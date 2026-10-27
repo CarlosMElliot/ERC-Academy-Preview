@@ -4,3 +4,6 @@
 
 
 body{background:#051326;color:#d4d9dc;color-scheme:dark}header,footer{border-color:#46535d}h1,h2,h3{color:#e5e7e5}.eyebrow,a{color:#a9c6e6}.card,blockquote{background:#2a343c;border-color:#46535d}.cta{background:#075bd8;color:#f1f3f2}footer{color:#bac4ca}
+
+/* Consistent readable links, button states and focus on supporting pages. */
+a:not(.cta),a:not(.cta):visited{color:#a9c6e6}.cta,.cta:visited{color:#f1f3f2}.cta:hover{background:#0864d8;color:#fff}a:focus-visible{outline-color:#71d6ef}::selection{background:#126ba5;color:#fff}
