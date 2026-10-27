@@ -175,3 +175,20 @@ body.erc-light{background:#051326;color:#d5dadd;color-scheme:dark}
 #prueba .erc-listening-focus #demo-feedback { margin:0; padding:0; border:0; background:transparent; color:#e4e7e5; font-size:.95rem; line-height:1.65; min-height:0; }
 #prueba #demo-next { margin-top:16px; align-self:flex-start; }
 @media(min-width:900px) { #prueba .erc-listening-focus { margin-top:auto; } #prueba .erc-demo-options { margin-bottom:24px; } }
+
+/* A visible research section, rather than a collapsed disclosure. */
+.erc-light #seguir-aprendiendo { padding:80px 24px; background:#071a31; }
+#seguir-aprendiendo .erc-research-body { padding-top:0; }
+#seguir-aprendiendo .erc-persistence-heading { max-width:850px; }
+#seguir-aprendiendo .erc-persistence-heading h2 { font-size:clamp(30px,3.5vw,44px); line-height:1.16; text-transform:none; font-style:normal; }
+#seguir-aprendiendo .erc-persistence-heading h2 span { color:#71d6ef; }
+#seguir-aprendiendo .erc-persistence-stat { padding:28px; }
+#seguir-aprendiendo .erc-data-row strong { font-size:36px; color:#71d6ef; }
+#seguir-aprendiendo .erc-data-track { height:12px; }
+#seguir-aprendiendo .erc-persistence-tag { font-size:11px; }
+#seguir-aprendiendo .erc-completion-context { margin-top:24px; }
+#seguir-aprendiendo .erc-completion-context h3 { padding:22px 24px 14px; color:#e4e7e5; font-size:17px; font-weight:700; }
+#seguir-aprendiendo .erc-completion-context strong { flex-shrink:0; color:#71d6ef; }
+#seguir-aprendiendo .erc-completion-context p { color:#c2ccd3; font-size:13px; }
+#seguir-aprendiendo .erc-persistence-action-panel { margin-top:32px; }
+@media(max-width:760px) { .erc-light #seguir-aprendiendo { padding:56px 20px; } #seguir-aprendiendo .erc-persistence-stat { padding:22px; } }
