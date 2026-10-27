@@ -169,12 +169,13 @@ body.erc-light{background:#051326;color:#d5dadd;color-scheme:dark}
 @media(min-width:900px) { #prueba .erc-listening-grid { grid-template-columns:1fr 1fr; align-items:start; } }
 
 /* Use the question column for a focused listening cue and answer explanation. */
-#prueba #demo-question-panel { display:flex; flex-direction:column; align-self:stretch; min-width:0; }
+#prueba #demo-question-panel { display:flex; flex-direction:column; align-self:start; min-width:0; }
 #prueba .erc-listening-focus { margin:24px 0 0; padding:20px; border:1px solid #456781; border-left:3px solid #71d6ef; border-radius:12px; background:#071a31; }
 #prueba #demo-focus-title { margin:0 0 8px; color:#71d6ef; font-size:.75rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
 #prueba .erc-listening-focus #demo-feedback { margin:0; padding:0; border:0; background:transparent; color:#e4e7e5; font-size:.95rem; line-height:1.65; min-height:0; }
 #prueba #demo-next { margin-top:16px; align-self:flex-start; }
-@media(min-width:900px) { #prueba .erc-listening-focus { margin-top:auto; } #prueba .erc-demo-options { margin-bottom:24px; } }
+#prueba .erc-listening-focus { margin-top:20px; }
+#prueba .erc-demo-options { margin-bottom:0; }
 
 /* A visible research section, rather than a collapsed disclosure. */
 .erc-light #seguir-aprendiendo { padding:80px 24px; background:#071a31; }
