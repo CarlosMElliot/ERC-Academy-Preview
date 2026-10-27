@@ -20,7 +20,20 @@
   ];
   const get = id => document.getElementById(id);
   let index = 0, correct = 0, answered = false, started = false;
+  let results = [];
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const recording = get('demo-recording');
+  function playing(active) {
+    get('prueba').classList.toggle('is-playing', active);
+    get('demo-play-state').textContent = active ? 'Escuchando…' : recording.ended ? 'Puedes volver a escucharlo' : 'Pulsa reproducir y escucha';
+  }
+  recording.addEventListener('play', () => playing(true));
+  recording.addEventListener('pause', () => playing(false));
+  recording.addEventListener('ended', () => playing(false));
+  function animatePanel() {
+    const panel = get('demo-question-panel');
+    if (!reducedMotion.matches && panel.animate) panel.animate([{opacity:0,transform:'translateY(10px)'},{opacity:1,transform:'translateY(0)'}], {duration:300,easing:'ease-out'});
+  }
   function stopAudio() {recording.pause();}
   recording.addEventListener('error', () => {
     get('demo-audio-note').insertAdjacentHTML('beforeend', '<br>No se pudo cargar el audio. Abre la lección original para escucharlo.');
@@ -42,6 +55,7 @@
       b.addEventListener('click', () => answer(choice));
       get('demo-options').append(b);
     });
+    animatePanel();
     if (focus) get('demo-question').focus();
   }
   function answer(choice) {
@@ -49,6 +63,7 @@
     answered = true;
     if (!started) { track('lesson_start'); started = true; }
     const q = questions[index], right = choice === q.answer;
+    results[index] = right;
     if (right) correct++;
     [...get('demo-options').children].forEach((b, i) => {
       b.disabled = true;
@@ -67,11 +82,26 @@
     stopAudio();
     root.hidden = true; get('demo-result').hidden = false;
     get('demo-score').textContent = `${correct} de 3 respuestas correctas.`;
+    get('demo-score-number').replaceChildren(document.createTextNode(String(correct)));
+    const denominator = document.createElement('span'); denominator.textContent = '/3';
+    get('demo-score-number').append(denominator);
+    const ring = get('demo-ring-value');
+    ring.style.strokeDasharray = '100';
+    ring.style.strokeDashoffset = String(100 - correct / 3 * 100);
+    if (!reducedMotion.matches && ring.animate) ring.animate([{strokeDashoffset:'100'},{strokeDashoffset:String(100 - correct / 3 * 100)}],{duration:850,easing:'ease-out'});
+    get('demo-result-steps').replaceChildren();
+    results.forEach((right, i) => {
+      const badge = document.createElement('span');
+      badge.className = right ? 'is-correct' : 'is-incorrect';
+      badge.textContent = (right ? '✓ ' : '↻ ') + 'Pregunta ' + (i + 1);
+      badge.setAttribute('aria-label', 'Pregunta ' + (i + 1) + (right ? ': correcta' : ': para repasar'));
+      get('demo-result-steps').append(badge);
+    });
     get('demo-result-title').focus(); track('lesson_complete');
   });
   get('demo-restart').addEventListener('click', () => {
     stopAudio(); recording.currentTime = 0;
-    index = 0; correct = 0; started = false;
+    index = 0; correct = 0; started = false; results = [];
     get('demo-result').hidden = true; root.hidden = false; render(true);
   });
   window.addEventListener('pagehide', stopAudio);
