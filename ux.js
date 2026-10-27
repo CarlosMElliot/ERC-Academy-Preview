@@ -1,14 +1,24 @@
 (() => {
-  const menu = document.querySelector('.erc-mobile-menu');
-  menu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { menu.open = false; }));
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && menu?.open) {
+  const menus = [...document.querySelectorAll('.erc-mobile-menu, .erc-classes-menu')];
+  menus.forEach(menu => {
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
       menu.open = false;
-      menu.querySelector('summary').focus();
+      menu.querySelectorAll('details[open]').forEach(child => { child.open = false; });
+    }));
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape') return;
+    const openMenu = menus.filter(menu => menu.open).pop();
+    if (openMenu) {
+      openMenu.open = false;
+      openMenu.querySelector('summary').focus();
+      event.preventDefault();
     }
   });
   document.addEventListener('click', event => {
-    if (menu?.open && !menu.contains(event.target)) menu.open = false;
+    menus.forEach(menu => {
+      if (menu.open && !menu.contains(event.target)) menu.open = false;
+    });
   });
   const form = document.getElementById('erc-contact-form');
   form?.addEventListener('submit', event => {
