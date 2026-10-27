@@ -13,11 +13,10 @@
   toggle.setAttribute('aria-controls', track.id);
   next.after(toggle);
   let paused = reduced.matches;
-  let hovering = false;
   let visible = false;
   let timer;
   const step = () => cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : track.clientWidth;
-  const canPlay = () => !paused && !hovering && visible && !document.hidden && !reduced.matches;
+  const canPlay = () => !paused && visible && !document.hidden && !reduced.matches;
   const update = () => {
     const first = Math.min(cards.length, Math.round(track.scrollLeft / step()) + 1);
     count.textContent = first + ' / ' + cards.length;
@@ -38,11 +37,11 @@
       const atEnd = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
       track.scrollTo({left: atEnd ? 0 : track.scrollLeft + step(), behavior: 'smooth'});
       schedule();
-    }, 4000);
+    }, 5000);
   };
   const pause = () => { paused = true; schedule(); };
   const move = direction => {
-    pause();
+    schedule();
     track.scrollBy({left: direction * step(), behavior: reduced.matches ? 'instant' : 'smooth'});
   };
   prev.addEventListener('click', () => move(-1));
@@ -53,18 +52,9 @@
     event.preventDefault();
     move(event.key === 'ArrowRight' ? 1 : -1);
   });
-  track.addEventListener('pointerdown', pause, {passive:true});
-  track.addEventListener('wheel', pause, {passive:true});
-  section.addEventListener('pointerenter', event => {
-    if (event.pointerType !== 'mouse') return;
-    hovering = true;
-    schedule();
-  });
-  section.addEventListener('pointerleave', event => {
-    if (event.pointerType !== 'mouse') return;
-    hovering = false;
-    schedule();
-  });
+  track.addEventListener('pointerdown', () => clearTimeout(timer), {passive:true});
+  window.addEventListener('pointerup', schedule, {passive:true});
+  track.addEventListener('wheel', schedule, {passive:true});
   section.addEventListener('focusin', event => {
     if (event.target !== toggle) pause();
   });
