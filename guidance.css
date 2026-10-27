@@ -32,3 +32,16 @@
 @media(max-width:900px){.erc-guidance-wrap{grid-template-columns:1fr;gap:40px}.erc-guidance-heading{position:static;max-width:650px}.erc-guidance-content{max-width:680px;width:100%;justify-self:center}.erc-guidance-lead{max-width:none}}
 @media(max-width:600px){.erc-guidance{padding:56px 20px}.erc-guidance h2{font-size:36px}.erc-guidance-content{padding-left:6px}.erc-guidance-item{padding:24px 18px 32px;border-radius:20px}.erc-guidance-item+.erc-guidance-item{margin-left:8px}.erc-guidance-item summary{grid-template-columns:58px minmax(0,1fr) 24px;gap:10px}.erc-guidance-number{font-size:56px}.erc-guidance-card-title{font-size:21px}.erc-guidance-detail{margin-left:0}.erc-guidance-toggle{width:24px;height:24px}.erc-guidance-toggle:before,.erc-guidance-toggle:after{left:6px;right:6px;top:10px}}
 @media(prefers-reduced-motion:reduce){.erc-guidance-item,.erc-guidance-toggle{transition:none}.erc-guidance-item:hover{translate:none}.erc-guidance-item[open] .erc-guidance-detail{animation:none}}
+
+/* Balance the introduction with useful goal shortcuts beside the card stack. */
+.erc-guidance-heading{padding-top:12px}
+.erc-guidance-goals{margin-top:32px;padding-top:24px;border-top:1px solid #1e293b;max-width:390px}
+.erc-guidance-goals>p{font-size:9px;font-weight:800;letter-spacing:.17em;color:#64748b;margin-bottom:14px}
+.erc-guidance-goals>a{display:grid;grid-template-columns:28px 1fr 16px;align-items:center;gap:10px;padding:11px 12px;margin-top:8px;border:1px solid #172b47;border-radius:12px;background:#0b172b80;color:#cbd5e1;font-size:12px;line-height:1.5;transition:translate .25s ease,border-color .25s ease,background .25s ease}
+.erc-guidance-goals>a>span:first-child{color:#60a5fa;font-size:21px}
+.erc-guidance-goals>a>span:last-child{color:#60a5fa;transition:translate .25s ease}
+@media(hover:hover){.erc-guidance-goals>a:hover{translate:4px 0;border-color:#2563eb;background:#10213d}.erc-guidance-goals>a:hover>span:last-child{translate:2px -2px}}
+@media(min-width:901px){.erc-guidance-heading{top:88px}.erc-guidance-wrap{gap:48px}}
+@media(max-width:900px){.erc-guidance-goals{max-width:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;padding-top:20px}.erc-guidance-goals>p{flex-basis:100%;margin:0}.erc-guidance-goals>a{flex:1 1 180px;margin-top:4px}}
+@media(max-height:780px) and (min-width:901px){.erc-guidance-heading{position:static}}
+@media(prefers-reduced-motion:reduce){.erc-guidance-goals>a,.erc-guidance-goals>a>span:last-child{transition:none;translate:none}}
