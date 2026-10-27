@@ -34,6 +34,8 @@
 <link rel="stylesheet" href="reviews.css">
 <link rel="stylesheet" href="/about.css">
 <link rel="stylesheet" href="/guidance.css">
+<link rel="stylesheet" href="/motion.css">
+<script src="/motion.js" defer></script>
 </head>
 <body class="bg-slate-950 text-white selection:bg-blue-500">
     <nav class="sticky top-0 z-50 glass border-b border-slate-800">
@@ -154,8 +156,8 @@
 <div class="erc-guidance-wrap">
 <header class="erc-guidance-heading"><p>UN CAMINO A TU MEDIDA</p><h2 id="guidance-title">Cómo puedo<br><span>acompañarte.</span></h2><p class="erc-guidance-lead">Tu motivo para aprender es donde empezamos.</p><a href="#contact" class="erc-guidance-cta">Hablemos de tus metas <span aria-hidden="true">→</span></a></header>
 <div class="erc-guidance-content">
-<article class="erc-guidance-item"><span class="erc-guidance-number" aria-hidden="true">01</span><div><h3>Primero, te escucho.</h3><p>No todos llegan por la misma razón. Quizá quieres volver a intentarlo, estudiar en otro país, prepararte para una entrevista de visa o disfrutar una conversación sin quedarte en blanco.</p><p class="erc-guidance-emphasis">Lo primero es conocerte y entender qué necesitas del inglés.</p></div></article>
-<article class="erc-guidance-item"><span class="erc-guidance-number" aria-hidden="true">02</span><div><h3>Después, practicamos.</h3><p>Soy Carlos, tu instructor. Partimos de lo que ya sabes y practicamos lo que necesitas reforzar, con espacio para preguntar, equivocarte y volver a intentar.</p><p class="erc-guidance-emphasis">Una experiencia cercana, con herramientas para seguir aprendiendo por tu cuenta.</p></div></article>
+<article class="erc-guidance-item"><span class="erc-guidance-number" aria-hidden="true">01</span><div><h3>Tu meta marca el camino.</h3><p>No todos llegan por la misma razón. Quizá quieres volver a intentarlo, estudiar en otro país, prepararte para una entrevista de visa o disfrutar una conversación sin quedarte en blanco.</p><p class="erc-guidance-emphasis">Empieza por eso que quieres lograr: hablar, retomar tus estudios o abrirte a una nueva oportunidad.</p></div></article>
+<article class="erc-guidance-item"><span class="erc-guidance-number" aria-hidden="true">02</span><div><h3>Convierte las ganas en avances.</h3><p>Practica para comprender más, expresar tus ideas y responder con mayor confianza. Cada actividad parte de lo que ya sabes y se enfoca en lo que necesitas para acercarte a tu meta.</p><p class="erc-guidance-emphasis">Que notes lo que hoy puedes hacer y encuentres las ganas de seguir avanzando.</p></div></article>
 </div></div></section>
 
 <section id="testimonials" class="erc-reviews" aria-labelledby="reviews-title">
@@ -174,14 +176,11 @@
             <h2 class="text-blue-500 font-bold uppercase tracking-widest text-[10px] mb-4 italic">Investment Options</h2>
             <h3 class="text-5xl md:text-7xl font-black italic mb-6 uppercase">Invierte en tu Futuro</h3>
             <p class="text-slate-400 text-sm md:text-lg mb-12 md:mb-6 font-light italic">Planes diseñados para profesionales que buscan resultados medibles</p>
-             <div class="inline-flex items-center gap-3 px-6 py-2 rounded-full border border-blue-500/20 bg-blue-500/5 mb-12 md:mb-20">
-            <span class="text-blue-400 font-black uppercase tracking-[0.2em] text-[10px]">Matrícula de Inscripción:</span>
-            <span class="text-white font-black italic text-xl">$15</span>
-        </div>
+             
             <div class="grid md:grid-cols-3 gap-8 items-stretch">
                 <div class="price-card p-10 bg-slate-900/20 rounded-[2.5rem] flex flex-col text-left">
                     <h4 class="text-xl font-bold italic mb-4 uppercase">One-on-One</h4>
-                    <div class="text-6xl font-black italic mb-8">$10<span class="text-lg text-slate-500 not-italic font-normal"> /hora</span></div>
+                    <div class="text-6xl font-black italic mb-8">$20<span class="text-lg text-slate-500 not-italic font-normal"> /hora</span></div>
                     <ul class="space-y-5 text-slate-400 text-sm flex-grow mb-12">
                         <li><i class="fa-solid fa-check text-blue-500 mr-3"></i> Atención 1 a 1 Personalizada</li>
                         <li><i class="fa-solid fa-check text-blue-500 mr-3"></i> Enfoque en tus dudas específicas</li>
@@ -189,13 +188,13 @@
                         <li><i class="fa-solid fa-check text-blue-500 mr-3"></i> Modalidad y horario por confirmar</li>
                         <li><i class="fa-solid fa-check text-blue-500 mr-3"></i> Material de Estudio Gratuito</li>
                     </ul>
-                    <a href="https://wa.me/50575281644?text=Hola,%20me%20gustaría%20reservar%20mi%20cupo%20para:%20One-on-One%20($10/hora).%20Mi%20nombre%20es:" class="border border-slate-800 py-4 rounded-xl text-center text-[10px] font-black uppercase tracking-widest hover:bg-slate-900 transition">AGENDAR HORA</a>
+                    <a href="https://wa.me/50575281644?text=Hola,%20me%20gustaría%20reservar%20mi%20cupo%20para:%20One-on-One%20($20/hora).%20Mi%20nombre%20es:" class="border border-slate-800 py-4 rounded-xl text-center text-[10px] font-black uppercase tracking-widest hover:bg-slate-900 transition">AGENDAR HORA</a>
                 </div>
 
                 <div class="price-card p-10 bg-blue-900/10 rounded-[2.5rem] flex flex-col text-left scale-100 md:scale-105 z-10 border-2 border-blue-600 relative shadow-2xl shadow-blue-900/20 my-8 md:my-0">
                     <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest italic">MÁS POPULAR</div>
                     <h4 class="text-xl font-bold italic mb-4 uppercase text-blue-400">Full Training ERC</h4>
-                    <div class="text-6xl font-black italic mb-8 text-white">$40<span class="text-lg text-slate-500 not-italic font-normal"> /mes</span></div>
+                    <div class="text-6xl font-black italic mb-8 text-white">$60<span class="text-lg text-slate-500 not-italic font-normal"> /mes</span></div>
                     <ul class="space-y-5 text-slate-300 text-sm flex-grow mb-12">
                         <li><i class="fa-solid fa-star text-blue-500 mr-3"></i> Needs Analysis Incluido </li>
                         <li><i class="fa-solid fa-star text-blue-500 mr-3"></i> Seguimiento Cognitivo Diario</li>
@@ -203,7 +202,7 @@
                         <li><i class="fa-solid fa-check text-blue-500 mr-3"></i> 1 hr de Clases por 3 dias</li>
                         <li><i class="fa-solid fa-check text-blue-500 mr-3"></i> Disponible Fines de Semana</li>
                     </ul>
-                    <a href="https://wa.me/50575281644?text=Hola,%20me%20gustaría%20reservar%20mi%20cupo%20para:%20Full%20Training%20ERC%20($40/mes).%20Mi%20nombre%20es:" class="bg-blue-600 py-4 rounded-xl text-center text-[10px] font-black uppercase tracking-widest hover:bg-blue-700 transition shadow-lg shadow-blue-600/40">INSCRIBIRME AHORA</a>
+                    <a href="https://wa.me/50575281644?text=Hola,%20me%20gustaría%20reservar%20mi%20cupo%20para:%20Full%20Training%20ERC%20($60/mes).%20Mi%20nombre%20es:" class="bg-blue-600 py-4 rounded-xl text-center text-[10px] font-black uppercase tracking-widest hover:bg-blue-700 transition shadow-lg shadow-blue-600/40">INSCRIBIRME AHORA</a>
                 </div>
 
                 <div class="price-card p-10 bg-slate-900/20 rounded-[2.5rem] flex flex-col text-left">
@@ -216,7 +215,7 @@
                         <li><i class="fa-solid fa-check text-emerald-500 mr-3"></i> Disponibilidad de 3 Horarios</li>
                         <li><i class="fa-solid fa-check text-blue-500 mr-3"></i> 1hr 30 mins de Clases por Sesión </li>
                     </ul>
-                    <a href="https://wa.me/50575281644?text=Hola,%20me%20gustaría%20reservar%20mi%20cupo%20para:%20Study%20Plus%20($60/mes).%20Mi%20nombre%20es:" class="border border-slate-800 py-4 rounded-xl text-center text-[10px] font-black uppercase tracking-widest hover:bg-slate-900 transition">MÁS INFORMACIÓN</a>
+                    <a href="https://wa.me/50575281644?text=Hola,%20me%20gustaría%20reservar%20mi%20cupo%20para:%20Study%20Plus%20($120/mes).%20Mi%20nombre%20es:" class="border border-slate-800 py-4 rounded-xl text-center text-[10px] font-black uppercase tracking-widest hover:bg-slate-900 transition">MÁS INFORMACIÓN</a>
                 </div>
             </div>
         </div>
