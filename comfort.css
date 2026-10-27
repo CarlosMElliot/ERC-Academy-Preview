@@ -38,3 +38,19 @@ body.erc-light{background:#20272d;color:#d5dadd;color-scheme:dark}
 .erc-light main :is(h2,h3,h4),.erc-light main :is(h2,h3,h4) span{color:#e4e7e5!important}
 .erc-light main summary,.erc-light main .erc-about-cta,.erc-light main .erc-about-kicker,.erc-light #mission [class*="text-blue-"],.erc-light section.w-full [class*="text-blue-"]{color:#acc8e5!important}
 .erc-light #demo-audio-note a,.erc-light .erc-demo-restart{color:#acc8e5!important}
+
+/* Compact listening card; no transcript or long teaching notes. */
+.erc-light #prueba{padding:40px 20px}
+.erc-light .erc-demo-layout{display:block;max-width:660px}
+.erc-light .erc-demo-layout header{margin-bottom:18px}
+.erc-light .erc-demo-layout header h2{font-size:clamp(26px,3vw,34px);margin:0 0 8px}
+.erc-light .erc-demo-layout header>p{font-size:14px;margin:0}
+.erc-light .erc-demo-card{padding:24px}
+.erc-light .erc-demo-top{margin-bottom:12px}
+.erc-light #demo-audio-note{font-size:12px;margin:8px 0 20px}
+.erc-light #demo-question{font-size:20px;line-height:1.4;margin:0 0 12px}
+.erc-light .erc-demo-options{margin-top:0;gap:8px}
+.erc-light .erc-demo-options button{padding:11px 14px}
+.erc-light .erc-demo-feedback{padding:14px 0 0;line-height:1.5}
+.erc-light #demo-next{margin-top:16px}
+@media(max-width:600px){.erc-light .erc-demo-card{padding:20px 16px}}
