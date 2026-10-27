@@ -28,11 +28,3 @@ nav a,footer a,.erc-resource-links a,.erc-review-person a,.erc-review-bottom a{
     transition:none!important;translate:none!important;scale:1!important;
   }
 }
-
-/* Consistent section emblems; the hero stays text-led. */
-.erc-section-icon{display:flex;align-items:center;justify-content:center;width:64px;height:64px;margin:0 0 24px;border-radius:20px;border:1px solid #24436c;background:linear-gradient(145deg,#10294d,#071020);color:#60a5fa;font-size:28px;box-shadow:0 10px 32px rgba(37,99,235,.12);flex-shrink:0;transition:translate .3s ease,box-shadow .3s ease}
-.erc-section-icon-center{margin-inline:auto}
-.erc-guidance-heading>p:first-of-type{color:#3b82f6;font-size:10px;letter-spacing:.22em;font-weight:800;margin-bottom:18px}
-@media(hover:hover){.erc-section-icon:hover{translate:0 -3px;box-shadow:0 12px 36px rgba(37,99,235,.2)}}
-@media(max-width:600px){.erc-section-icon{width:56px;height:56px;font-size:25px;margin-bottom:20px}}
-@media(prefers-reduced-motion:reduce){.erc-section-icon{transition:none}.erc-section-icon:hover{translate:none}}
