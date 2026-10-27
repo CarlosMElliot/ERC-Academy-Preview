@@ -1,0 +1,27 @@
+/* Real classroom showcase: scoped to preserve the landing page. */
+.erc-light #en-clase{padding:96px 24px;background:#06182e;color:#e4e7e5;border-block:1px solid #153750}
+#en-clase .erc-classroom-layout{max-width:1240px;margin:auto;display:grid;grid-template-columns:minmax(240px,.7fr) minmax(0,1.3fr);gap:clamp(32px,5vw,80px);align-items:start}
+#en-clase .erc-classroom-intro{position:sticky;top:120px;padding:20px 0}
+#en-clase .erc-classroom-eyebrow{color:#71d6ef;font-size:11px;font-weight:800;letter-spacing:.18em;margin:0 0 22px}
+#en-clase h2{font-size:clamp(34px,4vw,52px);line-height:1.08;letter-spacing:-.04em;color:#e4e7e5;margin:0 0 24px;font-weight:800}
+#en-clase h2 span{color:#71d6ef}
+#en-clase .erc-classroom-intro>p:not(.erc-classroom-eyebrow){color:#c2ccd3;line-height:1.75;max-width:34ch;font-size:16px;margin:0 0 28px}
+#en-clase .erc-classroom-link{display:inline-flex;gap:20px;align-items:center;color:#71d6ef;font-weight:700;padding:12px 0;border-bottom:1px solid #387187;text-decoration:none;transition:gap .2s}
+#en-clase .erc-classroom-link:hover{gap:30px}
+#en-clase a:focus-visible{outline:3px solid #71d6ef;outline-offset:5px}
+#en-clase .erc-classroom-stack{display:grid;gap:40px;padding-bottom:24px;min-width:0}
+#en-clase .erc-classroom-card{position:sticky;top:104px;background:#0b2744;border:1px solid #28516b;border-radius:20px;overflow:hidden;box-shadow:0 20px 45px #010a1880;margin:0;transform-origin:50% 0}
+#en-clase .erc-classroom-card:nth-child(2){top:120px}
+#en-clase .erc-classroom-card:nth-child(3){top:136px}
+#en-clase .erc-classroom-card:nth-child(4){top:152px}
+#en-clase .erc-classroom-card img{display:block;width:100%;height:auto;background:#071a31}
+#en-clase .erc-classroom-caption{display:grid;grid-template-columns:auto 1fr;gap:20px;padding:24px 28px}
+#en-clase .erc-classroom-number{font-size:34px;line-height:1;color:#71d6ef;font-weight:800;letter-spacing:-.05em}
+#en-clase h3{margin:0 0 8px;color:#e4e7e5;font-size:21px;font-weight:700;line-height:1.3}
+#en-clase .erc-classroom-caption p{margin:0;color:#c2ccd3;font-size:14px;line-height:1.6}
+@supports(animation-timeline:view()){ @media(prefers-reduced-motion:no-preference){
+#en-clase .erc-classroom-card{animation:erc-classroom-enter linear both;animation-timeline:view();animation-range:entry 0% entry 70%}
+@keyframes erc-classroom-enter{from{opacity:.65;translate:0 32px}to{opacity:1;translate:0 0}}
+}}
+@media(max-width:800px){.erc-light #en-clase{padding:56px 20px}#en-clase .erc-classroom-layout{grid-template-columns:1fr;gap:32px}#en-clase .erc-classroom-intro{position:static;padding:0}#en-clase .erc-classroom-intro>p:not(.erc-classroom-eyebrow){max-width:48ch}#en-clase .erc-classroom-stack{gap:32px}#en-clase .erc-classroom-caption{padding:20px;gap:16px}#en-clase h3{font-size:19px}}
+@media(max-height:650px),(prefers-reduced-motion:reduce){#en-clase .erc-classroom-card{position:relative;top:auto!important;animation:none}#en-clase .erc-classroom-intro{position:static}}
