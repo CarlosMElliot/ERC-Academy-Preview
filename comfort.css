@@ -220,3 +220,21 @@ body.erc-light{background:#051326;color:#d5dadd;color-scheme:dark}
 .erc-light #pricing .erc-plan-note { margin:24px 0; padding-top:16px; border-top:1px solid #456781; font-size:12px; line-height:1.7; }
 .erc-light #pricing .erc-plan-link { margin-top:auto; }
 @media(max-width:760px) { .erc-light #pricing .erc-plan-audience { min-height:0; } }
+
+/* A distinct, calm invitation after comparing packages. */
+.erc-light #pricing .erc-trial-banner { position:relative; isolation:isolate; overflow:hidden; display:grid; grid-template-columns:132px minmax(0,1fr) auto; align-items:center; gap:28px; margin-top:32px; padding:32px; border:1px solid #287297; border-left:4px solid #71d6ef; border-radius:18px; background:#0b2744; box-shadow:0 12px 32px #020b1826; }
+.erc-light #pricing .erc-trial-banner::before { content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; background:linear-gradient(115deg,transparent 67%,#075bd81a 67% 88%,transparent 88%); }
+.erc-light #pricing .erc-trial-duration { display:flex; flex-direction:column; gap:8px; padding-right:24px; border-right:1px solid #456781; }
+.erc-light #pricing .erc-trial-duration strong { color:#71d6ef!important; font-size:48px; font-weight:800; letter-spacing:-.04em; line-height:1; white-space:nowrap; }
+.erc-light #pricing .erc-trial-duration strong span { font-size:18px; font-weight:600; letter-spacing:0; }
+.erc-light #pricing .erc-trial-duration>span { color:#e4e7e5; font-size:13px; font-weight:600; }
+.erc-light #pricing .erc-trial-copy .erc-trial-eyebrow { color:#71d6ef!important; margin:0 0 8px; font-size:10px; font-weight:700; letter-spacing:.12em; }
+.erc-light #pricing .erc-trial-copy h3 { margin:0 0 10px; font-size:clamp(21px,2.2vw,27px); line-height:1.25; font-weight:750; letter-spacing:-.02em; }
+.erc-light #pricing .erc-trial-copy>p:last-child { margin:0; max-width:520px; font-size:14px; line-height:1.65; }
+.erc-light #pricing .erc-trial-action { display:flex; flex-direction:column; align-items:center; gap:12px; }
+.erc-light #pricing .erc-trial-action .erc-book { display:inline-flex; align-items:center; justify-content:center; gap:12px; padding:16px 22px; white-space:nowrap; font-size:14px; transition:transform .2s,background .2s,box-shadow .2s; }
+.erc-light #pricing .erc-trial-action>span { color:#c2ccd3; font-size:12px; }
+@media(hover:hover) { .erc-light #pricing .erc-trial-action .erc-book:hover { transform:translateY(-2px); box-shadow:0 6px 20px #020b1866; } }
+@media(max-width:1000px) { .erc-light #pricing .erc-trial-banner { grid-template-columns:112px minmax(0,1fr); gap:24px; } .erc-light #pricing .erc-trial-action { grid-column:2; align-items:flex-start; } }
+@media(max-width:600px) { .erc-light #pricing .erc-trial-banner { grid-template-columns:1fr; padding:26px 22px; gap:22px; } .erc-light #pricing .erc-trial-duration { flex-direction:row; align-items:baseline; gap:14px; padding:0; border:0; } .erc-light #pricing .erc-trial-duration strong { font-size:40px; } .erc-light #pricing .erc-trial-action { grid-column:1; align-items:stretch; text-align:center; } .erc-light #pricing .erc-trial-action .erc-book { white-space:normal; } }
+@media(prefers-reduced-motion:reduce) { .erc-light #pricing .erc-trial-action .erc-book { transition:none; transform:none; } }
