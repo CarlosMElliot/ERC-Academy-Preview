@@ -326,3 +326,18 @@ body.erc-light{background:#051326;color:#d5dadd;color-scheme:dark}
 .erc-light #prueba .erc-listening-heading .erc-listening-description { margin-inline:auto; }
 .erc-light #prueba .erc-listening-meta { justify-content:center; }
 @media(min-width:1024px) { .erc-light #prueba { padding-inline:clamp(24px,4vw,64px); } .erc-light #prueba .erc-listening-grid { gap:40px; } }
+
+/* Matched listening panels: compact player and equal-height desktop cards. */
+.erc-light #prueba .erc-listening-grid { grid-template-columns:repeat(2,minmax(0,1fr)); align-items:stretch; gap:24px; }
+.erc-light #prueba #demo-question-panel { align-self:stretch; padding:22px; border:1px solid #1b5278; border-radius:18px; background:#061d35; }
+.erc-light #prueba .erc-audio-panel { padding:22px; }
+.erc-light #prueba .erc-video-player { height:clamp(200px,19vw,260px); min-height:0; aspect-ratio:auto; }
+.erc-light #prueba .erc-video-hint { font-size:13px; line-height:1.55; margin:12px 0 6px; }
+.erc-light #prueba #demo-replay { padding:6px 0; }
+.erc-light #prueba #demo-audio-note { font-size:11px; line-height:1.5; margin:12px 0 0; }
+.erc-light #prueba .erc-listening-focus { margin-top:20px; }
+@media(max-width:800px) {
+ .erc-light #prueba .erc-listening-grid { grid-template-columns:1fr; gap:20px; }
+ .erc-light #prueba #demo-question-panel,.erc-light #prueba .erc-audio-panel { padding:16px; }
+ .erc-light #prueba .erc-video-player { height:auto; aspect-ratio:16/9; }
+}
