@@ -9,8 +9,17 @@ body.erc-light{background:#fff;color:#172338}
 .erc-light [class*="border-slate-"]{border-color:#dce0e5}
 .erc-light [class*="bg-slate-"],.erc-light #mission{background-color:#fff}
 .erc-light .glass{background:#fff;backdrop-filter:none}
-.erc-light .hero-bg{background:#f5f4f0;min-height:82vh;padding-block:88px}
-.erc-light .hero-bg h1 span{color:#172338}
+.erc-light .hero-bg{
+ background-color:#172338;
+ background-image:linear-gradient(rgba(13,25,43,.64),rgba(13,25,43,.72)),url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop');
+ background-size:cover;background-position:center;min-height:82vh;padding-block:88px;color:#fff
+}
+.erc-light .hero-bg h1,.erc-light .hero-bg h1 span{color:#fff}
+.erc-light .hero-bg h2{color:#c6dbf7}
+.erc-light .hero-bg p{color:#f0f3f7}
+.erc-light .hero-bg .text-yellow-400{color:#e7d7b6}
+.erc-light .hero-bg .erc-action.glass{background:#fff;color:#172338;border-color:#fff}
+.erc-light .hero-bg .erc-action:focus-visible{outline-color:#fff}
 .erc-light .text-glow{text-shadow:none}
 .erc-light #methodology,.erc-light #pricing{background:#f5f4f0}
 .erc-light .timeline-line::before{background:#d7dce2}
