@@ -74,3 +74,6 @@ body.erc-light{background:#e7e5de}
 .erc-faq-list details{border-bottom:1px solid #bac5ca}.erc-faq-list summary{cursor:pointer;font-size:16px;font-weight:600;line-height:1.6;padding:20px 4px}.erc-faq-list details p{padding:0 4px 20px;font-size:15px}
 @media(max-width:767px){.erc-demo-section,.erc-faq-section{padding:48px 20px}.erc-demo-layout,.erc-faq-grid{grid-template-columns:1fr;gap:32px}.erc-demo-card{padding:24px 20px}.erc-demo-card h3{font-size:22px}.erc-demo-layout header h2{margin-bottom:16px}.erc-demo-options button{font-size:16px}}
 @media(prefers-reduced-motion:reduce){.erc-demo-section *{scroll-behavior:auto;transition:none}}
+
+#demo-question,#demo-result-title{scroll-margin-top:110px}
+@media(max-width:767px){.erc-light>a.erc-action.fixed[href="https://wa.me/50575281644"]{display:none}}
