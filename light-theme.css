@@ -98,3 +98,36 @@ body.erc-light{background:#fff;color:#172338}
  .erc-light #legal a:hover{color:#fff}
 }
 @media(max-width:600px){.erc-light .hero-bg{padding:64px 24px;min-height:78vh}}
+
+/* Quiet paper-like texture on the light sections; no overlay over content. */
+.erc-light #mission,
+.erc-light #about,
+.erc-light #seguir-aprendiendo,
+.erc-light #contact,
+.erc-light section.w-full{
+ background-color:#fcfcfa;
+ background-image:
+  radial-gradient(ellipse at 0% 15%,rgba(88,117,154,.09),transparent 48%),
+  radial-gradient(ellipse at 100% 90%,rgba(184,164,124,.10),transparent 46%),
+  radial-gradient(circle,rgba(52,76,109,.065) .7px,transparent .9px);
+ background-size:100% 100%,100% 100%,26px 26px;
+ background-repeat:no-repeat,no-repeat,repeat;
+}
+.erc-light #about,
+.erc-light #contact{
+ background-image:
+  radial-gradient(ellipse at 100% 10%,rgba(88,117,154,.09),transparent 48%),
+  radial-gradient(ellipse at 0% 90%,rgba(184,164,124,.10),transparent 46%),
+  radial-gradient(circle,rgba(52,76,109,.065) .7px,transparent .9px);
+}
+.erc-light .erc-persistence-stat,
+.erc-light .erc-persistence-context{
+ background:#fff;
+ box-shadow:0 4px 18px rgba(23,35,56,.025);
+}
+@media(max-width:600px){
+ .erc-light #mission,.erc-light #about,.erc-light #seguir-aprendiendo,
+ .erc-light #contact,.erc-light section.w-full{
+  background-size:100% 100%,100% 100%,30px 30px;
+ }
+}
