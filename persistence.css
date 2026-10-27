@@ -1,0 +1,39 @@
+.erc-persistence{padding:88px 24px;background:#020617;border-top:1px solid #172033}
+.erc-persistence-wrap{max-width:1152px;margin:auto}
+.erc-persistence-heading{max-width:760px}
+.erc-persistence-eyebrow{font-size:10px;font-weight:800;letter-spacing:.18em;color:#60a5fa;margin-bottom:18px}
+.erc-persistence h2{font-size:clamp(30px,4vw,48px);font-weight:900;font-style:italic;text-transform:uppercase;line-height:1.12;letter-spacing:-.035em;color:#fff}
+.erc-persistence h2 span{color:#60a5fa}
+.erc-persistence-heading>p:last-child{color:#cbd5e1;font-size:16px;line-height:1.75;margin-top:22px;max-width:650px}
+.erc-persistence-scope{font-size:12px;color:#94a3b8;line-height:1.7;max-width:800px;margin:24px 0 30px}
+.erc-persistence-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.erc-persistence-stat{display:flex;flex-direction:column;padding:30px;border:1px solid #1e3657;border-radius:24px;background:linear-gradient(145deg,#0d1c35,#071020);transition:translate .3s,border-color .3s}
+.erc-persistence-tag{font-size:9px;color:#93c5fd;font-weight:800;letter-spacing:.1em;line-height:1.7}
+.erc-persistence-stat>strong{display:block;color:#60a5fa;font-size:clamp(52px,5vw,72px);font-weight:900;letter-spacing:-.06em;line-height:1.15;margin:24px 0 20px;font-variant-numeric:tabular-nums}
+.erc-persistence-stat>strong span{font-size:.48em;margin-left:4px}
+.erc-persistence-stat h3{font-size:18px;font-weight:800;color:#fff;line-height:1.4}
+.erc-persistence-stat p{font-size:13px;line-height:1.8;color:#94a3b8;margin:14px 0 24px;flex:1}
+.erc-persistence a{color:#93c5fd;font-size:11px;line-height:1.7;text-underline-offset:4px}
+.erc-persistence-bottom{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:32px;align-items:start}
+.erc-persistence-countries{border:1px solid #1e3657;border-radius:20px;background:#0b1629}
+.erc-persistence summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:14px;color:#e2e8f0;font-weight:700}
+.erc-persistence summary::-webkit-details-marker{display:none}
+.erc-persistence summary>span:last-child{color:#60a5fa;transition:rotate .25s}
+.erc-persistence details[open]>summary>span:last-child{rotate:45deg}
+.erc-persistence-countries>summary{padding:24px}
+.erc-persistence-panel{padding:0 24px 24px}
+.erc-persistence-panel>p{font-size:13px;line-height:1.8;color:#94a3b8;margin-bottom:20px}
+.erc-country-row{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-top:1px solid #1e293b;font-size:14px;color:#cbd5e1}
+.erc-country-row strong{color:#60a5fa;font-size:23px;font-weight:800}
+.erc-persistence .erc-persistence-note{font-size:11px;line-height:1.8;color:#94a3b8;margin:14px 0}
+.erc-persistence-next{padding:4px 0}
+.erc-persistence-next h3{font-size:22px;font-weight:800;color:#fff}
+.erc-persistence-next details{border-bottom:1px solid #1e293b;padding:17px 0}
+.erc-persistence-next details p{font-size:13px;color:#cbd5e1;line-height:1.85;margin-top:14px}
+.erc-persistence details[open]>.erc-persistence-panel,.erc-persistence-next details[open]>p{animation:erc-persistence-in .3s ease both}
+.erc-persistence a.erc-persistence-cta{display:inline-flex;gap:16px;align-items:center;margin-top:24px;padding:14px 20px;background:#2563eb;color:white;border-radius:12px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em}
+.erc-persistence summary:focus-visible,.erc-persistence a:focus-visible{outline:2px solid #60a5fa;outline-offset:5px;border-radius:6px}
+@keyframes erc-persistence-in{from{opacity:0;translate:0 6px}to{opacity:1;translate:0 0}}
+@media(hover:hover){.erc-persistence-stat:hover{translate:0 -4px;border-color:#3b82f6}.erc-persistence a:hover{text-decoration:underline}}
+@media(max-width:800px){.erc-persistence-stats{grid-template-columns:1fr}.erc-persistence-stat{padding:26px}.erc-persistence-stat>strong{margin:16px 0}.erc-persistence-bottom{grid-template-columns:1fr;gap:28px}.erc-persistence{padding:56px 20px}}
+@media(prefers-reduced-motion:reduce){.erc-persistence *{animation:none!important;transition:none!important}.erc-persistence-stat:hover{translate:none}}
