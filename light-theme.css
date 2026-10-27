@@ -1,0 +1,91 @@
+/* ERC preview: lighter surfaces, restrained brand accents. */
+body.erc-light{background:#fff;color:#172338}
+.erc-light ::selection{background:#dbeafe;color:#172338}
+.erc-light .text-white{color:#172338}
+.erc-light [class*="text-slate-3"],.erc-light [class*="text-slate-4"],.erc-light [class*="text-slate-5"],.erc-light [class*="text-slate-6"],.erc-light [class*="text-slate-7"]{color:#526071}
+.erc-light [class*="text-blue-"],.erc-light .text-purple-400{color:#2557a7}
+.erc-light [class*="text-emerald-"]{color:#16704b}
+.erc-light .text-yellow-400{color:#756035}
+.erc-light [class*="border-slate-"]{border-color:#dce0e5}
+.erc-light [class*="bg-slate-"],.erc-light #mission{background-color:#fff}
+.erc-light .glass{background:#fff;backdrop-filter:none}
+.erc-light .hero-bg{background:#f5f4f0;min-height:82vh;padding-block:88px}
+.erc-light .hero-bg h1 span{color:#172338}
+.erc-light .text-glow{text-shadow:none}
+.erc-light #methodology,.erc-light #pricing{background:#f5f4f0}
+.erc-light .timeline-line::before{background:#d7dce2}
+.erc-light .timeline-line h4{text-decoration:none}
+.erc-light .timeline-line [class*="bg-purple-"],.erc-light .timeline-line [class*="bg-emerald-"]{background:#748397}
+.erc-light #mission img{filter:none;opacity:1}
+.erc-light [class*="shadow-"]{box-shadow:none}
+.erc-light .price-card{background:#fff;border-color:#d7dce2}
+.erc-light .price-card.border-blue-600{border-color:#2557a7;background:#fff}
+.erc-light #contact{background:#fff}
+.erc-light #contact form,.erc-light #success-message{background:#f5f4f0;box-shadow:none}
+.erc-light #contact input,.erc-light #contact select,.erc-light #contact textarea{background-color:#fff;color:#172338;border-color:#cbd2da}
+.erc-light #contact :disabled{background-color:#e8e9eb;color:#707986}
+.erc-light #contact :is(input,select,textarea):focus-visible{outline:2px solid #2557a7;outline-offset:2px}
+.erc-light [class*="bg-blue-600"],.erc-light .erc-guidance-cta,.erc-light .erc-persistence-cta{background:#2557a7;color:#fff}
+.erc-light a[class*="bg-emerald-"],.erc-light button[class*="bg-emerald-"]{background:#16704b;color:#fff}
+.erc-light a[class*="bg-emerald-"] .text-white,.erc-light a[class*="bg-emerald-"] span{color:#fff}
+.erc-light .erc-resource-links{background:#f5f4f0;color:#526071}
+.erc-light #legal{background:#172338;color:#fff;border-color:#344155}
+.erc-light #legal [class*="text-slate-"]{color:#bdc6d2}
+.erc-light #legal [class*="text-blue-"]{color:#93b6ee}
+.erc-light #legal [class*="border-slate-"]{border-color:#344155}
+.erc-light .erc-about,.erc-light .erc-persistence{background:#fff;border-color:#e0e3e7}
+.erc-light .erc-guidance,.erc-light .erc-reviews{background:#f5f4f0;border-color:#e0e3e7}
+.erc-light :is(.erc-about,.erc-guidance,.erc-persistence,.erc-reviews) h2,
+.erc-light :is(.erc-about,.erc-guidance,.erc-persistence,.erc-reviews) h2 span,
+.erc-light .erc-guidance-card-title,.erc-light .erc-persistence-stat h3,
+.erc-light .erc-persistence-action-heading h3,.erc-light .erc-persistence-actions h4,
+.erc-light .erc-review-person h3,.erc-light .erc-rating{color:#172338}
+.erc-light .erc-about-intro,.erc-light .erc-about-highlights p,.erc-light .erc-about-story p,
+.erc-light .erc-guidance-lead,.erc-light .erc-guidance-preview,.erc-light .erc-guidance-detail p,
+.erc-light .erc-persistence-heading>p:last-child,.erc-light .erc-persistence-scope,
+.erc-light .erc-chart-description,.erc-light .erc-chart-footnote,.erc-light .erc-data-scale,
+.erc-light .erc-data-row span,.erc-light .erc-persistence-context p,
+.erc-light .erc-persistence-actions p,.erc-light .erc-persistence-action-footer p,
+.erc-light .erc-rating-source,.erc-light .erc-rating strong>span,
+.erc-light .erc-review-source,.erc-light .erc-review-person a,.erc-light .erc-review-bottom{color:#526071}
+.erc-light .erc-about-kicker,.erc-light .erc-about h3,.erc-light .erc-about-cta,
+.erc-light .erc-guidance-heading>p:first-child,.erc-light .erc-guidance-kicker,
+.erc-light .erc-persistence-eyebrow,.erc-light .erc-persistence-tag,
+.erc-light .erc-persistence a,.erc-light .erc-reviews-label,.erc-light .erc-review-bottom a{color:#2557a7}
+.erc-light .erc-about-portrait img,.erc-light .erc-about-details{border-color:#dce0e5}
+.erc-light .erc-about-portrait>span{background:#edf0f4;color:#344155}
+.erc-light .erc-about-highlights>div{border-color:#b9c5d3}
+.erc-light .erc-guidance-content:before{background:#e9e7e0;border-color:#dedbd2}
+.erc-light .erc-guidance-item,.erc-light .erc-guidance-item+.erc-guidance-item{background:#fff;border-color:#d6dbe1;box-shadow:0 6px 18px #17233808}
+.erc-light .erc-guidance-number{color:#344c6d}
+.erc-light .erc-guidance-toggle{border-color:#a9b6c5}
+.erc-light .erc-guidance-toggle:before,.erc-light .erc-guidance-toggle:after{background:#344c6d}
+.erc-light .erc-guidance-item[open] .erc-guidance-toggle{background:#e9edf2}
+.erc-light .erc-guidance-detail,.erc-light .erc-guidance-goals{border-color:#dce0e5}
+.erc-light .erc-guidance-goals>a{background:#fff;border-color:#dce0e5;color:#344155}
+.erc-light .erc-guidance-goals>a>span:last-child{color:#2557a7}
+.erc-light .erc-persistence-stat,.erc-light .erc-persistence-context{background:#f7f7f5;border-color:#dce0e5}
+.erc-light .erc-data-row strong,.erc-light .erc-persistence-context strong,.erc-light .erc-action-step{color:#344c6d}
+.erc-light .erc-data-track{background:#e0e4e9}
+.erc-light .erc-data-track>span{background:#58759a}
+.erc-light .erc-persistence-context summary{color:#344155}
+.erc-light .erc-persistence-context summary>span:last-child{color:#2557a7}
+.erc-light .erc-persistence-action-panel{background:#f5f4f0;border-color:#dce0e5}
+.erc-light .erc-persistence-actions article+article,.erc-light .erc-persistence-action-footer{border-color:#d6dbe1}
+.erc-light .erc-persistence a.erc-persistence-cta{background:#2557a7;color:white}
+.erc-light .erc-review-card,.erc-light .erc-rating{background:#fff;border-color:#dce0e5}
+.erc-light .erc-review-card blockquote{color:#26364c}
+.erc-light .erc-review-person{border-color:#e4e7ea}
+.erc-light .erc-review-avatar{background:#e9edf2;color:#344c6d}
+.erc-light .erc-stars{color:#967021}
+.erc-light .erc-reveal-in{animation-duration:.45s}
+@keyframes erc-reveal{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media(hover:hover){
+ .erc-light .erc-action:hover,.erc-light .price-card:hover,.erc-light .erc-review-card:hover,.erc-light .erc-guidance-item:hover,.erc-light .erc-persistence-stat:hover{box-shadow:none;translate:0 -2px;transform:none}
+ .erc-light a[class*="bg-blue-"]:hover,.erc-light .erc-guidance-cta:hover,.erc-light .erc-persistence-cta:hover{background:#1e478b;color:#fff}
+ .erc-light .erc-action.glass:hover,.erc-light .price-card a.border:hover{background:#e9edf2;color:#172338}
+ .erc-light .erc-guidance-goals>a:hover{background:#edf0f4;border-color:#a9b6c5}
+ .erc-light nav a:hover,.erc-light #prevBtn:hover{color:#2557a7}
+ .erc-light #legal a:hover{color:#fff}
+}
+@media(max-width:600px){.erc-light .hero-bg{padding:64px 24px;min-height:78vh}}
