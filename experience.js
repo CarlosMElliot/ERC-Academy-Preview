@@ -13,41 +13,41 @@
   });
   const root = document.getElementById('demo-interactive');
   if (!root) return;
+  const transcript = `Pete: Hi! Are you Anna?
+Anna: Yes! Hi there! Are you Pete?
+Pete: I am Pete.
+Anna: Nice to meet you.
+Anna: Let's try that again. I'm Anna. Nice to meet you.
+Pete: I'm Pete. “Anna” Is that A-N-A?
+Anna: No. A-N-N-A.
+Pete: Well, Anna with two “n's” ... Welcome to ... 1400 Irving Street!
+Anna: My new apartment! Yes!`;
   const questions = [
-    {context:'No entendiste lo que dijo la otra persona.', phrase:'Could you say that again, please?', question:'¿Qué estás pidiendo?', options:['Que repita lo que dijo.','Que hable más rápido.','Que termine la conversación.'], answer:0, why:'“Say that again” significa “repite eso”. “Could you… please?” hace que la petición suene amable.', practice:'Úsala cuando necesites escuchar una idea otra vez.'},
-    {context:'Te preguntan cómo va tu práctica de inglés.', phrase:'I used to study English, but I want to start again.', question:'¿Qué expresa esta frase?', options:['Que nunca has estudiado inglés.','Que estudiaste antes y quieres retomar.','Que ya no quieres aprender.'], answer:1, why:'“Used to” habla de algo habitual en el pasado. “Start again” expresa la intención de retomar.', practice:'Puedes cambiar “English” por otra actividad que quieras retomar.'},
-    {context:'Estás organizando tu próxima clase.', phrase:'Would Thursday afternoon work for you?', question:'¿Qué quiere confirmar la persona?', options:['Si trabajas todos los jueves.','Si la clase ya terminó.','Si el jueves por la tarde te viene bien.'], answer:2, why:'“Work for you” aquí significa “venirte bien”, no “trabajar para ti”. Se usa para proponer horarios.', practice:'Puedes responder: “Yes, that works for me.”'}
+    {context:'Escucha la conversación completa y fíjate en cómo se presentan.', phrase:transcript, question:'¿Cómo se llaman las dos personas?', options:['Anna y Pete.','Anna y Paul.','Amy y Pete.'], answer:0, why:'Se presentan como Anna y Pete.', practice:'“I’m…” e “I am…” sirven para decir tu nombre.'},
+    {context:'Puedes volver a escuchar el mismo audio. Presta atención al nombre de Anna.', phrase:transcript, question:'¿Cómo se escribe el nombre de Anna?', options:['A-N-A.','A-N-N-A.','A-M-A.'], answer:1, why:'Anna corrige a Pete y deletrea A-N-N-A: lleva dos letras n.', practice:'Practica deletrear tu propio nombre en inglés.'},
+    {context:'Escucha el final de la conversación.', phrase:transcript, question:'¿Qué hay en 1400 Irving Street?', options:['La oficina de Pete.','Una escuela de inglés.','El nuevo apartamento de Anna.'], answer:2, why:'Al final, Anna identifica el lugar como su nuevo apartamento.', practice:'Para hablar de un lugar nuevo para ti puedes decir “My new…” y añadir el nombre del lugar.'}
   ];
   const get = id => document.getElementById(id);
   let index = 0, correct = 0, answered = false, started = false;
-  let speechTimer, currentUtterance;
-  const audio = get('demo-listen');
-  const canSpeak = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
-  function stopAudio() {
-    clearTimeout(speechTimer);
-    if (currentUtterance) {currentUtterance.onend = null; currentUtterance.onerror = null; currentUtterance = null;}
-    if (canSpeak) window.speechSynthesis.cancel();
-    audio.disabled = false;
-    audio.textContent = 'Escuchar la frase';
-  }
-  function audioFallback() {
-    stopAudio();
+  const recording = get('demo-recording');
+  function stopAudio() {recording.pause();}
+  recording.addEventListener('error', () => {
     get('demo-transcript').open = true;
-    get('demo-audio-note').textContent = 'El audio no está disponible. Puedes completar la actividad leyendo la frase.';
-  }
+    get('demo-audio-note').insertAdjacentHTML('beforeend', '<br>No se pudo cargar el audio. Abre la lección original o usa la transcripción para practicar.');
+  }, {once:true});
   function render(focus = false) {
     stopAudio(); answered = false;
     const q = questions[index];
-    get('demo-step').textContent = `Situación ${index + 1} de 3`;
+    get('demo-step').textContent = `Pregunta ${index + 1} de 3`;
     get('demo-progress').value = index;
     get('demo-question').textContent = q.question;
     get('demo-context').textContent = q.context;
     get('demo-phrase').textContent = q.phrase;
-    get('demo-transcript').open = !canSpeak;
+    get('demo-transcript').open = false;
     get('demo-feedback').textContent = '';
     get('demo-feedback').className = '';
     get('demo-next').hidden = true;
-    get('demo-next').textContent = index === 2 ? 'Terminar la práctica →' : 'Siguiente situación →';
+    get('demo-next').textContent = index === 2 ? 'Terminar la práctica →' : 'Siguiente pregunta →';
     get('demo-options').replaceChildren();
     q.options.forEach((text, choice) => {
       const b = document.createElement('button');
@@ -75,28 +75,11 @@
     get('demo-progress').value = index + 1;
     get('demo-next').hidden = false;
   }
-  audio.addEventListener('click', () => {
-    if (!canSpeak) {audioFallback(); return;}
-    stopAudio();
-    try {
-      const utterance = new SpeechSynthesisUtterance(questions[index].phrase);
-      currentUtterance = utterance;
-      utterance.lang = 'en-US'; utterance.rate = .85;
-      const voices = window.speechSynthesis.getVoices();
-      const voice = voices.find(v => v.lang === 'en-US') || voices.find(v => v.lang.startsWith('en'));
-      if (voice) utterance.voice = voice;
-      audio.disabled = true; audio.textContent = 'Reproduciendo…';
-      utterance.onend = stopAudio;
-      utterance.onerror = audioFallback;
-      window.speechSynthesis.speak(utterance);
-      speechTimer = setTimeout(audioFallback, 15000);
-    } catch {audioFallback();}
-  });
   get('demo-next').addEventListener('click', () => {
     if (!answered) return;
     if (index < 2) {index++; render(true); return;}
     root.hidden = true; get('demo-result').hidden = false;
-    get('demo-score').textContent = `Completaste las 3 situaciones: ${correct} de 3 respuestas correctas en el primer intento. Repasar también es parte de aprender.`;
+    get('demo-score').textContent = `Completaste las 3 preguntas: ${correct} de 3 respuestas correctas en el primer intento. Repasar también es parte de aprender.`;
     get('demo-result-title').focus(); track('lesson_complete');
   });
   get('demo-restart').addEventListener('click', () => {
@@ -106,5 +89,5 @@
   window.addEventListener('pagehide', stopAudio);
   root.hidden = false;
   render();
-  if (!canSpeak) {audio.hidden = true; audioFallback();}
 })();
+
