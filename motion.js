@@ -1,7 +1,7 @@
 (() => {
   const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (preference.matches || !('IntersectionObserver' in window)) return;
-  const targets = document.querySelectorAll('section h1, section h2, section h3, .hero-bg > div > p, .hero-bg > div > div:last-child, #mission p, #mission img, .timeline-line > div, .price-card, .erc-guidance-item, .erc-about-portrait, .erc-about-content, #contact form, .erc-rating, main > h1, main > h2, main > .card');
+  const targets = document.querySelectorAll('section h1, section h2, section h3, .hero-bg > div > p, .hero-bg > div > div:last-child, #mission p, #mission img, .timeline-line > div, .price-card, .erc-persistence-stat, .erc-guidance-item, .erc-about-portrait, .erc-about-content, #contact form, .erc-rating, main > h1, main > h2, main > .card');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
