@@ -16,3 +16,11 @@
 @media(max-width:960px){.erc-review-grid .erc-review-card{flex-basis:calc((100% - 24px)/2)}}
 @media(max-width:600px){.erc-review-grid{gap:16px}.erc-review-grid .erc-review-card{flex-basis:92%}.erc-review-controls{gap:12px}.erc-review-hint{max-width:120px;line-height:1.6}}
 @media(prefers-reduced-motion:reduce){.erc-review-grid{scroll-behavior:auto}.erc-review-controls button{transition:none}}
+
+/* Quiet controls; horizontal movement is animated by the carousel. */
+.erc-review-grid{scrollbar-width:none;-ms-overflow-style:none}
+.erc-review-grid::-webkit-scrollbar{display:none}
+.erc-review-hint,.erc-review-count{display:none}
+.erc-review-controls{justify-content:flex-end;margin:8px 0 18px}
+.erc-review-controls>div{gap:10px}
+.erc-review-controls button{width:36px;height:36px;font-size:17px;background:transparent;border-color:#1e293b}
