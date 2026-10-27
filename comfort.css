@@ -33,3 +33,8 @@ body.erc-light{background:#20272d;color:#d5dadd;color-scheme:dark}
 .erc-light #legal{background:#192128}.erc-light .erc-resource-links a{color:#adc7e0}
 .erc-light a:focus-visible,.erc-light summary:focus-visible,.erc-light button:focus-visible,.erc-light #contact :is(input,textarea):focus-visible{outline-color:#a9c9e7}
 @media(hover:hover){.erc-light nav a:hover,.erc-light .erc-guidance-goals>a:hover{background:#334655;color:#e5eef5}.erc-light .erc-action.glass:hover,.erc-light .erc-plan-link:hover{background:#3b5164;color:#e8eef1}.erc-light .erc-book:hover,.erc-light .erc-guidance-cta:hover{background:#3c6c9e;color:#fff}}
+
+/* Override the earlier light-theme heading and utility colors. */
+.erc-light main :is(h2,h3,h4),.erc-light main :is(h2,h3,h4) span{color:#e4e7e5!important}
+.erc-light main summary,.erc-light main .erc-about-cta,.erc-light main .erc-about-kicker,.erc-light #mission [class*="text-blue-"],.erc-light section.w-full [class*="text-blue-"]{color:#acc8e5!important}
+.erc-light #demo-audio-note a,.erc-light .erc-demo-restart{color:#acc8e5!important}
