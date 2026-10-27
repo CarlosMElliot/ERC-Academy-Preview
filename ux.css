@@ -42,3 +42,35 @@
 
 .erc-section-heading h2,.erc-steps-section h2,.erc-contact-wrap h2{font-weight:800}
 .erc-light section.w-full a[href^="mailto:"]{overflow-wrap:anywhere}
+
+/* Softer stone surfaces: navy and blue remain the brand anchors. */
+body.erc-light{background:#e7e5de}
+.erc-light .erc-main-nav,.erc-mobile-menu>div{background:#eae8e2}
+.erc-light #mission,.erc-light #about,.erc-light #seguir-aprendiendo,.erc-light #contact,.erc-light section.w-full{background-color:#e7e5de}
+.erc-light #acompanamiento,.erc-light #testimonials,.erc-light #pricing,.erc-light #methodology,.erc-light .erc-resource-links{background:#e0e3e2}
+.erc-light .erc-guidance-item,.erc-light .erc-guidance-item+.erc-guidance-item,.erc-light .erc-guidance-goals>a,.erc-light .erc-review-card,.erc-light .erc-rating,.erc-light #pricing .erc-plan,.erc-light .erc-persistence-stat,.erc-light .erc-persistence-context{background:#efede7;border-color:#c4cbc9}
+.erc-light .erc-guidance-content:before{background:#d0d7d7}
+.erc-light #erc-contact-form{background:#efede7!important}
+.erc-light #contact input,.erc-light #contact textarea{background:#e8e7e1;border-color:#aab6be}
+.erc-light .erc-persistence-action-panel{background:#dde2e2}
+.erc-light .hero-bg .erc-action.glass{background:#e9e7df;border-color:#e9e7df}
+.erc-light [hidden]{display:none!important}
+.erc-skip-link{position:fixed;left:16px;top:-100px;padding:12px 20px;background:#172338;color:#fff;z-index:200}.erc-skip-link:focus{top:12px}
+.erc-demo-section{padding:64px 24px;background:#dce3e5;border-block:1px solid #c3cccf}
+.erc-demo-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+.erc-demo-layout header h2{font-weight:800;margin:16px 0 24px}.erc-demo-layout header>p{font-size:17px;line-height:1.8;color:#435366}.erc-demo-layout header .erc-eyebrow{font-size:12px;color:#2557a7}
+.erc-demo-layout .erc-demo-note{font-size:13px;line-height:1.7;color:#526071;margin:16px 0}
+.erc-demo-card{padding:32px;border:1px solid #b9c5ca;border-radius:24px;background:#efede7;min-width:0}
+.erc-demo-card h3{font-size:24px;font-weight:750;line-height:1.3}.erc-demo-card p{line-height:1.75;color:#435366}
+.erc-demo-top{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:24px;font-size:13px;color:#435366}.erc-demo-top progress{max-width:120px;height:8px;accent-color:#2557a7}
+#demo-context{margin:12px 0 20px}.erc-demo-listen{padding:12px 18px;border:1px solid #7186a0;border-radius:10px;color:#244d87;font-size:15px;font-weight:700}.erc-demo-listen:disabled{opacity:.65}
+#demo-transcript summary{cursor:pointer;padding:10px 0;font-size:14px;color:#2557a7}#demo-phrase{font-size:18px;font-weight:600;border-left:3px solid #7186a0;padding:8px 16px;margin:8px 0 20px}
+.erc-demo-options{display:grid;gap:10px;margin-top:18px}.erc-demo-options button{padding:14px 16px;border:1px solid #b5bfc6;border-radius:10px;text-align:left;font-size:15px;line-height:1.5;background:#e6e8e5;color:#26364c;min-height:48px}
+.erc-demo-options button:not(:disabled):hover{background:#d7e0e7;border-color:#2557a7}.erc-demo-options button.is-correct{background:#dbe6db;border-color:#467256}.erc-demo-options button.is-incorrect{background:#eadfd4;border-color:#956d47}
+.erc-demo-feedback{padding:18px 0;font-size:15px;line-height:1.8;color:#344155}#demo-next{margin-top:8px}
+#demo-result p{margin:16px 0 24px}.erc-demo-restart{display:block;padding:14px 0;color:#2557a7;text-decoration:underline;text-underline-offset:4px;font-size:14px}
+.erc-faq-section{padding:64px 24px;background:#e0e3e2;border-top:1px solid #c4cbc9}.erc-faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}.erc-faq-grid h3{font-size:24px;font-weight:750;line-height:1.4;margin-bottom:16px}.erc-faq-grid p{font-size:16px;line-height:1.8;color:#435366}
+.erc-booking-steps{list-style:decimal;padding-left:22px;margin:24px 0 32px}.erc-booking-steps li{padding-left:8px;margin:18px 0;color:#2557a7}.erc-booking-steps strong{display:block;font-size:16px;color:#172338;margin-bottom:6px}.erc-booking-steps span{font-size:15px;line-height:1.7;color:#435366}
+.erc-faq-list details{border-bottom:1px solid #bac5ca}.erc-faq-list summary{cursor:pointer;font-size:16px;font-weight:600;line-height:1.6;padding:20px 4px}.erc-faq-list details p{padding:0 4px 20px;font-size:15px}
+@media(max-width:767px){.erc-demo-section,.erc-faq-section{padding:48px 20px}.erc-demo-layout,.erc-faq-grid{grid-template-columns:1fr;gap:32px}.erc-demo-card{padding:24px 20px}.erc-demo-card h3{font-size:22px}.erc-demo-layout header h2{margin-bottom:16px}.erc-demo-options button{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.erc-demo-section *{scroll-behavior:auto;transition:none}}
