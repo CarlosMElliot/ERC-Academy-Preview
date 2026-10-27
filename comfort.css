@@ -205,3 +205,18 @@ body.erc-light{background:#051326;color:#d5dadd;color-scheme:dark}
 .erc-light #seguir-aprendiendo .erc-study-copy>p:not(.erc-study-label) { margin:0 0 12px; font-size:14px; line-height:1.7; }
 .erc-light #seguir-aprendiendo .erc-study-copy a { display:inline-block; font-size:12px; line-height:1.6; text-decoration:underline; text-underline-offset:4px; }
 @media(max-width:640px) { .erc-light #seguir-aprendiendo .erc-study-note { grid-template-columns:1fr; padding:24px; gap:20px; } .erc-light #seguir-aprendiendo .erc-study-metric { padding:0 0 18px; border-right:0; border-bottom:1px solid #456781; } .erc-light #seguir-aprendiendo .erc-study-copy h3 { font-size:20px; } }
+
+/* Package details remain scannable within the existing three-card layout. */
+.erc-light #pricing .erc-plan-audience { min-height:72px; line-height:1.6; }
+.erc-light #pricing .erc-plan dl { margin-bottom:0; }
+.erc-light #pricing .erc-plan dl>div { padding:14px 0; }
+.erc-light #pricing .erc-plan-includes { margin-top:24px; }
+.erc-light #pricing .erc-plan-includes h4 { margin:0 0 16px; font-size:15px; font-weight:700; }
+.erc-light #pricing .erc-plan-includes ul { display:grid; gap:18px; list-style:none; padding:0; margin:0; }
+.erc-light #pricing .erc-plan-includes li { position:relative; padding-left:20px; }
+.erc-light #pricing .erc-plan-includes li::before { content:""; position:absolute; top:8px; left:0; width:6px; height:6px; border-radius:50%; background:#71d6ef; }
+.erc-light #pricing .erc-plan-includes strong { display:block; margin-bottom:5px; color:#e4e7e5; font-size:14px; line-height:1.5; }
+.erc-light #pricing .erc-plan-includes li>span { display:block; color:#c2ccd3; font-size:13px; line-height:1.65; }
+.erc-light #pricing .erc-plan-note { margin:24px 0; padding-top:16px; border-top:1px solid #456781; font-size:12px; line-height:1.7; }
+.erc-light #pricing .erc-plan-link { margin-top:auto; }
+@media(max-width:760px) { .erc-light #pricing .erc-plan-audience { min-height:0; } }
