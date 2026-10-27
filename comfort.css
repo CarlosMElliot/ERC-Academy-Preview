@@ -317,3 +317,11 @@ body.erc-light{background:#051326;color:#d5dadd;color-scheme:dark}
 .erc-light #prueba #demo-progress::-moz-progress-bar { background:#71d6ef; border-radius:6px; }
 @media(min-width:900px) { .erc-light #prueba .erc-listening-title-break { display:none; } }
 @media(max-width:700px) { .erc-light #prueba { padding:48px 20px; } .erc-light #prueba .erc-demo-card { padding:24px 20px; border-radius:18px; } .erc-light #prueba .erc-listening-heading { margin-bottom:24px; padding-bottom:24px; } .erc-light #prueba .erc-listening-heading .erc-listening-eyebrow { margin-bottom:16px; } }
+
+/* Center the listening introduction and use the landing page's wider content span. */
+.erc-light #prueba .erc-demo-layout { width:100%; max-width:1440px; margin-inline:auto; }
+.erc-light #prueba .erc-listening-heading { text-align:center; }
+.erc-light #prueba .erc-listening-heading h2 { max-width:none; margin-inline:auto; }
+.erc-light #prueba .erc-listening-heading .erc-listening-description { margin-inline:auto; }
+.erc-light #prueba .erc-listening-meta { justify-content:center; }
+@media(min-width:1024px) { .erc-light #prueba { padding-inline:clamp(24px,4vw,64px); } .erc-light #prueba .erc-listening-grid { gap:40px; } }
