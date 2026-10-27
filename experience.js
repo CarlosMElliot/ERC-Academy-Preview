@@ -15,169 +15,169 @@
   if (!root) return;
   const questions = [
   {
-    "kind": "Intención",
-    "question": "Pete pregunta “Are you Anna?”. ¿Qué intenta confirmar?",
+    "kind": "Matiz",
+    "question": "¿Qué comunica “countless” en esta introducción?",
     "options": [
-      "Cómo prefiere Anna que escriban su nombre.",
-      "Si está hablando con la persona que espera.",
-      "Si Anna quiere conocer a alguien llamado Pete."
+      "Una cantidad certificada por un recuento.",
+      "Una abundancia que el hablante presenta como difícil de contar.",
+      "La imposibilidad de ver ningún animal."
     ],
     "answer": 1,
-    "why": "Pregunta por su identidad; todavía no está comprobando cómo se escribe el nombre."
+    "why": "Es una expresión de abundancia; no aporta una cifra verificable."
   },
   {
-    "kind": "Palabra en contexto",
-    "question": "En “Hi there!”, ¿qué función cumple “there”?",
+    "kind": "Grado de certeza",
+    "question": "¿Qué efecto tiene “maybe” antes de una cifra?",
     "options": [
-      "Señala el apartamento al que van a entrar.",
-      "Indica que Pete está lejos de Anna.",
-      "Forma parte de un saludo informal y amistoso."
-    ],
-    "answer": 2,
-    "why": "“Hi there” funciona como saludo; aquí “there” no identifica un lugar concreto."
-  },
-  {
-    "kind": "Significado implícito",
-    "question": "Anna dice “Nice to meet you”. ¿Qué interpretación encaja mejor?",
-    "options": [
-      "Expresa agrado al presentarse a Pete.",
-      "Está agradeciendo que Pete recuerde su nombre.",
-      "Está diciendo que le gusta el apartamento."
+      "Presenta la cifra como una estimación.",
+      "Convierte la cifra en un mínimo garantizado.",
+      "Confirma que alguien ya hizo el recuento."
     ],
     "answer": 0,
-    "why": "La expresión se usa al conocer a alguien; no describe el lugar ni confirma una amistad previa."
+    "why": "Este adverbio reduce el grado de certeza."
+  },
+  {
+    "kind": "Desacuerdo implícito",
+    "question": "La segunda voz cuestiona la cantidad. ¿Qué rechaza exactamente?",
+    "options": [
+      "Que haya tiburones en el lugar.",
+      "Que se pueda participar en el reto.",
+      "La magnitud de la estimación anterior."
+    ],
+    "answer": 2,
+    "why": "Cuestionar una cantidad no equivale a negar la existencia de lo mencionado."
   },
   {
     "kind": "Referencia",
-    "question": "En “Let’s try that again”, ¿a qué se refiere “that” en esta conversación?",
+    "question": "¿Cómo funciona “that many” en la respuesta?",
     "options": [
-      "A volver a visitar el apartamento.",
-      "A corregir la dirección de Irving Street.",
-      "A volver a presentarse y saludarse."
-    ],
-    "answer": 2,
-    "why": "Inmediatamente después, Anna vuelve a decir su nombre y a saludar."
-  },
-  {
-    "kind": "Palabra en contexto",
-    "question": "¿Qué añade “again” a “Let’s try that again”?",
-    "options": [
-      "Que deben hacerlo de una manera más formal.",
-      "Que van a repetir algo que ya intentaron.",
-      "Que la otra persona debe hacerlo sola."
-    ],
-    "answer": 1,
-    "why": "“Again” indica repetición. No especifica por sí solo ni formalidad ni quién cometió un error."
-  },
-  {
-    "kind": "Intención",
-    "question": "¿Qué diferencia hay entre “Let’s try that again” y “Try that again”?",
-    "options": [
-      "La primera propone hacerlo juntos; la segunda se dirige a la otra persona.",
-      "La primera obliga a repetir; la segunda expresa una duda.",
-      "La primera se refiere al pasado; la segunda, al futuro."
+      "Compara con una cantidad mencionada antes.",
+      "Introduce una nueva cifra exacta.",
+      "Se refiere al tamaño de cada animal."
     ],
     "answer": 0,
-    "why": "“Let’s” incluye al hablante en la propuesta: equivale a “hagámoslo”."
+    "why": "La expresión recupera una cantidad del contexto sin repetirla."
   },
   {
-    "kind": "Escucha precisa",
-    "question": "Pete dice “Is that A-N-A?”. ¿Qué necesita comprobar?",
+    "kind": "Registro informal",
+    "question": "En un contexto de dinero, ¿qué significa “grand”?",
     "options": [
-      "La manera en que Anna prefiere que la saluden.",
-      "La escritura del nombre que acaba de escuchar.",
-      "Si Anna está preguntando por otra persona."
-    ],
-    "answer": 1,
-    "why": "Al decir las letras, Pete comprueba la ortografía, no el saludo ni la identidad de otra persona."
-  },
-  {
-    "kind": "Corrección",
-    "question": "Anna responde “No. A-N-N-A”. ¿Qué está corrigiendo exactamente?",
-    "options": [
-      "La cantidad de letras n en su propio nombre.",
-      "El nombre con el que Pete se ha presentado.",
-      "La dirección que Pete acaba de mencionar."
-    ],
-    "answer": 0,
-    "why": "Conserva el nombre Anna y aclara que lleva dos letras n."
-  },
-  {
-    "kind": "Palabra en contexto",
-    "question": "“Anna with two n’s” significa que…",
-    "options": [
-      "Pete está distinguiendo a Anna de dos personas más.",
-      "Anna usa dos nombres diferentes al presentarse.",
-      "El nombre Anna contiene dos letras n."
+      "Un premio de cualquier valor.",
+      "Un millón de unidades monetarias.",
+      "Mil unidades monetarias."
     ],
     "answer": 2,
-    "why": "“With” describe aquí una característica de la escritura del nombre."
+    "why": "Es una forma coloquial de expresar miles; el contexto determina la moneda."
   },
   {
-    "kind": "Organización del diálogo",
-    "question": "En “Well, Anna with two n’s… Welcome to…”, ¿qué hace “Well”?",
+    "kind": "Verbo preciso",
+    "question": "¿Qué acción expresa “retrieve”?",
     "options": [
-      "Indica que Anna se encuentra bien de salud.",
-      "Marca el paso de aclarar el nombre a dar la bienvenida.",
-      "Expresa que Pete considera incorrecta la respuesta de Anna."
+      "Averiguar cuánto vale un objeto.",
+      "Ir a buscar y recuperar algo.",
+      "Entregar voluntariamente algo propio."
     ],
     "answer": 1,
-    "why": "Aquí “Well” introduce la continuación del diálogo; no significa “estar bien”."
+    "why": "El verbo destaca la recuperación, no la compra ni la donación."
   },
   {
-    "kind": "Referencia",
-    "question": "Anna dice “My new apartment!”. ¿A quién se refiere “my”?",
+    "kind": "Condición",
+    "question": "¿Qué relación introduce “if” en la propuesta?",
     "options": [
-      "A Pete, porque él menciona primero la dirección.",
-      "A los dos, porque ambos están en la conversación.",
-      "A Anna, porque ella está hablando de su apartamento."
-    ],
-    "answer": 2,
-    "why": "“My” se refiere a quien habla en ese momento, no a quien dijo la dirección."
-  },
-  {
-    "kind": "Inferencia",
-    "question": "¿Qué conclusión está respaldada por el final del audio?",
-    "options": [
-      "Anna identifica ese lugar como su nuevo apartamento.",
-      "Pete y Anna vivirán juntos en ese apartamento.",
-      "Pete es el propietario del edificio de Irving Street."
+      "Un resultado depende de que ocurra una acción.",
+      "La acción ya ocurrió antes de hablar.",
+      "El resultado sucederá aunque nadie actúe."
     ],
     "answer": 0,
-    "why": "El audio vincula el lugar con el apartamento de Anna, pero no establece la relación de Pete con la vivienda."
+    "why": "Una condición distingue lo posible de lo ya realizado."
   },
   {
-    "kind": "Escenario nuevo",
-    "question": "Un compañero escribe “Sara”, pero tu nombre es “Sarah”. ¿Qué respuesta aplica mejor lo que hizo Anna?",
+    "kind": "Intención comunicativa",
+    "question": "En la propuesta, ¿qué función tiene “I’ll”?",
     "options": [
-      "“Nice to meet you, Sara.”",
-      "“Yes, Sara. Let’s meet again.”",
-      "“Actually, S-A-R-A-H, with an h at the end.”"
+      "Pedir permiso para participar.",
+      "Describir una obligación que se cumplió ayer.",
+      "Comprometer al hablante a una acción futura."
     ],
     "answer": 2,
-    "why": "Deletrear y señalar la letra que falta corrige la escritura de forma específica."
+    "why": "En este contexto, la forma futura funciona como una promesa condicionada."
   },
   {
-    "kind": "Escenario nuevo",
-    "question": "Acabas de conocer a alguien y dice “Nice to meet you”. ¿Qué respuesta corresponde mejor?",
+    "kind": "Roles del diálogo",
+    "question": "¿Qué detalle exige distinguir entre participante y beneficiario?",
     "options": [
-      "“Nice to meet you, too.”",
-      "“I’m fine, thank you.”",
-      "“Welcome back.”"
-    ],
-    "answer": 0,
-    "why": "“Too” devuelve el saludo. “I’m fine” responde a una pregunta sobre cómo estás."
-  },
-  {
-    "kind": "Límite de la inferencia",
-    "question": "¿Qué NO podemos asegurar solamente con esta conversación?",
-    "options": [
-      "Que Anna aclara cómo se escribe su nombre.",
-      "Que Anna acaba de llegar de otro país.",
-      "Que Pete da una bienvenida y menciona una dirección."
+      "Ambos deben recuperar una mochila distinta.",
+      "El dinero se ofrece para un fan del participante.",
+      "El fan debe financiar el premio."
     ],
     "answer": 1,
-    "why": "El diálogo menciona un apartamento nuevo, pero no dice desde dónde llegó Anna."
+    "why": "Quien realiza una acción no siempre es quien recibe su recompensa."
+  },
+  {
+    "kind": "Expresión figurada",
+    "question": "¿Cómo interpretar “number one” al hablar de un fan?",
+    "options": [
+      "Como una etiqueta de entusiasmo o preferencia.",
+      "Como prueba de una clasificación oficial.",
+      "Como referencia a la primera persona en llegar."
+    ],
+    "answer": 0,
+    "why": "El uso coloquial de un superlativo no demuestra que exista un ranking."
+  },
+  {
+    "kind": "Tono y puesta en escena",
+    "question": "¿Qué aporta “conveniently” al presentar a alguien que ya está allí?",
+    "options": [
+      "Indica que su presencia resulta molesta.",
+      "Sugiere que llegó demasiado tarde.",
+      "Subraya que su presencia encaja oportunamente con el momento."
+    ],
+    "answer": 2,
+    "why": "La palabra resalta lo oportuno; por sí sola no prueba si hubo planificación."
+  },
+  {
+    "kind": "Referencia espacial",
+    "question": "¿Qué matiz añade “right” a “here”?",
+    "options": [
+      "Expresa que el lugar es moralmente correcto.",
+      "Enfatiza la cercanía o ubicación exacta.",
+      "Señala necesariamente el lado derecho."
+    ],
+    "answer": 1,
+    "why": "Como intensificador de lugar, refuerza la localización."
+  },
+  {
+    "kind": "Intención en contexto",
+    "question": "Cuando animan al participante con “let’s go”, ¿cuál es la lectura más adecuada?",
+    "options": [
+      "Una invitación literal a abandonar el lugar.",
+      "Una petición para cambiar de tema.",
+      "Una expresión de ánimo para empezar o actuar."
+    ],
+    "answer": 2,
+    "why": "Las expresiones conversacionales cambian de función según la situación."
+  },
+  {
+    "kind": "Aplicación",
+    "question": "En una reunión, una persona calcula una cifra y otra duda de que sea tan alta. ¿Qué respuesta conserva mejor ese matiz?",
+    "options": [
+      "La segunda persona rechaza la estimación, sin negar todo el informe.",
+      "La segunda persona demuestra que no ocurrió nada.",
+      "La segunda persona confirma que la cifra es exacta."
+    ],
+    "answer": 0,
+    "why": "Una objeción limitada no debe interpretarse como una negación total."
+  },
+  {
+    "kind": "Lectura crítica",
+    "question": "¿Qué afirmación requiere evidencia adicional a esta introducción?",
+    "options": [
+      "Se propone una recompensa vinculada a una acción.",
+      "Se ha comprobado el número exacto de tiburones.",
+      "Una persona cuestiona una estimación."
+    ],
+    "answer": 1,
+    "why": "Una estimación llamativa y una reacción no sustituyen un recuento."
   }
 ];
   const get = id => document.getElementById(id);
@@ -185,21 +185,16 @@
   let results = [];
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const recording = get('demo-recording');
-  function playing(active) {
-    get('prueba').classList.toggle('is-playing', active);
-    get('demo-play-state').textContent = active ? 'Escuchando…' : recording.ended ? 'Puedes volver a escucharlo' : 'Pulsa reproducir y escucha';
-  }
-  recording.addEventListener('play', () => playing(true));
-  recording.addEventListener('pause', () => playing(false));
-  recording.addEventListener('ended', () => playing(false));
   function animatePanel() {
     const panel = get('demo-question-panel');
     if (!reducedMotion.matches && panel.animate) panel.animate([{opacity:0,transform:'translateY(10px)'},{opacity:1,transform:'translateY(0)'}], {duration:300,easing:'ease-out'});
   }
-  function stopAudio() {recording.pause();}
-  recording.addEventListener('error', () => {
-    get('demo-audio-note').insertAdjacentHTML('beforeend', '<br>No se pudo cargar el audio. Abre la lección original para escucharlo.');
-  }, {once:true});
+  function stopAudio() {
+    // Unload the iframe to stop playback without relying on a third-party API.
+    recording.removeAttribute('src');
+  }
+  function loadClip() { recording.src = recording.dataset.src; }
+  get('demo-replay').addEventListener('click', loadClip);
   function render(focus = false) {
     answered = false;
     const q = questions[index];
@@ -264,7 +259,7 @@
     get('demo-result-title').focus(); track('lesson_complete');
   });
   get('demo-restart').addEventListener('click', () => {
-    stopAudio(); recording.currentTime = 0;
+    stopAudio(); loadClip();
     index = 0; correct = 0; started = false; results = [];
     get('demo-result').hidden = true; root.hidden = false; render(true);
   });
