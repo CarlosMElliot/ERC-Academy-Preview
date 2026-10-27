@@ -121,3 +121,40 @@ body.erc-light{background:#051326;color:#d5dadd;color-scheme:dark}
 .erc-light .erc-audio-panel{border-color:#1b5278}
 .erc-light .erc-data-track>span{background:#17b9da}
 .erc-light .erc-result-steps>.is-correct{border-color:#4c9f9c}
+
+/* Contrast guard: prevent earlier light-theme rules from dimming dark surfaces. */
+.erc-light main p,
+.erc-light main :is(li,dd,dt,label,blockquote),
+.erc-light main .text-white,
+.erc-light main [class*="text-slate-"],
+.erc-light .erc-guidance-preview,
+.erc-light .erc-chart-description,
+.erc-light .erc-chart-footnote,
+.erc-light .erc-persistence-scope,
+.erc-light .erc-review-source,
+.erc-light .erc-review-bottom,
+.erc-light .erc-rating-source{color:#c2ccd3!important}
+.erc-light main :is(h1,h2,h3,h4),.erc-light .erc-guidance-card-title{color:#e4e7e5!important}
+.erc-light .hero-bg h1 span{color:#65e0ee!important}
+.erc-light .hero-bg p{color:#e1e5e6!important}
+.erc-light main .erc-eyebrow,
+.erc-light main .erc-guidance-kicker,
+.erc-light main .erc-about-kicker,
+.erc-light main .erc-reviews-label,
+.erc-light main .erc-persistence-eyebrow,
+.erc-light main .erc-persistence-tag,
+.erc-light #demo-kind{color:#71d6ef!important}
+.erc-light .erc-main-nav a:not(.erc-book),.erc-light .erc-main-nav summary{color:#dce6ee!important}
+.erc-light .erc-main-nav a:not(.erc-book):hover{color:#71d6ef!important}
+.erc-light .erc-book,.erc-light .erc-guidance-cta,.erc-light .erc-persistence a.erc-persistence-cta{color:#f0f2f2!important;background:#075bd8}
+.erc-light .erc-book:hover,.erc-light .erc-guidance-cta:hover,.erc-light .erc-persistence a.erc-persistence-cta:hover{color:#fff!important;background:#0864d8}
+.erc-light .erc-plan-link,.erc-light .erc-about-cta,.erc-light .erc-persistence a:not(.erc-persistence-cta),.erc-light .erc-review-bottom a{color:#71d6ef!important}
+.erc-light .erc-plan-price,.erc-light .erc-plan-price span{color:#e4e7e5!important}
+.erc-light .erc-plan-badge{color:#b5f1fa!important}
+.erc-light #erc-contact-form label{color:#dae1e3!important}
+.erc-light #contact :is(input,textarea){color:#e4e9ea!important}
+.erc-light #contact :is(input,textarea)::placeholder{color:#b8c7d3!important;opacity:1}
+.erc-light .erc-demo-options button:disabled{opacity:1}
+.erc-light .erc-demo-options button.is-correct{color:#e0eee6!important}
+.erc-light .erc-demo-options button.is-incorrect{color:#f0e7d9!important}
+.erc-light .erc-contact-submit{color:#dce8f1!important}
