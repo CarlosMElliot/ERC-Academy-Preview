@@ -26,6 +26,8 @@
       return;
     }
     const message = `Hola, soy ${name}.\nMi WhatsApp: ${phone}.\nQuiero mejorar mi inglés para: ${goal}`;
+    if (typeof window.gtag === 'function') window.gtag('event', 'whatsapp_form_continue', {placement:'contact'});
     window.location.assign('https://wa.me/50575281644?text=' + encodeURIComponent(message));
   });
 })();
+
