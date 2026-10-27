@@ -39,11 +39,14 @@
 <script src="/motion.js" defer></script>
 <link rel="stylesheet" href="/light-theme.css">
 <link rel="stylesheet" href="/ux.css">
+<script src="/experience.js" defer></script>
 </head>
 <body class="erc-light bg-slate-950 text-white selection:bg-blue-500">
-    <nav class="erc-main-nav sticky top-0 z-50" aria-label="Navegación principal"><div class="erc-nav-inner"><a class="erc-brand" href="#inicio">ERC Academy<span>.</span></a><div class="erc-desktop-links"><a href="#mission">Clases</a><a href="#pricing">Planes</a><a href="#testimonials">Reseñas</a><a href="#about">Tu instructor</a><a href="#contact">Contacto</a></div><a class="erc-action erc-book" href="https://calendar.app.google/dT9HURDSafqhZkSd6" target="_blank" rel="noopener noreferrer">Reserva tu clase gratis</a><details class="erc-mobile-menu"><summary>Menú <span aria-hidden="true">☰</span></summary><div><a href="#mission">Clases</a><a href="#pricing">Planes</a><a href="#testimonials">Reseñas</a><a href="#about">Tu instructor</a><a href="#contact">Contacto</a></div></details></div></nav>
+    <a class="erc-skip-link" href="#contenido">Saltar al contenido</a>
+<nav class="erc-main-nav sticky top-0 z-50" aria-label="Navegación principal"><div class="erc-nav-inner"><a class="erc-brand" href="#inicio">ERC Academy<span>.</span></a><div class="erc-desktop-links"><a href="#mission">Clases</a><a href="#pricing">Planes</a><a href="#testimonials">Reseñas</a><a href="#about">Tu instructor</a><a href="#contact">Contacto</a></div><a class="erc-action erc-book" href="https://calendar.app.google/dT9HURDSafqhZkSd6" target="_blank" rel="noopener noreferrer">Reserva tu clase gratis</a><details class="erc-mobile-menu"><summary>Menú <span aria-hidden="true">☰</span></summary><div><a href="#mission">Clases</a><a href="#pricing">Planes</a><a href="#testimonials">Reseñas</a><a href="#about">Tu instructor</a><a href="#contact">Contacto</a></div></details></div></nav>
 
-    <section id="inicio" class="hero-bg min-h-[95vh] flex items-center justify-center text-center px-12">
+    <main id="contenido">
+<section id="inicio" class="hero-bg min-h-[95vh] flex items-center justify-center text-center px-12">
         <div class="max-w-6xl">
             <div class="flex flex-col items-center mb-6">
                 <div class="text-yellow-400 mb-2 italic tracking-widest text-[10px] font-bold uppercase">Clases de inglés online</div>
@@ -53,7 +56,7 @@
             <p class="text-slate-300 text-lg md:text-2xl max-w-3xl mx-auto mb-10 leading-relaxed font-light italic">Inglés online en Nicaragua. Escucha, practica y habla con confianza.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="https://calendar.app.google/dT9HURDSafqhZkSd6" target="_blank" rel="noopener noreferrer" class="erc-action bg-blue-600 text-white px-10 py-4 rounded-xl font-bold hover:bg-blue-700 transition shadow-2xl shadow-blue-500/40 uppercase tracking-widest text-sm text-center">Reserva tu clase gratis</a>
-                <a href="#pricing" class="erc-action glass border px-10 py-4 rounded-xl font-bold text-sm text-center">Explora los planes</a>
+                <a href="#prueba" class="erc-action glass border px-10 py-4 rounded-xl font-bold text-sm text-center">Prueba una actividad</a>
             </div>
 <p class="text-slate-400 text-sm mt-6">30 minutos · Online por Google Meet · Sin costo</p>
         </div>
@@ -78,6 +81,7 @@
 </details>
 </div></div></section>
 
+<section id="prueba" class="erc-demo-section" aria-labelledby="demo-title"><div class="erc-section-wrap erc-demo-layout"><header><p class="erc-eyebrow">Prueba una actividad · 2 minutos</p><h2 id="demo-title">Un poco de inglés.<br>Un primer paso.</h2><p>Escucha una frase, elige su intención y descubre cómo usarla en una conversación.</p><p class="erc-demo-note">Tres situaciones cotidianas. Sin registro. Es una práctica breve, no una prueba de nivel.</p></header><div class="erc-demo-card"><noscript><p>Activa JavaScript para realizar la actividad. También puedes <a href="https://calendar.app.google/dT9HURDSafqhZkSd6">reservar una clase gratis</a>.</p></noscript><div id="demo-interactive" hidden><div class="erc-demo-top"><span id="demo-step">Situación 1 de 3</span><progress id="demo-progress" max="3" value="0" aria-label="Situaciones completadas"></progress></div><h3 id="demo-question" tabindex="-1"></h3><p id="demo-context"></p><button type="button" id="demo-listen" class="erc-demo-listen">Escuchar la frase</button><p id="demo-audio-note" class="erc-demo-note">Voz del dispositivo en inglés. También puedes leer la frase.</p><details id="demo-transcript"><summary>Leer la frase</summary><p id="demo-phrase" lang="en"></p></details><div id="demo-options" class="erc-demo-options" role="group" aria-labelledby="demo-question"></div><div id="demo-feedback" role="status" aria-live="polite" aria-atomic="true"></div><button id="demo-next" type="button" class="erc-book erc-action" hidden>Siguiente situación →</button></div><div id="demo-result" hidden><h3 tabindex="-1" id="demo-result-title">Ya diste el primer paso.</h3><p id="demo-score"></p><p>Ahora intenta decir una de las frases en voz alta. Puedes volver a practicar cuando quieras.</p><a class="erc-action erc-book" href="https://calendar.app.google/dT9HURDSafqhZkSd6" target="_blank" rel="noopener noreferrer">Practica en una clase gratis</a><button type="button" id="demo-restart" class="erc-demo-restart">Volver a practicar</button></div></div></div></section>
 <section id="testimonials" class="erc-reviews" aria-labelledby="reviews-title">
 <div class="erc-reviews-wrap">
 <div class="erc-reviews-heading">
@@ -166,7 +170,7 @@
             </div>
     
             <div class="flex flex-col items-center group">
-                <a href="https://discord.gg/HVRPnyP6V" target="_blank" rel="noopener noreferrer" class="erc-action w-14 h-14 rounded-2xl bg-blue-500/5 border border-blue-500/20 flex items-center justify-center mb-5 group-hover:bg-blue-500/10 transition-colors">
+                <a href="https://discord.gg/HVRPnyP6V" aria-label="Abrir la comunidad de ERC en Discord" target="_blank" rel="noopener noreferrer" class="erc-action w-14 h-14 rounded-2xl bg-blue-500/5 border border-blue-500/20 flex items-center justify-center mb-5 group-hover:bg-blue-500/10 transition-colors">
                     <i class="fa-brands fa-discord text-blue-500 text-3xl"></i>
                 </a>
                 <h4 class="text-blue-400 font-black text-xs uppercase tracking-[0.4em] mb-3">Discord</h4>
@@ -201,9 +205,11 @@
         </div>
     </section>
 
+<section id="preguntas" class="erc-faq-section"><div class="erc-section-wrap"><header class="erc-section-heading"><p class="erc-eyebrow">Antes de empezar</p><h2>Resuelve tus dudas</h2></header><div class="erc-faq-grid"><div><h3>Tu primera conversación con ERC</h3><p>La clase gratis dura 30 minutos por Google Meet. Es un espacio para compartir tus metas, resolver dudas y consultar cómo podemos ayudarte.</p><ol class="erc-booking-steps"><li><strong>Elige un horario</strong><span>Abre el calendario y revisa los espacios disponibles.</span></li><li><strong>Comparte tu punto de partida</strong><span>Cuéntanos qué sabes y qué te gustaría lograr.</span></li><li><strong>Consulta tu siguiente paso</strong><span>Resuelve tus preguntas sobre los planes y la disponibilidad.</span></li></ol><a href="https://calendar.app.google/dT9HURDSafqhZkSd6" target="_blank" rel="noopener noreferrer" class="erc-book erc-action">Reserva tu clase gratis</a></div><div class="erc-faq-list"><details><summary>¿Puedo retomar el inglés después de mucho tiempo?</summary><p>Sí. Cuéntanos qué recuerdas y qué necesitas reforzar. La primera conversación nos ayuda a orientar el siguiente paso desde tu punto de partida.</p></details><details><summary>¿Las clases son individuales o grupales?</summary><p>One-on-One y Study Plus ofrecen atención individual. Para Full Training ERC, confirma el formato y la disponibilidad antes de inscribirte.</p></details><details><summary>¿Cómo confirmo el horario de un plan?</summary><p>El calendario muestra los espacios de la clase gratis. Para las clases de cada plan, consulta por WhatsApp antes de elegir: los horarios se acuerdan según disponibilidad.</p></details><details><summary>¿Qué necesito para la clase gratis?</summary><p>Un teléfono o computadora con conexión a internet y acceso a Google Meet. Busca un lugar donde puedas escuchar y conversar con tranquilidad.</p></details><details><summary>¿Qué pasa si no puedo asistir?</summary><p>Escríbenos en cuanto lo sepas. Antes de contratar un plan, consulta sus condiciones de cancelación y reprogramación para tenerlas claras.</p></details><details><summary>¿La actividad de esta página mide mi nivel?</summary><p>No. Es una muestra breve de práctica. Si necesitas orientación sobre tu nivel, puedes consultar la prueba de nivelación en la sección de clases o hablarlo en tu clase gratis.</p></details></div></div></div></section>
 <section id="contact" class="erc-contact-section"><div class="erc-contact-wrap"><header><p class="erc-eyebrow">Demos el primer paso</p><h2>Cuéntanos qué quieres lograr</h2><p>Reserva una clase gratis de 30 minutos por Google Meet para compartir tus metas y resolver dudas.</p><a class="erc-action erc-book" href="https://calendar.app.google/dT9HURDSafqhZkSd6" target="_blank" rel="noopener noreferrer">Reserva tu clase gratis</a><p class="erc-contact-hours">¿Prefieres escribir? Prepara tu consulta por WhatsApp.<br>Atención: lunes a sábado, 8:00 a. m.–7:00 p. m., hora de Nicaragua.</p></header><form id="erc-contact-form"><h3>Escríbenos por WhatsApp</h3><label for="contact-name">Tu nombre</label><input id="contact-name" name="nombre" autocomplete="given-name" required maxlength="100"><label for="contact-phone">Tu WhatsApp (con código de país)</label><input id="contact-phone" name="telefono" type="tel" autocomplete="tel" placeholder="+505 8888 8888" required minlength="7" maxlength="25"><label for="contact-goal">¿Qué te gustaría lograr con tu inglés?</label><textarea id="contact-goal" name="metas" required maxlength="1000" rows="3" placeholder="Por ejemplo: retomar mis clases o conversar con más confianza."></textarea><p id="contact-help">Al continuar, se abrirá WhatsApp con tu mensaje. Revísalo y pulsa Enviar para compartirlo con ERC.</p><button class="erc-action erc-contact-submit" type="submit" aria-describedby="contact-help">Continuar en WhatsApp ↗</button><noscript><p><a href="https://wa.me/50575281644">Abrir WhatsApp directamente</a></p></noscript></form></div></section>
 
-    <nav aria-label="Más información de ERC Academy" class="erc-resource-links"><a href="/clases-ingles-online/">Clases online</a><a href="/clases-particulares-ingles/">Tutorías</a><a href="/metodo-y-profesor/">Profesor</a><a href="/guias/ingles-atencion-cliente/">Guía de inglés</a></nav>
+    </main>
+<nav aria-label="Más información de ERC Academy" class="erc-resource-links"><a href="/clases-ingles-online/">Clases online</a><a href="/clases-particulares-ingles/">Tutorías</a><a href="/metodo-y-profesor/">Profesor</a><a href="/guias/ingles-atencion-cliente/">Guía de inglés</a></nav>
 <footer id="legal" class="py-20 flex flex-col items-center border-t border-slate-900/50 px-6">
         <div class="text-2xl font-black mb-6 uppercase tracking-tighter italic">
             ERC Academy<span class="text-blue-500">.</span>
@@ -238,4 +244,5 @@
 <script src="reviews-carousel.js" defer></script>
 </body>
 </html>
+
 
