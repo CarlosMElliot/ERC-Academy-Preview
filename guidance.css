@@ -45,3 +45,9 @@
 @media(max-width:900px){.erc-guidance-goals{max-width:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;padding-top:20px}.erc-guidance-goals>p{flex-basis:100%;margin:0}.erc-guidance-goals>a{flex:1 1 180px;margin-top:4px}}
 @media(max-height:780px) and (min-width:901px){.erc-guidance-heading{position:static}}
 @media(prefers-reduced-motion:reduce){.erc-guidance-goals>a,.erc-guidance-goals>a>span:last-child{transition:none;translate:none}}
+
+/* Goal shortcuts accompany expanded cards only. */
+.erc-guidance-goals{display:none}
+.erc-guidance-wrap:has(.erc-guidance-item[open]) .erc-guidance-goals{display:block;animation:erc-guidance-open .3s ease both}
+@media(max-width:900px){.erc-guidance-wrap:has(.erc-guidance-item[open]) .erc-guidance-goals{display:flex}}
+@media(prefers-reduced-motion:reduce){.erc-guidance-wrap:has(.erc-guidance-item[open]) .erc-guidance-goals{animation:none}}
