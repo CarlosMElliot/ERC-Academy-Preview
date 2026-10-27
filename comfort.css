@@ -1,0 +1,35 @@
+/* Muted charcoal palette. Kept separate so the preview theme is easy to adjust. */
+body.erc-light{background:#20272d;color:#d5dadd;color-scheme:dark}
+.erc-light ::selection{background:#456789;color:#fff}
+.erc-light .erc-main-nav,.erc-light .erc-mobile-menu>div{background:#222b33;border-color:#45535e}
+.erc-light .erc-brand,.erc-light .erc-desktop-links,.erc-light .erc-mobile-menu{color:#e2e6e6}
+.erc-light .erc-brand span{color:#a5c2e1}
+.erc-light #mission,.erc-light #about,.erc-light #seguir-aprendiendo,.erc-light #contact,.erc-light section.w-full{background:#242d34;border-color:#3c4953}
+.erc-light #acompanamiento,.erc-light #testimonials,.erc-light #pricing,.erc-light #methodology,.erc-light #preguntas,.erc-light .erc-resource-links{background:#20282f;border-color:#3c4953;color:#c2ccd3}
+.erc-light #prueba{background:#26333e;border-color:#465765}
+.erc-light main :is(h2,h3,h4),.erc-light .erc-guidance-card-title{color:#e4e7e5}
+.erc-light main p,.erc-light main dd,.erc-light main li,.erc-light main [class*="text-slate-"],.erc-light #mission .space-y-4 span{color:#c2ccd3}
+.erc-light main :is(h2,h3) span,.erc-light .erc-guidance-number,.erc-light .erc-action-step,.erc-light .erc-data-row strong{color:#b8cce0}
+.erc-light .hero-bg h1,.erc-light .hero-bg h1 span{color:#f0f0e9}
+.erc-light .hero-bg p{color:#e1e5e6}
+.erc-light .hero-bg .erc-action.glass{background:#2b3b49;color:#e4e7e5;border-color:#788c9e}
+.erc-light main a:not(.erc-book):not(.erc-guidance-cta):not(.erc-persistence-cta):not([class*="bg-blue-"]),.erc-light main summary{color:#acc8e5}
+.erc-light main .erc-eyebrow,.erc-light .erc-guidance-heading>p:first-child,.erc-light .erc-guidance-kicker,.erc-light .erc-about-kicker,.erc-light .erc-reviews-label,.erc-light .erc-persistence-eyebrow,.erc-light .erc-persistence-tag{color:#a4bfdc}
+.erc-light .erc-book,.erc-light .erc-guidance-cta,.erc-light .erc-persistence a.erc-persistence-cta,.erc-light [class*="bg-blue-600"]{background:#315d8e;color:#f0f2f2;border-color:#6689ad}
+.erc-light .erc-guidance-item,.erc-light .erc-guidance-item+.erc-guidance-item,.erc-light .erc-guidance-goals>a,.erc-light .erc-review-card,.erc-light .erc-rating,.erc-light #pricing .erc-plan,.erc-light .erc-persistence-stat,.erc-light .erc-persistence-context,.erc-light .erc-demo-card{background:#2c3842;border-color:#4b5a67;box-shadow:none}
+.erc-light .erc-guidance-content:before{background:#364651;border-color:#536674}
+.erc-light .erc-guidance-detail,.erc-light .erc-guidance-goals,.erc-light .erc-review-person,.erc-light .erc-about-details{border-color:#4b5a67}
+.erc-light .erc-guidance-preview,.erc-light .erc-guidance-goals>p,.erc-light .erc-guidance-detail p,.erc-light .erc-guidance-detail .erc-guidance-emphasis{color:#c2ccd3}
+.erc-light .erc-guidance-toggle{border-color:#8fa5ba}.erc-light .erc-guidance-toggle:before,.erc-light .erc-guidance-toggle:after{background:#c4d4e2}.erc-light .erc-guidance-item[open] .erc-guidance-toggle{background:#3a5267}
+.erc-light .erc-review-card blockquote,.erc-light .erc-rating,.erc-light .erc-review-person h3{color:#e1e6e6}.erc-light .erc-review-source,.erc-light .erc-review-person a,.erc-light .erc-review-bottom,.erc-light .erc-rating-source,.erc-light .erc-rating strong>span{color:#b9c5cf}
+.erc-light .erc-review-avatar,.erc-light .erc-about-portrait>span{background:#3b4d5c;color:#d5e0e9}.erc-light .erc-stars{color:#d2b980}
+.erc-light .erc-about-portrait img,.erc-light .erc-about-highlights>div{border-color:#536978}
+.erc-light #pricing .erc-plan-featured{border-color:#8babc9}.erc-light .erc-plan-price{color:#e5e9e7;font-weight:800}.erc-light .erc-plan-price span{color:#bbc8d1}.erc-light .erc-plan-badge{background:#40566c;color:#e4edf5}.erc-light .erc-plan dl,.erc-light .erc-plan dl>div,.erc-light .erc-plan-link{border-color:#52626e}.erc-light .erc-plan dt{color:#b3c3cf}
+.erc-light .erc-learning-steps article,.erc-light .erc-method-details,.erc-light .erc-faq-list details{border-color:#52626e}.erc-light .erc-learning-steps span,.erc-light .erc-booking-steps li{color:#a8c2db}.erc-light .erc-booking-steps strong{color:#e2e7e7}.erc-light .erc-booking-steps span{color:#c2ccd3}
+.erc-light .erc-persistence-action-panel{background:#2c3842;border-color:#536674}.erc-light .erc-persistence-actions article+article,.erc-light .erc-persistence-action-footer{border-color:#536674}.erc-light .erc-data-row span,.erc-light .erc-data-scale{color:#bac8d1}.erc-light .erc-data-track{background:#455462}.erc-light .erc-data-track>span{background:#8ca9c4}
+.erc-light #erc-contact-form{background:#2c3842!important;border-color:#536674}.erc-light #erc-contact-form label{color:#dae1e3}.erc-light #contact input,.erc-light #contact textarea{background:#202d37;color:#e4e9ea;border-color:#708595}.erc-light #contact ::placeholder{color:#aebcc7}.erc-light .erc-contact-submit{background:#314758;color:#dce8f1;border-color:#88a5bf}
+.erc-light .erc-demo-top,.erc-light .erc-demo-note,.erc-light .erc-demo-card p,.erc-light .erc-demo-feedback{color:#c2ccd3}.erc-light .erc-demo-options button{background:#26343f;color:#dce3e7;border-color:#718392}.erc-light .erc-demo-options button:not(:disabled):hover{background:#3a4d5c;border-color:#a7bfd6}.erc-light .erc-demo-options button.is-correct{background:#304c43;color:#e0eee6;border-color:#8faf9d}.erc-light .erc-demo-options button.is-incorrect{background:#504336;color:#f0e7d9;border-color:#b9a087}
+#demo-recording{width:100%;margin:8px 0;display:block;color-scheme:dark}#demo-phrase{white-space:pre-line;font-size:16px;font-weight:400;line-height:1.8}
+.erc-light #legal{background:#192128}.erc-light .erc-resource-links a{color:#adc7e0}
+.erc-light a:focus-visible,.erc-light summary:focus-visible,.erc-light button:focus-visible,.erc-light #contact :is(input,textarea):focus-visible{outline-color:#a9c9e7}
+@media(hover:hover){.erc-light nav a:hover,.erc-light .erc-guidance-goals>a:hover{background:#334655;color:#e5eef5}.erc-light .erc-action.glass:hover,.erc-light .erc-plan-link:hover{background:#3b5164;color:#e8eef1}.erc-light .erc-book:hover,.erc-light .erc-guidance-cta:hover{background:#3c6c9e;color:#fff}}
