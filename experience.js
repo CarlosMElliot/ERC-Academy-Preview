@@ -15,169 +15,184 @@
   if (!root) return;
   const questions = [
   {
-    "kind": "Matiz",
-    "question": "¿Qué comunica “countless” en esta introducción?",
+    "kind": "Nuance",
+    "question": "What does “countless” convey in this introduction?",
     "options": [
-      "Una cantidad certificada por un recuento.",
-      "Una abundancia que el hablante presenta como difícil de contar.",
-      "La imposibilidad de ver ningún animal."
+      "A quantity confirmed by an exact count.",
+      "An abundance presented as difficult to count.",
+      "An inability to see any animals."
     ],
     "answer": 1,
-    "why": "Es una expresión de abundancia; no aporta una cifra verificable."
+    "why": "It expresses abundance without providing a verified number.",
+    "focus": "Separate dramatic language from measurable facts."
   },
   {
-    "kind": "Grado de certeza",
-    "question": "¿Qué efecto tiene “maybe” antes de una cifra?",
+    "kind": "Certainty",
+    "question": "How does “maybe” affect the number that follows?",
     "options": [
-      "Presenta la cifra como una estimación.",
-      "Convierte la cifra en un mínimo garantizado.",
-      "Confirma que alguien ya hizo el recuento."
+      "It presents the number as an estimate.",
+      "It makes the number a guaranteed minimum.",
+      "It confirms that someone has already counted."
     ],
     "answer": 0,
-    "why": "Este adverbio reduce el grado de certeza."
+    "why": "This adverb reduces the speaker’s degree of certainty.",
+    "focus": "Listen for small words that change how certain a speaker sounds."
   },
   {
-    "kind": "Desacuerdo implícito",
-    "question": "La segunda voz cuestiona la cantidad. ¿Qué rechaza exactamente?",
+    "kind": "Implied disagreement",
+    "question": "The second speaker challenges the quantity. What exactly is being disputed?",
     "options": [
-      "Que haya tiburones en el lugar.",
-      "Que se pueda participar en el reto.",
-      "La magnitud de la estimación anterior."
+      "Whether there are any sharks there.",
+      "Whether anyone can take part in the challenge.",
+      "How large the previous estimate is."
     ],
     "answer": 2,
-    "why": "Cuestionar una cantidad no equivale a negar la existencia de lo mencionado."
+    "why": "Questioning a quantity does not mean denying that something exists.",
+    "focus": "Identify exactly which part of the previous statement receives a response."
   },
   {
-    "kind": "Referencia",
-    "question": "¿Cómo funciona “that many” en la respuesta?",
+    "kind": "Reference",
+    "question": "How does “that many” function in the reply?",
     "options": [
-      "Compara con una cantidad mencionada antes.",
-      "Introduce una nueva cifra exacta.",
-      "Se refiere al tamaño de cada animal."
+      "It refers back to a previously mentioned quantity.",
+      "It introduces a new, exact number.",
+      "It refers to the size of each animal."
     ],
     "answer": 0,
-    "why": "La expresión recupera una cantidad del contexto sin repetirla."
+    "why": "The expression points back to a quantity without repeating it.",
+    "focus": "Connect short references to the statement immediately before them."
   },
   {
-    "kind": "Registro informal",
-    "question": "En un contexto de dinero, ¿qué significa “grand”?",
+    "kind": "Informal language",
+    "question": "In a money context, what does “grand” mean?",
     "options": [
-      "Un premio de cualquier valor.",
-      "Un millón de unidades monetarias.",
-      "Mil unidades monetarias."
+      "A prize of any value.",
+      "One million currency units.",
+      "One thousand currency units."
     ],
     "answer": 2,
-    "why": "Es una forma coloquial de expresar miles; el contexto determina la moneda."
+    "why": "It is an informal way to express thousands; context determines the currency.",
+    "focus": "Use the topic of the conversation to interpret informal vocabulary."
   },
   {
-    "kind": "Verbo preciso",
-    "question": "¿Qué acción expresa “retrieve”?",
+    "kind": "Precise vocabulary",
+    "question": "What action does “retrieve” describe?",
     "options": [
-      "Averiguar cuánto vale un objeto.",
-      "Ir a buscar y recuperar algo.",
-      "Entregar voluntariamente algo propio."
+      "Finding out how much an object is worth.",
+      "Going to get something and bringing it back.",
+      "Voluntarily giving away something you own."
     ],
     "answer": 1,
-    "why": "El verbo destaca la recuperación, no la compra ni la donación."
+    "why": "The verb emphasizes recovery rather than buying or donating.",
+    "focus": "Picture the action each verb describes before choosing."
   },
   {
-    "kind": "Condición",
-    "question": "¿Qué relación introduce “if” en la propuesta?",
+    "kind": "Conditions",
+    "question": "What relationship does “if” establish in the proposal?",
     "options": [
-      "Un resultado depende de que ocurra una acción.",
-      "La acción ya ocurrió antes de hablar.",
-      "El resultado sucederá aunque nadie actúe."
+      "An outcome depends on an action happening.",
+      "The action already happened before the conversation.",
+      "The outcome will happen even if nobody acts."
     ],
     "answer": 0,
-    "why": "Una condición distingue lo posible de lo ya realizado."
+    "why": "A condition distinguishes a possible outcome from an accomplished fact.",
+    "focus": "Track the action and the result separately."
   },
   {
-    "kind": "Intención comunicativa",
-    "question": "En la propuesta, ¿qué función tiene “I’ll”?",
+    "kind": "Speaker intention",
+    "question": "What does “I’ll” do in this proposal?",
     "options": [
-      "Pedir permiso para participar.",
-      "Describir una obligación que se cumplió ayer.",
-      "Comprometer al hablante a una acción futura."
+      "Ask for permission to participate.",
+      "Describe an obligation fulfilled yesterday.",
+      "Commit the speaker to a future action."
     ],
     "answer": 2,
-    "why": "En este contexto, la forma futura funciona como una promesa condicionada."
+    "why": "Here, the future form functions as a conditional promise.",
+    "focus": "Consider what the speaker is doing with the statement, not just its tense."
   },
   {
-    "kind": "Roles del diálogo",
-    "question": "¿Qué detalle exige distinguir entre participante y beneficiario?",
+    "kind": "Conversation roles",
+    "question": "Which detail requires you to distinguish the participant from the beneficiary?",
     "options": [
-      "Ambos deben recuperar una mochila distinta.",
-      "El dinero se ofrece para un fan del participante.",
-      "El fan debe financiar el premio."
+      "They each have to retrieve a different backpack.",
+      "The money is offered for a fan of the participant.",
+      "The fan has to fund the prize."
     ],
     "answer": 1,
-    "why": "Quien realiza una acción no siempre es quien recibe su recompensa."
+    "why": "The person performing an action is not always the person receiving its reward.",
+    "focus": "Keep track of who acts, who speaks, and who benefits."
   },
   {
-    "kind": "Expresión figurada",
-    "question": "¿Cómo interpretar “number one” al hablar de un fan?",
+    "kind": "Figurative meaning",
+    "question": "How should “number one” be interpreted when describing a fan?",
     "options": [
-      "Como una etiqueta de entusiasmo o preferencia.",
-      "Como prueba de una clasificación oficial.",
-      "Como referencia a la primera persona en llegar."
+      "As a label suggesting enthusiasm or preference.",
+      "As proof of an official ranking.",
+      "As a reference to the first person to arrive."
     ],
     "answer": 0,
-    "why": "El uso coloquial de un superlativo no demuestra que exista un ranking."
+    "why": "A conversational superlative does not establish that a formal ranking exists.",
+    "focus": "Ask whether an expression is literal or used for emphasis."
   },
   {
-    "kind": "Tono y puesta en escena",
-    "question": "¿Qué aporta “conveniently” al presentar a alguien que ya está allí?",
+    "kind": "Tone and staging",
+    "question": "What does “conveniently” add when introducing someone already nearby?",
     "options": [
-      "Indica que su presencia resulta molesta.",
-      "Sugiere que llegó demasiado tarde.",
-      "Subraya que su presencia encaja oportunamente con el momento."
+      "It suggests their presence is irritating.",
+      "It suggests they arrived too late.",
+      "It highlights how their presence suits the moment."
     ],
     "answer": 2,
-    "why": "La palabra resalta lo oportuno; por sí sola no prueba si hubo planificación."
+    "why": "The word emphasizes suitability; on its own, it does not prove advance planning.",
+    "focus": "Distinguish what a word suggests from what it actually proves."
   },
   {
-    "kind": "Referencia espacial",
-    "question": "¿Qué matiz añade “right” a “here”?",
+    "kind": "Spatial reference",
+    "question": "What does “right” add to “here”?",
     "options": [
-      "Expresa que el lugar es moralmente correcto.",
-      "Enfatiza la cercanía o ubicación exacta.",
-      "Señala necesariamente el lado derecho."
+      "It says the location is morally correct.",
+      "It emphasizes proximity or an exact location.",
+      "It necessarily indicates the right-hand side."
     ],
     "answer": 1,
-    "why": "Como intensificador de lugar, refuerza la localización."
+    "why": "As a place intensifier, it strengthens the location reference.",
+    "focus": "Interpret the words together rather than translating each in isolation."
   },
   {
-    "kind": "Intención en contexto",
-    "question": "Cuando animan al participante con “let’s go”, ¿cuál es la lectura más adecuada?",
+    "kind": "Meaning in context",
+    "question": "When the participant is encouraged with “let’s go”, what is the best interpretation?",
     "options": [
-      "Una invitación literal a abandonar el lugar.",
-      "Una petición para cambiar de tema.",
-      "Una expresión de ánimo para empezar o actuar."
+      "A literal invitation to leave the location.",
+      "A request to change the subject.",
+      "Encouragement to begin or take action."
     ],
     "answer": 2,
-    "why": "Las expresiones conversacionales cambian de función según la situación."
+    "why": "Conversational expressions can serve different purposes in different situations.",
+    "focus": "Use the situation and the speakers’ reactions to identify the intention."
   },
   {
-    "kind": "Aplicación",
-    "question": "En una reunión, una persona calcula una cifra y otra duda de que sea tan alta. ¿Qué respuesta conserva mejor ese matiz?",
+    "kind": "New scenario",
+    "question": "In a meeting, one person gives an estimate and another doubts it is that high. Which interpretation preserves the distinction?",
     "options": [
-      "La segunda persona rechaza la estimación, sin negar todo el informe.",
-      "La segunda persona demuestra que no ocurrió nada.",
-      "La segunda persona confirma que la cifra es exacta."
+      "The second person challenges the estimate without rejecting the entire report.",
+      "The second person proves that nothing happened.",
+      "The second person confirms the number is exact."
     ],
     "answer": 0,
-    "why": "Una objeción limitada no debe interpretarse como una negación total."
+    "why": "A limited objection should not be interpreted as a total denial.",
+    "focus": "Apply the same listening distinction to a different situation."
   },
   {
-    "kind": "Lectura crítica",
-    "question": "¿Qué afirmación requiere evidencia adicional a esta introducción?",
+    "kind": "Critical listening",
+    "question": "Which claim needs evidence beyond this introduction?",
     "options": [
-      "Se propone una recompensa vinculada a una acción.",
-      "Se ha comprobado el número exacto de tiburones.",
-      "Una persona cuestiona una estimación."
+      "A reward is proposed in connection with an action.",
+      "The exact number of sharks has been verified.",
+      "Someone questions an estimate."
     ],
     "answer": 1,
-    "why": "Una estimación llamativa y una reacción no sustituyen un recuento."
+    "why": "A striking estimate and a reaction do not replace an actual count.",
+    "focus": "Choose only what the conversation supports; avoid filling in missing facts."
   }
 ];
   const get = id => document.getElementById(id);
@@ -198,15 +213,16 @@
   function render(focus = false) {
     answered = false;
     const q = questions[index];
-    get('demo-step').textContent = `Pregunta ${index + 1} de ${questions.length}`;
+    get('demo-step').textContent = `Question ${index + 1} of ${questions.length}`;
     get('demo-progress').max = questions.length;
     get('demo-progress').value = index;
     get('demo-kind').textContent = q.kind;
     get('demo-question').textContent = q.question;
-    get('demo-feedback').textContent = '';
+    get('demo-focus-title').textContent = 'Listening focus';
+    get('demo-feedback').textContent = q.focus;
     get('demo-feedback').className = '';
     get('demo-next').hidden = true;
-    get('demo-next').textContent = index === questions.length - 1 ? 'Terminar la práctica →' : 'Siguiente pregunta →';
+    get('demo-next').textContent = index === questions.length - 1 ? 'See my results →' : 'Next question →';
     get('demo-options').replaceChildren();
     q.options.forEach((text, choice) => {
       const b = document.createElement('button');
@@ -230,8 +246,9 @@
       if (i === choice && !right) b.classList.add('is-incorrect');
     });
     const feedback = get('demo-feedback');
+    get('demo-focus-title').textContent = right ? 'You caught it' : 'What to listen for';
     feedback.className = 'erc-demo-feedback';
-    feedback.textContent = (right ? '✓ Correcto. ' : '✕ Incorrecto. ' + q.options[q.answer] + ' ') + q.why;
+    feedback.textContent = (right ? '✓ Correct. ' : '✕ Not quite. ' + q.options[q.answer] + ' ') + q.why;
     get('demo-progress').value = index + 1;
     get('demo-next').hidden = false;
   }
@@ -240,7 +257,7 @@
     if (index < questions.length - 1) {index++; render(true); return;}
     stopAudio();
     root.hidden = true; get('demo-result').hidden = false;
-    get('demo-score').textContent = `${correct} de ${questions.length} respuestas correctas.`;
+    get('demo-score').textContent = `${correct} of ${questions.length} answers correct.`;
     get('demo-score-number').replaceChildren(document.createTextNode(String(correct)));
     const denominator = document.createElement('span'); denominator.textContent = '/' + questions.length;
     get('demo-score-number').append(denominator);
@@ -252,8 +269,8 @@
     results.forEach((right, i) => {
       const badge = document.createElement('span');
       badge.className = right ? 'is-correct' : 'is-incorrect';
-      badge.textContent = (right ? '✓ ' : '↻ ') + 'P' + (i + 1);
-      badge.setAttribute('aria-label', 'Pregunta ' + (i + 1) + (right ? ': correcta' : ': para repasar'));
+      badge.textContent = (right ? '✓ ' : '↻ ') + 'Q' + (i + 1);
+      badge.setAttribute('aria-label', 'Question ' + (i + 1) + (right ? ': correct' : ': review'));
       get('demo-result-steps').append(badge);
     });
     get('demo-result-title').focus(); track('lesson_complete');
