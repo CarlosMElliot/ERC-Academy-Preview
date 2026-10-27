@@ -35,3 +35,22 @@ body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; background-col
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
             background: #94a3b8; /* Se oscurece un poco al pasar el mouse */
         }
+
+/* Give pricing headings and the featured badge their own breathing room. */
+#pricing{padding-inline:clamp(24px,4vw,64px)}
+#pricing>div>h2{margin-bottom:24px}
+#pricing>div>h3{font-size:clamp(36px,4.5vw,64px);line-height:1.15;margin-bottom:28px}
+#pricing>div>p{max-width:680px;margin:0 auto 72px;line-height:1.8}
+#pricing .erc-pricing-grid{gap:32px}
+#pricing .price-card{padding:44px 32px 32px}
+#pricing .price-card h4{margin-bottom:24px;line-height:1.4}
+@media(max-width:1023px) and (min-width:768px){
+ #pricing .erc-pricing-grid{grid-template-columns:1fr;max-width:580px;margin-inline:auto;gap:48px}
+}
+@media(max-width:767px){
+ #pricing>div>h2{margin-bottom:20px}
+ #pricing>div>h3{margin-bottom:24px}
+ #pricing>div>p{margin-bottom:56px}
+ #pricing .erc-pricing-grid{gap:48px}
+ #pricing .price-card{padding:40px 28px 28px}
+}
