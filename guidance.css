@@ -37,8 +37,8 @@
 .erc-guidance-heading{padding-top:12px}
 .erc-guidance-goals{margin-top:32px;padding-top:24px;border-top:1px solid #1e293b;max-width:390px}
 .erc-guidance-goals>p{font-size:9px;font-weight:800;letter-spacing:.17em;color:#64748b;margin-bottom:14px}
-.erc-guidance-goals>a{display:grid;grid-template-columns:28px 1fr 16px;align-items:center;gap:10px;padding:11px 12px;margin-top:8px;border:1px solid #172b47;border-radius:12px;background:#0b172b80;color:#cbd5e1;font-size:12px;line-height:1.5;transition:translate .25s ease,border-color .25s ease,background .25s ease}
-.erc-guidance-goals>a>span:first-child{color:#60a5fa;font-size:21px}
+.erc-guidance-goals>a{display:grid;grid-template-columns:minmax(0,1fr) 16px;align-items:center;gap:10px;padding:11px 12px;margin-top:8px;border:1px solid #172b47;border-radius:12px;background:#0b172b80;color:#cbd5e1;font-size:12px;line-height:1.5;transition:translate .25s ease,border-color .25s ease,background .25s ease}
+
 .erc-guidance-goals>a>span:last-child{color:#60a5fa;transition:translate .25s ease}
 @media(hover:hover){.erc-guidance-goals>a:hover{translate:4px 0;border-color:#2563eb;background:#10213d}.erc-guidance-goals>a:hover>span:last-child{translate:2px -2px}}
 @media(min-width:901px){.erc-guidance-heading{top:88px}.erc-guidance-wrap{gap:48px}}
