@@ -38,126 +38,30 @@
 <link rel="stylesheet" href="/motion.css">
 <script src="/motion.js" defer></script>
 <link rel="stylesheet" href="/light-theme.css">
+<link rel="stylesheet" href="/ux.css">
 </head>
 <body class="erc-light bg-slate-950 text-white selection:bg-blue-500">
-    <nav class="sticky top-0 z-50 glass border-b border-slate-800">
-        <div class="flex justify-between items-center p-4 max-w-7xl mx-auto">
-            <div class="text-2xl font-extrabold tracking-tighter cursor-pointer" onclick="window.scrollTo({top:0, behavior:'smooth'})">ERC Academy<span class="text-blue-500">.</span></div>
-            <div class="hidden lg:flex gap-8 text-sm font-medium text-slate-300">
-                <a href="#mission" class="hover:text-blue-400 transition">Metodología</a>
-                <a href="#methodology" class="hover:text-blue-400 transition">Progreso</a>
-                <a href="#about" class="hover:text-blue-400 transition">El Fundador</a>
-                <a href="#pricing" class="hover:text-blue-400 transition">Inversión</a>
-                <a href="#testimonials" class="hover:text-blue-400 transition">Reseñas</a>
-            </div>
-            <div class="flex items-center gap-4">
-                <div class="hidden md:flex gap-4 text-slate-400 border-r border-slate-800 pr-6">
-                    <a href="https://www.youtube.com/@ERCNic" target="_blank" class="hover:text-red-600 transition"><i class="fa-brands fa-youtube text-lg"></i></a>
-                    <a href="https://www.tiktok.com/@erc.nic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-tiktok text-lg"></i></a>
-                    <a href="https://www.facebook.com/ercnica/" target="_blank" class="hover:text-blue-600 transition"><i class="fa-brands fa-facebook text-lg"></i></a>
-                    <a href="https://www.instagram.com/erc.nic/" target="_blank" class="hover:text-pink-500 transition"><i class="fa-brands fa-instagram text-lg"></i></a>
-                    <!--<a href="https://maps.app.goo.gl/DaoFgtYor6YuGGYM8" target="_blank" class="hover:text-green-500 transition"><i class="fa-solid fa-location-dot"></i></a>-->
-                </div>
-                <a href="#contact" class="erc-action bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-full text-xs font-bold transition uppercase tracking-widest shadow-lg shadow-blue-600/20">Registrarme</a>
-            </div>
-        </div>
-    </nav>
+    <nav class="erc-main-nav sticky top-0 z-50" aria-label="Navegación principal"><div class="erc-nav-inner"><a class="erc-brand" href="#inicio">ERC Academy<span>.</span></a><div class="erc-desktop-links"><a href="#mission">Clases</a><a href="#pricing">Planes</a><a href="#testimonials">Reseñas</a><a href="#about">Tu instructor</a><a href="#contact">Contacto</a></div><a class="erc-action erc-book" href="https://calendar.app.google/dT9HURDSafqhZkSd6" target="_blank" rel="noopener noreferrer">Reserva tu clase gratis</a><details class="erc-mobile-menu"><summary>Menú <span aria-hidden="true">☰</span></summary><div><a href="#mission">Clases</a><a href="#pricing">Planes</a><a href="#testimonials">Reseñas</a><a href="#about">Tu instructor</a><a href="#contact">Contacto</a></div></details></div></nav>
 
-    <section class="hero-bg min-h-[95vh] flex items-center justify-center text-center px-12">
+    <section id="inicio" class="hero-bg min-h-[95vh] flex items-center justify-center text-center px-12">
         <div class="max-w-6xl">
             <div class="flex flex-col items-center mb-6">
-                <div class="text-yellow-400 mb-2 italic tracking-widest text-[10px] font-bold uppercase">Premium Cognitive Training</div>
+                <div class="text-yellow-400 mb-2 italic tracking-widest text-[10px] font-bold uppercase">Clases de inglés online</div>
                 <h2 class="text-xs font-bold tracking-[0.4em] uppercase text-blue-400">ERC Academy Nicaragua</h2>
             </div>
             <h1 class="text-5xl md:text-8xl font-extrabold tracking-tight mb-8 leading-tight">Piensa Rápido. <br/><span class="text-blue-400 text-glow italic">Habla al Instante.</span></h1>
             <p class="text-slate-300 text-lg md:text-2xl max-w-3xl mx-auto mb-10 leading-relaxed font-light italic">Inglés online en Nicaragua. Escucha, practica y habla con confianza.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="https://calendar.app.google/dT9HURDSafqhZkSd6" target="_blank" rel="noopener noreferrer" class="erc-action bg-blue-600 text-white px-10 py-4 rounded-xl font-bold hover:bg-blue-700 transition shadow-2xl shadow-blue-500/40 uppercase tracking-widest text-sm text-center">Reserva tu clase gratis</a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScqsDS89Rc5QNjncW9gRtAEadA8S-jl6XTLzHLIcivpy6CRyQ/viewform?usp=dialog" target="_blank" class="erc-action glass border border-slate-600 px-10 py-4 rounded-xl font-bold hover:bg-slate-800 transition uppercase tracking-widest text-sm italic text-center">Prueba de Nivelación</a>
+                <a href="#pricing" class="erc-action glass border px-10 py-4 rounded-xl font-bold text-sm text-center">Explora los planes</a>
             </div>
 <p class="text-slate-400 text-sm mt-6">30 minutos · Online por Google Meet · Sin costo</p>
         </div>
     </section>
 
-    <section id="mission" class="py-12 md:py-24 bg-[#020617] px-6 overflow-hidden border-b border-slate-900/50">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
-            <div class="w-full md:w-1/2 text-left">
-                <div class="inline-block border-b-2 border-blue-600 pb-1 mb-8">
-                    <span class="text-blue-500 font-bold uppercase tracking-[0.2em] text-[10px]">The ERC Method</span>
-                </div>
-                <h2 class="text-5xl md:text-6xl font-black italic uppercase leading-none tracking-tighter mb-8 text-white">Neurociencia <br/> Aplicada al Inglés</h2>
-                <p class="text-slate-400 text-lg md:text-xl font-light italic leading-relaxed mb-10 max-w-xl">Dejamos atrás los métodos de traducción mecánica. En <span class="text-white font-bold">ERC Academy</span> nos enfocamos en el <span class="text-white font-bold">Audible Memory Nurture</span>: entrenamos tu cerebro para conectar sonidos directamente con conceptos.</p>
-                <div class="space-y-4">
-                    <div class="flex items-center gap-3 group"><i class="fa-solid fa-check text-blue-500 text-xs"></i><span class="text-white font-black uppercase tracking-[0.1em] text-xs">Acoustic Bridge: Reconstrucción Fonética</span></div>
-                    <div class="flex items-center gap-3 group"><i class="fa-solid fa-check text-blue-500 text-xs"></i><span class="text-white font-black uppercase tracking-[0.1em] text-xs">Técnica Feynman: Maestría de Conceptos</span></div>
-                    <div class="flex items-center gap-3 group"><i class="fa-solid fa-check text-blue-500 text-xs"></i><span class="text-white font-black uppercase tracking-[0.1em] text-xs">Recuperación Activa: Práctica de Respuestas</span></div>
-                </div>
-            </div>
-            <div class="w-full md:w-1/2">
-                <div class="relative rounded-[3rem] overflow-hidden border border-slate-800 shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop" alt="Persona trabajando con recursos digitales de aprendizaje" loading="lazy" class="w-full h-auto object-cover grayscale opacity-60">
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-            
-
-
-
-    <section id="methodology" class="py-16 md:py-32 bg-slate-900/10 px-6 overflow-hidden">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-12 md:mb-24">
-                <h2 class="text-blue-500 font-bold uppercase tracking-widest text-sm mb-4 italic">El Viaje del Atleta Cognitivo</h2>
-                <h3 class="text-4xl md:text-5xl font-black italic tracking-tighter">Línea de Tiempo de Progreso</h3>
-            </div>
-            <div class="relative timeline-line">
-                <div class="mb-16 md:mb-24 relative">
-                    <div class="absolute left-[-11px] md:left-1/2 md:-translate-x-1/2 w-6 h-6 bg-blue-600 rounded-full border-4 border-slate-950 z-10 shadow-[0_0_20px_rgba(37,99,235,0.6)]"></div>
-                    <div class="ml-10 md:ml-0 md:w-[45%] md:text-right md:pr-12">
-                        <span class="text-blue-400 font-black text-xs uppercase tracking-[0.3em]">Mes 1 - 3: Input Auditivo</span>
-                        <h4 class="text-2xl font-bold mt-2 text-white italic underline underline-offset-4 decoration-slate-800">Acoustic Reconstruction</h4>
-                        <p class="text-slate-400 mt-4 text-sm leading-relaxed"><strong>92 Horas de Entrenamiento.</strong> Practicamos la identificación de sonidos del inglés mediante escucha y repetición.</p>
-                    </div>
-                </div>
-                <div class="mb-16 md:mb-24 relative">
-                    <div class="absolute left-[-11px] md:left-1/2 md:-translate-x-1/2 w-6 h-6 bg-emerald-600 rounded-full border-4 border-slate-950 z-10"></div>
-                    <div class="ml-10 md:ml-0 md:w-[45%] md:left-1/2 md:relative md:pl-12">
-                        <span class="text-emerald-400 font-black text-xs uppercase tracking-[0.3em]">Mes 4 - 7: Recuperación Activa</span>
-                        <h4 class="text-2xl font-bold mt-2 text-white italic underline underline-offset-4 decoration-slate-800">Narrative Retrieval</h4>
-                        <p class="text-slate-400 mt-4 text-sm leading-relaxed"><strong>62 Horas de Recobro.</strong> Entrenamos la velocidad de respuesta mediante la reconstrucción de historias complejas.</p>
-                    </div>
-                </div>
-                <div class="mb-10 relative">
-                    <div class="absolute left-[-11px] md:left-1/2 md:-translate-x-1/2 w-6 h-6 bg-purple-600 rounded-full border-4 border-slate-950 z-10"></div>
-                    <div class="ml-10 md:ml-0 md:w-[45%] md:text-right md:pr-12">
-                        <span class="text-purple-400 font-black text-xs uppercase tracking-[0.3em]">Mes 8 - 12: Maestría Técnica</span>
-                        <h4 class="text-2xl font-bold mt-2 text-white italic underline underline-offset-4 decoration-slate-800">The Feynman Mastery</h4>
-                        <p class="text-slate-400 mt-4 text-sm leading-relaxed"><strong>90 Horas de Output Técnico.</strong> Práctica de expresión oral. Aplicamos el laboratorio Feynman para explicar conceptos profesionales.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-  <section id="about" class="erc-about" aria-labelledby="about-title">
-<div class="erc-about-grid">
-<div class="erc-about-portrait"><img src="/about_us.jpg" alt="Carlos Mercado, instructor y fundador de ERC Academy" width="320" height="320" loading="lazy"><span>INSTRUCTOR &amp; FUNDADOR</span><p>Managua, Nicaragua</p></div>
-<div class="erc-about-content"><p class="erc-about-kicker">INGLÉS CON PROPÓSITO</p><h2 id="about-title">Carlos <span>Mercado</span></h2>
-<p class="erc-about-intro">Tal vez dejaste pendiente el sueño de hablar inglés. O necesitas prepararte para un examen, retomar lo aprendido o tener con quién practicar. Estoy aquí para escucharte y guiarte hacia eso que quieres lograr.</p>
-<div class="erc-about-highlights">
-<div><h3>Retoma ese sueño</h3><p>Dale otra oportunidad a tu inglés.</p></div>
-<div><h3>Ve por tu meta</h3><p>Un examen, un viaje o una nueva etapa.</p></div>
-<div><h3>Vuelve a practicar</h3><p>Refresca lo aprendido y úsalo de nuevo.</p></div>
-</div>
-
-<a href="#acompanamiento" class="erc-action erc-about-cta">Cómo puedo acompañarte <span aria-hidden="true">↓</span></a>
-</div></div></section>
 <section id="acompanamiento" class="erc-guidance" aria-labelledby="guidance-title">
 <div class="erc-guidance-wrap">
-<header class="erc-guidance-heading"><p>UN CAMINO A TU MEDIDA</p><h2 id="guidance-title">Cómo puedo<br><span>acompañarte.</span></h2><p class="erc-guidance-lead">Tu motivo para aprender es donde empezamos.</p><a href="#contact" class="erc-action erc-guidance-cta">Hablemos de tus metas <span aria-hidden="true">→</span></a>
+<header class="erc-guidance-heading"><p>UN CAMINO A TU MEDIDA</p><h2 id="guidance-title">Cómo puedo<br><span>acompañarte.</span></h2><p class="erc-guidance-lead">Tu motivo para aprender es donde empezamos.</p><a href="https://calendar.app.google/dT9HURDSafqhZkSd6" target="_blank" rel="noopener noreferrer" class="erc-action erc-guidance-cta">Reserva tu clase gratis <span aria-hidden="true">→</span></a>
 <div class="erc-guidance-goals"><p>¿QUÉ QUIERES LOGRAR?</p>
 <a href="#contact"><span>Retomar mi inglés</span><span aria-hidden="true">↗</span></a>
 <a href="#contact"><span>Prepararme para una meta</span><span aria-hidden="true">↗</span></a>
@@ -174,8 +78,60 @@
 </details>
 </div></div></section>
 
+<section id="testimonials" class="erc-reviews" aria-labelledby="reviews-title">
+<div class="erc-reviews-wrap">
+<div class="erc-reviews-heading">
+<div><p class="erc-reviews-label">EXPERIENCIAS REALES</p><h2 id="reviews-title">Lo dicen <span>ellos.</span></h2></div>
+<a class="erc-rating" href="https://maps.app.goo.gl/DaoFgtYor6YuGGYM8" target="_blank" rel="noopener noreferrer" aria-label="Ver las 11 reseñas en Google, valoración 4.9 de 5"><strong>4.9<span>/5</span></strong><span><span class="erc-stars" aria-hidden="true">★★★★★</span><span class="erc-rating-source">11 reseñas en Google</span></span><span aria-hidden="true">↗</span></a>
+</div>
+<div class="erc-review-grid" id="review-track" role="region" aria-label="Reseñas de estudiantes" aria-roledescription="carrusel" tabindex="0"><article class="erc-review-card"><div class="erc-review-top"><span class="erc-stars" role="img" aria-label="5 de 5 estrellas">★★★★★</span><span class="erc-review-source">Google</span></div><blockquote>“Excellent, I recommend it.”</blockquote><div class="erc-review-person"><span class="erc-review-avatar" aria-hidden="true">JB</span><div><h3>JOSUE BARQUERO RAMOS</h3><a href="https://maps.app.goo.gl/DaoFgtYor6YuGGYM8" target="_blank" rel="noopener noreferrer">Reseña · Leer en Google ↗</a></div></div></article>
+<article class="erc-review-card"><div class="erc-review-top"><span class="erc-stars" role="img" aria-label="5 de 5 estrellas">★★★★★</span><span class="erc-review-source">Google</span></div><blockquote>“Su paciencia y vocación se notan en cada clase”</blockquote><div class="erc-review-person"><span class="erc-review-avatar" aria-hidden="true">JS</span><div><h3>Junior Sotelo</h3><a href="https://maps.app.goo.gl/DaoFgtYor6YuGGYM8" target="_blank" rel="noopener noreferrer">Reseña · Leer en Google ↗</a></div></div></article>
+<article class="erc-review-card"><div class="erc-review-top"><span class="erc-stars" role="img" aria-label="5 de 5 estrellas">★★★★★</span><span class="erc-review-source">Google</span></div><blockquote>“al menos algunas de las palabras ya las entiendo mejor”</blockquote><div class="erc-review-person"><span class="erc-review-avatar" aria-hidden="true">AG</span><div><h3>Angelin Gutierrez</h3><a href="https://maps.app.goo.gl/DaoFgtYor6YuGGYM8" target="_blank" rel="noopener noreferrer">Reseña · Leer en Google ↗</a></div></div></article><article class="erc-review-card"><div class="erc-review-top"><span class="erc-stars" role="img" aria-label="5 de 5 estrellas">★★★★★</span><span class="erc-review-source">Google</span></div><blockquote>“Lo que más me gusta son los ejercicios prácticos”</blockquote><div class="erc-review-person"><span class="erc-review-avatar" aria-hidden="true">NG</span><div><h3>Neftaly Gomez</h3><a href="https://maps.app.goo.gl/DaoFgtYor6YuGGYM8" target="_blank" rel="noopener noreferrer">Reseña · Leer en Google ↗</a></div></div></article><article class="erc-review-card"><div class="erc-review-top"><span class="erc-stars" role="img" aria-label="5 de 5 estrellas">★★★★★</span><span class="erc-review-source">Google</span></div><blockquote>“Muy buen trato y un ambiente súper cómodo.”</blockquote><div class="erc-review-person"><span class="erc-review-avatar" aria-hidden="true">GA</span><div><h3>Ghendoling Andino</h3><a href="https://maps.app.goo.gl/DaoFgtYor6YuGGYM8" target="_blank" rel="noopener noreferrer">Reseña · Leer en Google ↗</a></div></div></article></div>
+<div class="erc-review-bottom"><p>Selección de reseñas · Consultado el 27 de octubre de 2026</p><a href="https://maps.app.goo.gl/DaoFgtYor6YuGGYM8" target="_blank" rel="noopener noreferrer">Ver todas las reseñas ↗</a></div>
+</div></section>
+
+<section id="pricing" class="erc-plans-section"><div class="erc-section-wrap"><header class="erc-section-heading"><p class="erc-eyebrow">Opciones para aprender</p><h2>Elige cómo quieres avanzar</h2><p>Compara los planes y consulta los horarios disponibles antes de decidir.</p></header><div class="erc-pricing-grid"><article class="price-card erc-plan "><h3>One-on-One</h3><p class="erc-plan-audience">Para resolver dudas y practicar a tu ritmo.</p><p class="erc-plan-price">$20<span>/hora</span></p><dl><div><dt>Formato</dt><dd>Individual</dd></div><div><dt>Duración por sesión</dt><dd>60 minutos</dd></div><div><dt>Frecuencia</dt><dd>Por reserva</dd></div></dl><p class="erc-plan-extra">Material de estudio incluido.</p><a class="erc-action erc-plan-link" href="https://wa.me/50575281644?text=Hola%2C%20quiero%20consultar%20el%20plan%20One-on-One%20de%20%2420%2Fhora." target="_blank" rel="noopener noreferrer">Consultar este plan <span aria-hidden="true">↗</span></a></article><article class="price-card erc-plan erc-plan-featured"><p class="erc-plan-badge">Más popular</p><h3>Full Training ERC</h3><p class="erc-plan-audience">Para mantener una práctica regular y guiada.</p><p class="erc-plan-price">$60<span>/mes</span></p><dl><div><dt>Formato</dt><dd>Consultar formato</dd></div><div><dt>Duración por sesión</dt><dd>60 minutos</dd></div><div><dt>Frecuencia</dt><dd>3 días por semana</dd></div></dl><p class="erc-plan-extra">Análisis de tus necesidades y seguimiento.</p><a class="erc-action erc-plan-link" href="https://wa.me/50575281644?text=Hola%2C%20quiero%20consultar%20el%20plan%20Full%20Training%20ERC%20de%20%2460%2Fmes." target="_blank" rel="noopener noreferrer">Consultar este plan <span aria-hidden="true">↗</span></a></article><article class="price-card erc-plan "><h3>Study Plus</h3><p class="erc-plan-audience">Para quienes buscan sesiones privadas más largas.</p><p class="erc-plan-price">$120<span>/mes</span></p><dl><div><dt>Formato</dt><dd>Individual</dd></div><div><dt>Duración por sesión</dt><dd>90 minutos</dd></div><div><dt>Frecuencia</dt><dd>Consultar frecuencia; atención de lunes a viernes</dd></div></dl><p class="erc-plan-extra">Acceso a plataforma y práctica diaria guiada.</p><a class="erc-action erc-plan-link" href="https://wa.me/50575281644?text=Hola%2C%20quiero%20consultar%20el%20plan%20Study%20Plus%20de%20%24120%2Fmes." target="_blank" rel="noopener noreferrer">Consultar este plan <span aria-hidden="true">↗</span></a></article></div><div class="erc-plan-help"><p>¿No sabes por dónde empezar? Comparte tus metas en una clase gratis de 30 minutos.</p><a class="erc-action erc-book" href="https://calendar.app.google/dT9HURDSafqhZkSd6" target="_blank" rel="noopener noreferrer">Reserva tu clase gratis</a></div></div></section>
+
+<section id="mission" class="py-12 md:py-24 bg-[#020617] px-6 overflow-hidden border-b border-slate-900/50">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="w-full md:w-1/2 text-left">
+                <div class="inline-block border-b-2 border-blue-600 pb-1 mb-8">
+                    <span class="text-blue-500 font-bold uppercase tracking-[0.2em] text-[10px]">Así practicamos</span>
+                </div>
+                <h2 class="text-5xl md:text-6xl font-black italic uppercase leading-none tracking-tighter mb-8 text-white">Escucha, practica<br>y úsalo en tu día</h2>
+                <p class="text-slate-400 text-lg leading-relaxed mb-10 max-w-xl">Escuchamos ejemplos, practicamos respuestas y usamos el inglés en situaciones conectadas con tus metas. Tienes espacio para preguntar, equivocarte y volver a intentar.</p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 group"><i class="fa-solid fa-check text-blue-500 text-xs"></i><span class="text-white font-black uppercase tracking-[0.1em] text-xs">Reconoce sonidos y mejora tu pronunciación</span></div>
+                    <div class="flex items-center gap-3 group"><i class="fa-solid fa-check text-blue-500 text-xs"></i><span class="text-white font-black uppercase tracking-[0.1em] text-xs">Explica ideas con tus propias palabras</span></div>
+                    <div class="flex items-center gap-3 group"><i class="fa-solid fa-check text-blue-500 text-xs"></i><span class="text-white font-black uppercase tracking-[0.1em] text-xs">Practica recordar y responder en inglés</span></div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2">
+                <div class="relative rounded-[3rem] overflow-hidden border border-slate-800 shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop" alt="Persona trabajando con recursos digitales de aprendizaje" loading="lazy" class="w-full h-auto object-cover grayscale opacity-60">
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="methodology" class="erc-steps-section"><div class="erc-section-wrap"><h2>Un paso a la vez</h2><p>La práctica se adapta a tu punto de partida y a lo que necesitas reforzar.</p><div class="erc-learning-steps"><article><span>01</span><h3>Escucha y reconoce</h3><p>Familiarízate con sonidos y expresiones a través de ejemplos y repetición.</p></article><article><span>02</span><h3>Recuerda y responde</h3><p>Recupera lo aprendido y úsalo para contar historias y responder preguntas.</p></article><article><span>03</span><h3>Expresa tus ideas</h3><p>Explica situaciones con tus palabras y sigue practicando con orientación.</p></article></div><details class="erc-method-details"><summary>¿Quieres conocer tu nivel o el método con más detalle?</summary><p><a href="/metodo-y-profesor/">Conoce cómo trabajamos →</a></p><p><a href="https://docs.google.com/forms/d/e/1FAIpQLScqsDS89Rc5QNjncW9gRtAEadA8S-jl6XTLzHLIcivpy6CRyQ/viewform?usp=dialog" target="_blank" class="erc-text-link">Prueba de Nivelación</a></p></details></div></section>
+
+<section id="about" class="erc-about" aria-labelledby="about-title">
+<div class="erc-about-grid">
+<div class="erc-about-portrait"><img src="/about_us.jpg" alt="Carlos Mercado, instructor y fundador de ERC Academy" width="320" height="320" loading="lazy"><span>INSTRUCTOR &amp; FUNDADOR</span><p>Managua, Nicaragua</p></div>
+<div class="erc-about-content"><p class="erc-about-kicker">INGLÉS CON PROPÓSITO</p><h2 id="about-title">Carlos <span>Mercado</span></h2>
+<p class="erc-about-intro">Tal vez dejaste pendiente el sueño de hablar inglés. O necesitas prepararte para un examen, retomar lo aprendido o tener con quién practicar. Estoy aquí para escucharte y guiarte hacia eso que quieres lograr.</p>
+<div class="erc-about-highlights">
+<div><h3>Retoma ese sueño</h3><p>Dale otra oportunidad a tu inglés.</p></div>
+<div><h3>Ve por tu meta</h3><p>Un examen, un viaje o una nueva etapa.</p></div>
+<div><h3>Vuelve a practicar</h3><p>Refresca lo aprendido y úsalo de nuevo.</p></div>
+</div>
+
+<a href="#acompanamiento" class="erc-action erc-about-cta">Cómo puedo acompañarte <span aria-hidden="true">↓</span></a>
+</div></div></section>
+
 <section id="seguir-aprendiendo" class="erc-persistence" aria-labelledby="persistence-title">
-<div class="erc-persistence-wrap">
+<div class="erc-persistence-wrap"><details class="erc-research-details"><summary>¿Qué dificulta seguir aprendiendo? Consulta los datos y cómo podemos ayudarte.</summary><div class="erc-research-body">
 <header class="erc-persistence-heading"><p class="erc-persistence-eyebrow">ENTIENDE EL OBSTÁCULO. ELIGE TU SIGUIENTE PASO.</p><h2 id="persistence-title">¿Qué te frena?<br><span>Empecemos por ahí.</span></h2><p>En América Latina y en otros países, aprender también compite con el trabajo, la familia y el presupuesto. En ERC partimos de tu realidad para ayudarte a retomar el inglés.</p></header>
 <p class="erc-persistence-scope">Formación de adultos: contexto latinoamericano e internacional. Son estudios de distintos años y poblaciones, no una comparación directa ni tasas de abandono del inglés.</p>
 <div class="erc-persistence-charts">
@@ -191,70 +147,9 @@
 <article><span class="erc-action-step" aria-hidden="true">03</span><h4>Opciones para elegir con claridad</h4><p>Explora clases online o tutorías individuales, conoce los precios y consulta los horarios antes de decidir. También te orientamos para practicar por tu cuenta.</p></article>
 </div>
 <div class="erc-persistence-action-footer"><div><p><strong>Empieza con una clase gratis.</strong></p><p>30 minutos por Google Meet para compartir tus metas, resolver dudas y ver cómo podemos ayudarte.</p></div><a class="erc-action erc-persistence-cta" href="https://calendar.app.google/dT9HURDSafqhZkSd6" target="_blank" rel="noopener noreferrer">Reserva tu clase gratis <span aria-hidden="true">↗</span></a></div>
-</div></div></section>
+</div></div></details></div></section>
 
-<section id="testimonials" class="erc-reviews" aria-labelledby="reviews-title">
-<div class="erc-reviews-wrap">
-<div class="erc-reviews-heading">
-<div><p class="erc-reviews-label">EXPERIENCIAS REALES</p><h2 id="reviews-title">Lo dicen <span>ellos.</span></h2></div>
-<a class="erc-rating" href="https://maps.app.goo.gl/DaoFgtYor6YuGGYM8" target="_blank" rel="noopener noreferrer" aria-label="Ver las 11 reseñas en Google, valoración 4.9 de 5"><strong>4.9<span>/5</span></strong><span><span class="erc-stars" aria-hidden="true">★★★★★</span><span class="erc-rating-source">11 reseñas en Google</span></span><span aria-hidden="true">↗</span></a>
-</div>
-<div class="erc-review-grid" id="review-track" role="region" aria-label="Reseñas de estudiantes" aria-roledescription="carrusel" tabindex="0"><article class="erc-review-card"><div class="erc-review-top"><span class="erc-stars" role="img" aria-label="5 de 5 estrellas">★★★★★</span><span class="erc-review-source">Google</span></div><blockquote>“Excellent, I recommend it.”</blockquote><div class="erc-review-person"><span class="erc-review-avatar" aria-hidden="true">JB</span><div><h3>JOSUE BARQUERO RAMOS</h3><a href="https://maps.app.goo.gl/DaoFgtYor6YuGGYM8" target="_blank" rel="noopener noreferrer">Reseña · Leer en Google ↗</a></div></div></article>
-<article class="erc-review-card"><div class="erc-review-top"><span class="erc-stars" role="img" aria-label="5 de 5 estrellas">★★★★★</span><span class="erc-review-source">Google</span></div><blockquote>“Su paciencia y vocación se notan en cada clase”</blockquote><div class="erc-review-person"><span class="erc-review-avatar" aria-hidden="true">JS</span><div><h3>Junior Sotelo</h3><a href="https://maps.app.goo.gl/DaoFgtYor6YuGGYM8" target="_blank" rel="noopener noreferrer">Reseña · Leer en Google ↗</a></div></div></article>
-<article class="erc-review-card"><div class="erc-review-top"><span class="erc-stars" role="img" aria-label="5 de 5 estrellas">★★★★★</span><span class="erc-review-source">Google</span></div><blockquote>“al menos algunas de las palabras ya las entiendo mejor”</blockquote><div class="erc-review-person"><span class="erc-review-avatar" aria-hidden="true">AG</span><div><h3>Angelin Gutierrez</h3><a href="https://maps.app.goo.gl/DaoFgtYor6YuGGYM8" target="_blank" rel="noopener noreferrer">Reseña · Leer en Google ↗</a></div></div></article><article class="erc-review-card"><div class="erc-review-top"><span class="erc-stars" role="img" aria-label="5 de 5 estrellas">★★★★★</span><span class="erc-review-source">Google</span></div><blockquote>“Lo que más me gusta son los ejercicios prácticos”</blockquote><div class="erc-review-person"><span class="erc-review-avatar" aria-hidden="true">NG</span><div><h3>Neftaly Gomez</h3><a href="https://maps.app.goo.gl/DaoFgtYor6YuGGYM8" target="_blank" rel="noopener noreferrer">Reseña · Leer en Google ↗</a></div></div></article><article class="erc-review-card"><div class="erc-review-top"><span class="erc-stars" role="img" aria-label="5 de 5 estrellas">★★★★★</span><span class="erc-review-source">Google</span></div><blockquote>“Muy buen trato y un ambiente súper cómodo.”</blockquote><div class="erc-review-person"><span class="erc-review-avatar" aria-hidden="true">GA</span><div><h3>Ghendoling Andino</h3><a href="https://maps.app.goo.gl/DaoFgtYor6YuGGYM8" target="_blank" rel="noopener noreferrer">Reseña · Leer en Google ↗</a></div></div></article></div>
-<div class="erc-review-bottom"><p>Selección de reseñas · Consultado el 27 de octubre de 2026</p><a href="https://maps.app.goo.gl/DaoFgtYor6YuGGYM8" target="_blank" rel="noopener noreferrer">Ver todas las reseñas ↗</a></div>
-</div></section>
-<section id="pricing" class="py-16 md:py-32 bg-slate-950 px-6">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-blue-500 font-bold uppercase tracking-widest text-[10px] mb-4 italic">Investment Options</h2>
-            <h3 class="text-5xl md:text-7xl font-black italic mb-6 uppercase">Invierte en tu Futuro</h3>
-            <p class="text-slate-400 text-sm md:text-lg mb-12 md:mb-6 font-light italic">Planes diseñados para profesionales que buscan resultados medibles</p>
-             
-            <div class="erc-pricing-grid grid md:grid-cols-3 gap-8 items-stretch">
-                <div class="price-card p-10 bg-slate-900/20 rounded-[2.5rem] flex flex-col text-left">
-                    <h4 class="text-xl font-bold italic mb-4 uppercase">One-on-One</h4>
-                    <div class="text-6xl font-black italic mb-8">$20<span class="text-lg text-slate-500 not-italic font-normal"> /hora</span></div>
-                    <ul class="space-y-5 text-slate-400 text-sm flex-grow mb-12">
-                        <li><i class="fa-solid fa-check text-blue-500 mr-3"></i> Atención 1 a 1 Personalizada</li>
-                        <li><i class="fa-solid fa-check text-blue-500 mr-3"></i> Enfoque en tus dudas específicas</li>
-                        <li><i class="fa-solid fa-check text-blue-500 mr-3"></i> Horario Flexible (Tú eliges)</li>
-                        <li><i class="fa-solid fa-check text-blue-500 mr-3"></i> Modalidad y horario por confirmar</li>
-                        <li><i class="fa-solid fa-check text-blue-500 mr-3"></i> Material de Estudio Gratuito</li>
-                    </ul>
-                    <a href="https://wa.me/50575281644?text=Hola,%20me%20gustaría%20reservar%20mi%20cupo%20para:%20One-on-One%20($20/hora).%20Mi%20nombre%20es:" class="erc-action border border-slate-800 py-4 rounded-xl text-center text-[10px] font-black uppercase tracking-widest hover:bg-slate-900 transition">AGENDAR HORA</a>
-                </div>
-
-                <div class="price-card p-10 bg-blue-900/10 rounded-[2.5rem] flex flex-col text-left  z-10 border-2 border-blue-600 relative shadow-2xl shadow-blue-900/20 ">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest italic">MÁS POPULAR</div>
-                    <h4 class="text-xl font-bold italic mb-4 uppercase text-blue-400">Full Training ERC</h4>
-                    <div class="text-6xl font-black italic mb-8 text-white">$60<span class="text-lg text-slate-500 not-italic font-normal"> /mes</span></div>
-                    <ul class="space-y-5 text-slate-300 text-sm flex-grow mb-12">
-                        <li><i class="fa-solid fa-star text-blue-500 mr-3"></i> Needs Analysis Incluido </li>
-                        <li><i class="fa-solid fa-star text-blue-500 mr-3"></i> Seguimiento Cognitivo Diario</li>
-                        <li><i class="fa-solid fa-star text-blue-500 mr-3"></i> Guía Exclusiva de Deep Work</li>
-                        <li><i class="fa-solid fa-check text-blue-500 mr-3"></i> 1 hr de Clases por 3 dias</li>
-                        <li><i class="fa-solid fa-check text-blue-500 mr-3"></i> Disponible Fines de Semana</li>
-                    </ul>
-                    <a href="https://wa.me/50575281644?text=Hola,%20me%20gustaría%20reservar%20mi%20cupo%20para:%20Full%20Training%20ERC%20($60/mes).%20Mi%20nombre%20es:" class="erc-action bg-blue-600 py-4 rounded-xl text-center text-[10px] font-black uppercase tracking-widest hover:bg-blue-700 transition shadow-lg shadow-blue-600/40">INSCRIBIRME AHORA</a>
-                </div>
-
-                <div class="price-card p-10 bg-slate-900/20 rounded-[2.5rem] flex flex-col text-left">
-                    <h4 class="text-xl font-bold italic mb-4 uppercase">Study Plus</h4>
-                    <div class="text-6xl font-black italic mb-8">$120<span class="text-lg text-slate-500 not-italic font-normal"> /mes</span></div>
-                    <ul class="space-y-5 text-slate-400 text-sm flex-grow mb-12">
-                        <li><i class="fa-solid fa-check text-emerald-500 mr-3"></i> Sesiones Privadas de Lunes a Jueves</li>
-                        <li><i class="fa-solid fa-check text-emerald-500 mr-3"></i> Acceso a Plataforma 24/7</li>
-                        <li><i class="fa-solid fa-check text-emerald-500 mr-3"></i> Práctica Diaria Guiada</li>
-                        <li><i class="fa-solid fa-check text-emerald-500 mr-3"></i> Disponibilidad de 3 Horarios</li>
-                        <li><i class="fa-solid fa-check text-blue-500 mr-3"></i> 1hr 30 mins de Clases por Sesión </li>
-                    </ul>
-                    <a href="https://wa.me/50575281644?text=Hola,%20me%20gustaría%20reservar%20mi%20cupo%20para:%20Study%20Plus%20($120/mes).%20Mi%20nombre%20es:" class="erc-action border border-slate-800 py-4 rounded-xl text-center text-[10px] font-black uppercase tracking-widest hover:bg-slate-900 transition">MÁS INFORMACIÓN</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-       <section class="w-full py-20 bg-slate-950 border-y border-slate-900">
+<section class="w-full py-20 bg-slate-950 border-y border-slate-900">
         <div class="max-w-screen-2xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-y-16 md:gap-8 text-center items-start">
             
             <div class="flex flex-col items-center group">
@@ -279,7 +174,7 @@
                     Únete a nuestro grupo
                 </a>
                 <p class="text-slate-400 text-sm font-medium italic leading-snug mt-5">
-                    Inscripción totalmente gratuita
+                    Comunidad gratuita de práctica
                 </p>
             </div>
     
@@ -287,11 +182,11 @@
                 <div class="w-14 h-14 rounded-2xl bg-blue-500/5 border border-blue-500/20 flex items-center justify-center mb-5 group-hover:bg-blue-500/10 transition-colors">
                     <i class="fa-solid fa-envelope-open-text text-blue-500 text-3xl"></i>
                 </div>
-                <h4 class="text-blue-400 font-black text-xs uppercase tracking-[0.4em] mb-3">Email Academy</h4>
+                <h4 class="text-blue-400 font-black text-xs uppercase tracking-[0.4em] mb-3">Correo</h4>
                 <a href="mailto:erc.academianic@gmail.com" class="text-white text-xl font-black italic hover:text-blue-400 transition-all duration-300 underline underline-offset-[10px] decoration-slate-800 hover:decoration-blue-500">
                     erc.academianic@gmail.com
                 </a>
-                <p class="text-slate-500 text-[10px] mt-5 uppercase font-bold tracking-[0.2em]">Soporte Académico 24/7</p>
+                <p class="text-slate-500 text-[10px] mt-5 uppercase font-bold tracking-[0.2em]">Consultas académicas</p>
             </div>
     
             <div class="flex flex-col items-center group">
@@ -305,210 +200,8 @@
     
         </div>
     </section>
-    
-    <section id="contact" class="py-16 md:py-32 max-w-4xl mx-auto px-6">
-        <div id="form-header">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-black italic tracking-tighter uppercase mb-2">Registro de Inscripción <span class="text-blue-500">ERC</span></h2>
-                <p class="text-slate-500 text-xs tracking-widest uppercase font-bold">Programa de Adquisición Lingüística</p>
-                <p class="text-center text-slate-400 text-[11px] leading-relaxed italic py-1 max-w-md mx-auto">
-                    Te motivamos a que llenes el formulario para conocer un poco más sobre ti. 
-                    Si es posible, envíanos una <span class="text-blue-400 font-semibold">captura de pantalla</span> del mensaje final por WhatsApp para darte seguimiento.
-                </p>
-            </div>
-            <div class="mb-10 px-4">
-                <div class="flex justify-between text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 mb-2">
-                    <span id="step-title">Información Personal</span>
-                    <span id="step-indicator">Paso 1 de 5</span>
-                </div>
-                <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden border border-slate-800">
-                    <div id="progress" class="progress-bar bg-blue-600 h-full w-1/5"></div>
-                </div>
 
-            </div>
-        </div>
-
-        <form id="erc-master-form" class="bg-slate-900/40 p-8 md:p-12 rounded-[3rem] border border-slate-800 shadow-2xl">
-            <div class="step active" data-title="Información Personal">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="md:col-span-2">
-                        <label class="block text-[10px] font-bold uppercase text-slate-500 mb-2 ml-2">1. Nombre completo*</label>
-                        <input type="text" name="nombre" required class="w-full bg-slate-950 border border-slate-800 rounded-2xl px-6 py-4 text-white focus:border-blue-500 outline-none transition italic">
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-bold uppercase text-slate-500 mb-2 ml-2">2. Edad*</label>
-                        <input type="number" name="edad" required class="w-full bg-slate-950 border border-slate-800 rounded-2xl px-6 py-4 text-white focus:border-blue-500 outline-none transition">
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-bold uppercase text-slate-500 mb-2 ml-2">3. Número de teléfono*</label>
-                        <input type="tel" name="telefono" required class="w-full bg-slate-950 border border-slate-800 rounded-2xl px-6 py-4 text-white focus:border-blue-500 outline-none transition" placeholder="+505">
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-bold uppercase text-slate-500 mb-2 ml-2">4. Correo electrónico</label>
-                        <input type="email" name="email" required class="w-full bg-slate-950 border border-slate-800 rounded-2xl px-6 py-4 text-white focus:border-blue-500 outline-none transition">
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-bold uppercase text-slate-500 mb-2 ml-2">5. Dirección</label>
-                        <input type="text" name="direccion" required class="w-full bg-slate-950 border border-slate-800 rounded-2xl px-6 py-4 text-white focus:border-blue-500 outline-none transition">
-                    </div>
-                </div>
-            </div>
-
-            <div class="step" data-title="Experiencia Académica">
-                <div class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-[10px] font-bold uppercase text-slate-500 mb-2 ml-2">6. ¿Estudia actualmente?*</label>
-                            <select name="estudia_actualmente" id="cond-estudia" onchange="toggleField('cond-estudia', ['institucion'], 'Sí')" class="w-full bg-slate-950 border border-slate-800 rounded-2xl px-6 py-4 text-slate-300 outline-none">
-                                <option value=""> Seleccione...</option>
-                                <option value="Sí">Sí</option>
-                                <option value="No">No</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label id="label-institucion" class="block text-[10px] font-bold uppercase text-slate-700 mb-2 ml-2">7. Nombre de Institución</label>
-                            <input type="text" id="institucion" name="institucion" disabled class="w-full bg-slate-900 border border-slate-800 rounded-2xl px-6 py-4 text-slate-500 outline-none transition italic cursor-not-allowed">
-                        </div>
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-[10px] font-bold uppercase text-slate-500 mb-2 ml-2">8. ¿Cuánto tiempo ha estudiado inglés?*</label>
-                            <input type="text" name="tiempo_estudio" required class="w-full bg-slate-950 border border-slate-800 rounded-2xl px-6 py-4 text-white outline-none">
-                        </div>
-                        <div>
-                            <label class="block text-[10px] font-bold uppercase text-slate-500 mb-2 ml-2">10. Nivel CEFR estimado</label>
-                            <select name="nivel_cefr" class="w-full bg-slate-950 border border-slate-800 rounded-2xl px-6 py-4 text-slate-300 outline-none">
-                                <option value=""> Seleccione...</option>
-                                <option>A1</option><option>A2</option><option>B1</option><option>B2</option><option>C1</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-bold uppercase text-slate-500 mb-2 ml-2">9. ¿Cómo se siente con su nivel actual?*</label>
-                        <textarea name="sentimiento_nivel" required class="w-full bg-slate-950 border border-slate-800 rounded-2xl px-6 py-4 text-white h-20 outline-none"></textarea>
-                    </div>
-                </div>
-            </div>
-
-            <div class="step" data-title="Metas y Dificultades">
-                <div class="space-y-6">
-                    <div>
-                        <label class="block text-[10px] font-bold uppercase text-slate-500 mb-2 ml-2">11. ¿Cuál ha sido su mayor dificultad?*</label>
-                        <textarea name="dificultad" required class="w-full bg-slate-950 border border-slate-800 rounded-2xl px-6 py-4 text-white h-24 outline-none"></textarea>
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-bold uppercase text-slate-500 mb-2 ml-2">12. ¿Qué le gustaría mejorar específicamente?*</label>
-                        <input type="text" name="mejora_especifica" required class="w-full bg-slate-950 border border-slate-800 rounded-2xl px-6 py-4 text-white outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-bold uppercase text-slate-500 mb-2 ml-2">13. ¿Cuáles son sus metas principales?*</label>
-                        <textarea name="metas" required class="w-full bg-slate-950 border border-slate-800 rounded-2xl px-6 py-4 text-white h-24 outline-none"></textarea>
-                    </div>
-                </div>
-            </div>
-
-            <div class="step" data-title="Laboral y Disponibilidad">
-                <div class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-[10px] font-bold uppercase text-slate-500 mb-2 ml-2">14. ¿Actualmente trabaja?*</label>
-                            <select name="trabaja" id="cond-trabaja" onchange="toggleField('cond-trabaja', ['horas_trabajo', 'horario_trabajo'], 'Sí')" class="w-full bg-slate-950 border border-slate-800 rounded-2xl px-6 py-4 text-slate-300 outline-none">
-                                <option value=""> Seleccione...</option>
-                                <option value="Sí">Sí</option>
-                                <option value="No">No</option>
-                            </select>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <label id="label-horas_trabajo" class="block text-[10px] font-bold uppercase text-slate-700 mb-2">15. Horas/día</label>
-                                <input type="number" id="horas_trabajo" name="horas_trabajo" disabled class="w-full bg-slate-900 border border-slate-800 rounded-2xl px-4 py-4 text-slate-500 outline-none cursor-not-allowed">
-                            </div>
-                            <div>
-                                <label id="label-horario_trabajo" class="block text-[10px] font-bold uppercase text-slate-700 mb-2">16. Horario</label>
-                                <input type="text" id="horario_trabajo" name="horario_trabajo" disabled class="w-full bg-slate-900 border border-slate-800 rounded-2xl px-4 py-4 text-slate-500 outline-none cursor-not-allowed">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-[10px] font-bold uppercase text-slate-500 mb-2 ml-2">17. ¿Tiene con quién practicar?</label>
-                            <select name="practica_companero" class="w-full bg-slate-950 border border-slate-800 rounded-2xl px-6 py-4 text-slate-300 outline-none">
-                                <option value=""> Seleccione...</option>
-                                <option>No</option><option>Sí</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-[10px] font-bold uppercase text-slate-500 mb-2 ml-2">18. Horas/semana para estudio*</label>
-                            <input type="text" name="horas_estudio" required class="w-full bg-slate-950 border border-slate-800 rounded-2xl px-6 py-4 text-white outline-none">
-                        </div>
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-[10px] font-bold uppercase text-slate-500 mb-2 ml-2">19. ¿Disponible fines de semana?*</label>
-                            <select name="dispo_finde" required class="w-full bg-slate-950 border border-slate-800 rounded-2xl px-6 py-4 text-slate-300 outline-none">
-                                <option value=""> Seleccione...</option>
-                                <option>Sí</option><option>No</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-[10px] font-bold uppercase text-slate-500 mb-2 ml-2">20. Horario de preferencia</label>
-                            <input type="text" name="horario_pref" placeholder="Ej: Mañanas" required class="w-full bg-slate-950 border border-slate-800 rounded-2xl px-6 py-4 text-white outline-none italic">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="step" data-title="Confirmación Final">
-                <div class="space-y-6">
-                    <div>
-                        <label class="block text-[10px] font-bold uppercase text-slate-500 mb-2 ml-2">21. Comentarios o preguntas adicionales</label>
-                        <textarea name="comentarios" required class="w-full bg-slate-950 border border-slate-800 rounded-2xl px-6 py-4 text-white h-24 outline-none italic"></textarea>
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-[10px] font-bold uppercase text-slate-500 mb-2 ml-2">Preferencia WhatsApp*</label>
-                            <select name="pref_whatsapp" required class="w-full bg-slate-950 border border-slate-800 rounded-2xl px-6 py-4 text-slate-300 outline-none">
-                                <option value=""> Seleccione...</option>
-                                <option>Mensaje escrito</option>
-                                <option>Nota de voz</option>
-                                <option>Llamada</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-[10px] font-bold uppercase text-slate-500 mb-2 ml-2">Idioma de contacto*</label>
-                            <select name="idioma_contacto" required class="w-full bg-slate-950 border border-slate-800 rounded-2xl px-6 py-4 text-slate-300 outline-none">
-                                <option value=""> Seleccione...</option>
-                                <option>Español</option>
-                                <option>Inglés</option>
-                                <option>Ambos</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex justify-between items-center mt-12 pt-8 border-t border-slate-800/50">
-                <button type="button" id="prevBtn" class="erc-action px-8 py-4 text-[10px] font-black uppercase tracking-widest text-slate-500 hover:text-white transition invisible">Anterior</button>
-                <div class="flex gap-4">
-                    <button type="button" id="nextBtn" class="erc-action bg-blue-600 hover:bg-blue-700 px-10 py-4 rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] transition-all">Siguiente</button>
-                    <button type="submit" id="submitBtn" formnovalidate class="erc-action hidden bg-emerald-600 hover:bg-emerald-700 px-10 py-4 rounded-2xl font-black uppercase tracking-[0.2em] text-[10px] transition-all">
-                        Finalizar Registro
-                    </button>
-                </div>
-            </div>
-        </form>
-
-        <div id="success-message" class="bg-slate-900/60 p-12 rounded-[3rem] border border-emerald-500/30 shadow-2xl flex-col items-center text-center">
-            <div class="w-20 h-20 bg-emerald-500/20 rounded-full flex items-center justify-center mb-6">
-                <i class="fa-solid fa-check text-4xl text-emerald-500"></i>
-            </div>
-            <h3 class="text-3xl font-black italic uppercase tracking-tighter mb-4">¡Registro Recibido!</h3>
-            <p class="text-slate-400 text-lg font-light italic leading-relaxed max-w-md">Tu camino hacia la fluidez cognitiva ha comenzado. Un especialista de <span class="text-white font-bold">ERC Academy</span> te contactará pronto.</p>
-            <button onclick="goToHero()" class="erc-action mt-8 text-[10px] font-black uppercase tracking-[0.3em] text-blue-500 hover:text-white transition">
-                Volver al inicio
-            </button>
-        </div>
-    </section>
+<section id="contact" class="erc-contact-section"><div class="erc-contact-wrap"><header><p class="erc-eyebrow">Demos el primer paso</p><h2>Cuéntanos qué quieres lograr</h2><p>Reserva una clase gratis de 30 minutos por Google Meet para compartir tus metas y resolver dudas.</p><a class="erc-action erc-book" href="https://calendar.app.google/dT9HURDSafqhZkSd6" target="_blank" rel="noopener noreferrer">Reserva tu clase gratis</a><p class="erc-contact-hours">¿Prefieres escribir? Prepara tu consulta por WhatsApp.<br>Atención: lunes a sábado, 8:00 a. m.–7:00 p. m., hora de Nicaragua.</p></header><form id="erc-contact-form"><h3>Escríbenos por WhatsApp</h3><label for="contact-name">Tu nombre</label><input id="contact-name" name="nombre" autocomplete="given-name" required maxlength="100"><label for="contact-phone">Tu WhatsApp (con código de país)</label><input id="contact-phone" name="telefono" type="tel" autocomplete="tel" placeholder="+505 8888 8888" required minlength="7" maxlength="25"><label for="contact-goal">¿Qué te gustaría lograr con tu inglés?</label><textarea id="contact-goal" name="metas" required maxlength="1000" rows="3" placeholder="Por ejemplo: retomar mis clases o conversar con más confianza."></textarea><p id="contact-help">Al continuar, se abrirá WhatsApp con tu mensaje. Revísalo y pulsa Enviar para compartirlo con ERC.</p><button class="erc-action erc-contact-submit" type="submit" aria-describedby="contact-help">Continuar en WhatsApp ↗</button><noscript><p><a href="https://wa.me/50575281644">Abrir WhatsApp directamente</a></p></noscript></form></div></section>
 
     <nav aria-label="Más información de ERC Academy" class="erc-resource-links"><a href="/clases-ingles-online/">Clases online</a><a href="/clases-particulares-ingles/">Tutorías</a><a href="/metodo-y-profesor/">Profesor</a><a href="/guias/ingles-atencion-cliente/">Guía de inglés</a></nav>
 <footer id="legal" class="py-20 flex flex-col items-center border-t border-slate-900/50 px-6">
@@ -516,10 +209,10 @@
             ERC Academy<span class="text-blue-500">.</span>
         </div>
         <div class="flex justify-center gap-8 mb-10 text-xl text-slate-500">
-            <a href="https://www.youtube.com/@ERCNic" target="_blank" class="hover:text-red-600 transition"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://www.tiktok.com/@erc.nic" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-tiktok"></i></a>
-            <a href="https://www.facebook.com/ercnica/" target="_blank" class="hover:text-blue-600 transition"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://www.instagram.com/erc.nic/" target="_blank" class="hover:text-pink-500 transition"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@ERCNic" target="_blank" class="hover:text-red-600 transition" aria-label="Youtube"><i aria-hidden="true" class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@erc.nic" target="_blank" class="hover:text-white transition" aria-label="Tiktok"><i aria-hidden="true" class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/ercnica/" target="_blank" class="hover:text-blue-600 transition" aria-label="Facebook"><i aria-hidden="true" class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/erc.nic/" target="_blank" class="hover:text-pink-500 transition" aria-label="Instagram"><i aria-hidden="true" class="fa-brands fa-instagram"></i></a>
             <!--<a href="https://maps.app.goo.gl/DaoFgtYor6YuGGYM8" target="_blank" class="hover:text-green-500 transition"><i class="fa-solid fa-location-dot"></i></a>-->
         </div>
         <p class="text-slate-600 text-[9px] uppercase tracking-[0.5em] font-bold text-center mb-12">
@@ -536,12 +229,13 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/50575281644" target="_blank" class="erc-action fixed bottom-8 right-8 z-[100] bg-emerald-500 hover:bg-emerald-600 w-16 h-16 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(16,185,129,0.4)] transition-all hover:scale-110 group">
+    <a href="https://wa.me/50575281644" target="_blank" aria-label="Escribir a ERC por WhatsApp" class="erc-action fixed bottom-8 right-8 z-[100] bg-emerald-500 hover:bg-emerald-600 w-16 h-16 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(16,185,129,0.4)] transition-all hover:scale-110 group">
         <i class="fa-brands fa-whatsapp text-3xl text-white"></i>
         <span class="absolute right-20 bg-emerald-500 text-white text-[9px] font-bold px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap uppercase tracking-[0.2em] shadow-xl">¿Habla con un asesor ahora?</span>
     </a>
 
-<script src="script.js"></script>
+<script src="/ux.js" defer></script>
 <script src="reviews-carousel.js" defer></script>
 </body>
 </html>
+
