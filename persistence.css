@@ -44,3 +44,10 @@
 @media(hover:hover){.erc-persistence-stat:hover{translate:0 -3px;border-color:#3b82f6}.erc-persistence a:hover{text-decoration:underline}}
 @media(max-width:760px){.erc-persistence{padding:56px 20px}.erc-persistence-charts{grid-template-columns:1fr}.erc-persistence-stat,.erc-persistence-action-panel{padding:24px}.erc-persistence-actions{grid-template-columns:1fr;gap:20px}.erc-persistence-actions article+article{border-left:0;border-top:1px solid #24436c;padding-left:0;padding-top:20px}.erc-persistence-action-footer{align-items:stretch;flex-direction:column;gap:18px}.erc-persistence-context>div{align-items:flex-start;flex-direction:column;gap:8px}.erc-chart-description{min-height:0}}
 @media(prefers-reduced-motion:reduce){.erc-persistence *{animation:none!important;transition:none!important}.erc-persistence-stat:hover{translate:none}}
+
+/* Center the introduction above the charts. */
+.erc-persistence-heading{margin-inline:auto;text-align:center}
+.erc-persistence-heading>p:last-child{margin-inline:auto}
+.erc-persistence-icon{display:flex;align-items:center;justify-content:center;width:64px;height:64px;margin:0 auto 24px;border-radius:20px;border:1px solid #24436c;background:linear-gradient(145deg,#10294d,#071020);color:#60a5fa;font-size:30px;box-shadow:0 10px 32px rgba(37,99,235,.12)}
+.erc-persistence-scope{max-width:850px;margin:22px auto 36px;text-align:center}
+@media(max-width:600px){.erc-persistence-icon{width:56px;height:56px;font-size:26px;margin-bottom:20px}.erc-persistence-scope{margin-bottom:28px}}
