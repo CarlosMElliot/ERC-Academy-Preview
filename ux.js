@@ -48,13 +48,13 @@
     // Open synchronously from the click so popup blockers do not depend on the email request.
     window.open(url, '_blank', 'noopener,noreferrer');
     if (lastAccepted === message) {
-      status.textContent = 'Esta consulta ya fue procesada. En WhatsApp, revisa el mensaje y pulsa Enviar.';
+      status.textContent = 'Consulta ya procesada. Continúa en WhatsApp.';
       return;
     }
     sending = true;
     button.disabled = true;
     button.textContent = 'Enviando consulta…';
-    status.textContent = 'Procesando tu consulta por correo. En WhatsApp, pulsa Enviar para compartir el mensaje.';
+    status.textContent = 'Enviando tu consulta…';
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 15000);
     try {
@@ -73,14 +73,14 @@
       const result = await response.json();
       if (!response.ok || !(result.success === true || result.success === 'true')) throw new Error('Submission not accepted');
       lastAccepted = message;
-      status.textContent = 'Consulta procesada por el servicio de correo. Para enviarla también por WhatsApp, revisa el mensaje y pulsa Enviar.';
+      status.textContent = 'Consulta procesada. Continúa en WhatsApp.';
     } catch {
-      status.textContent = 'No pudimos confirmar el envío por correo. Tus datos siguen aquí: puedes reintentar o enviarlos por WhatsApp.';
+      status.textContent = 'No pudimos confirmar el correo. Reintenta o usa WhatsApp.';
     } finally {
       clearTimeout(timeout);
       sending = false;
       button.disabled = false;
-      button.textContent = 'Enviar consulta y abrir WhatsApp ↗';
+      button.textContent = 'Enviar consulta ↗';
     }
   });
 })();
