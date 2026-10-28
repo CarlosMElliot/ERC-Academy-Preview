@@ -432,3 +432,16 @@ body.erc-light{background:#051326;color:#d5dadd;color-scheme:dark}
  .erc-light #methodology .erc-learning-steps article>p,
  .erc-light #seguir-aprendiendo .erc-persistence-actions article>p { margin:0; }
 }
+
+/* Center the complete support card in its single-column mobile layout. */
+@media(max-width:760px) {
+ .erc-light #seguir-aprendiendo .erc-persistence-action-panel,
+ .erc-light #seguir-aprendiendo .erc-persistence-action-heading,
+ .erc-light #seguir-aprendiendo .erc-persistence-actions article,
+ .erc-light #seguir-aprendiendo .erc-persistence-action-footer { text-align:center; }
+ .erc-light #seguir-aprendiendo .erc-persistence-actions article>p,
+ .erc-light #seguir-aprendiendo .erc-persistence-action-footer p { margin-inline:auto; max-width:38ch; }
+ .erc-light #seguir-aprendiendo .erc-persistence-actions .erc-action-step { display:block; text-align:center; }
+ .erc-light #seguir-aprendiendo .erc-persistence-action-footer>div { width:100%; }
+ .erc-light #seguir-aprendiendo .erc-persistence-action-footer .erc-persistence-cta { width:100%; justify-content:center; }
+}
