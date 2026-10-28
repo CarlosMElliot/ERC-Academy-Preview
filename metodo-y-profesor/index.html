@@ -10,55 +10,152 @@
 <meta property="og:image" content="https://ercacademynic.com/about_us.jpg">
 <meta property="og:image:alt" content="Carlos Mercado, instructor de ERC Academy">
 <meta name="twitter:card" content="summary">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "EducationalOrganization", "name": "ERC Academy", "url": "https://ercacademynic.com/", "description": "Clases de inglés y práctica guiada para estudiantes en Nicaragua.", "email": "erc.academianic@gmail.com", "telephone": "+50575281644", "sameAs": ["https://www.instagram.com/erc.nic/", "https://www.facebook.com/ercnica/", "https://www.youtube.com/@ERCNic"]}</script><script src="https://cdn.tailwindcss.com"></script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="/content.css"><link rel="stylesheet" href="/styles.css"><style>h1,h2{font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:-.04em}header>a{font-weight:900;color:white;font-size:24px}main>img{border-radius:50%;border:4px solid #1e293b;margin:24px 0 40px}.cta{font-weight:800;text-transform:uppercase;font-size:12px;letter-spacing:.1em;border-radius:12px}.card{border-radius:32px;background:rgba(15,23,42,.4)}</style><link rel="stylesheet" href="/motion.css"><script src="/motion.js" defer></script><style>
-body.method-page{background:#051326;color:#c2ccd3}
-.method-page header,.method-page main,.method-page footer{max-width:1120px}
-.method-page h1,.method-page h2,.method-page h3{font-style:normal;text-transform:none;letter-spacing:-.025em;color:#e4e7e5}
-.method-page h1{font-size:clamp(34px,5vw,58px);font-weight:800;max-width:850px;margin:16px auto 24px}
-.method-page h2{font-size:clamp(26px,3vw,34px);font-weight:800;margin:0 0 20px;line-height:1.2}
-.method-page h3{font-size:19px;line-height:1.4;font-weight:700;margin:0 0 12px}
-.method-page p{margin:0 0 18px}
-.method-page .method-hero{text-align:center;padding:36px 0 56px;border-bottom:1px solid #20496b}
-.method-page .method-hero>p:last-child{max-width:740px;margin:auto;font-size:20px}
-.method-page .eyebrow{font-size:12px;color:#71d6ef;letter-spacing:.14em}
-.method-page section{margin-top:56px}
-.method-page .method-bio{display:grid;grid-template-columns:160px minmax(0,1fr);gap:32px;align-items:center}
-.method-page .method-bio img{width:160px;height:160px;border-radius:50%;object-fit:cover;border:2px solid #28516b}
-.method-page .method-principles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;list-style:none;counter-reset:principles;padding:0;margin:24px 0 0}
-.method-page .method-principles li{counter-increment:principles;margin:0;padding:24px;background:#0b2744;border:1px solid #20496b;border-radius:18px}
-.method-page .method-principles li::before{content:counter(principles,decimal-leading-zero);display:block;color:#71d6ef;font-size:25px;font-weight:800;margin-bottom:16px}
-.method-page .method-principles p{font-size:16px;margin:0}
-.method-page .method-value{padding-left:24px}
-.method-page .method-value li{padding-left:8px;margin-bottom:16px}
-.method-page .method-value li::marker{color:#71d6ef}
-.method-page details{border-bottom:1px solid #28516b;padding:18px 0}
-.method-page summary{cursor:pointer;font-weight:700;color:#e4e7e5;min-height:44px}
-.method-page details p{padding-top:12px;margin-bottom:0}
-.method-page .method-closing{padding:36px;background:#0b2744;border:1px solid #28516b;border-radius:20px;text-align:center}
-.method-page .method-closing p{max-width:680px;margin:0 auto 24px}
-.method-page .cta{font-size:16px;letter-spacing:0;text-transform:none;min-height:48px}
-.method-page nav a{display:inline-flex;align-items:center;min-height:44px}
-@media(max-width:600px){
- .method-page header,.method-page main,.method-page footer{padding:20px}
- .method-page header{gap:8px}
- .method-page nav{gap:16px}
- .method-page .method-hero{padding:24px 0 36px}
- .method-page .method-hero>p:last-child{font-size:17px}
- .method-page section{margin-top:40px}
- .method-page .method-bio{grid-template-columns:1fr;gap:24px}
- .method-page .method-bio img{margin:auto;width:144px;height:144px}
- .method-page h2{text-align:center}
- .method-page .method-principles{grid-template-columns:1fr}
- .method-page .method-closing{padding:28px 20px}
- .method-page .cta{width:100%;text-align:center}
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "EducationalOrganization", "name": "ERC Academy", "url": "https://ercacademynic.com/", "description": "Clases de inglés y práctica guiada para estudiantes en Nicaragua.", "email": "erc.academianic@gmail.com", "telephone": "+50575281644", "sameAs": ["https://www.instagram.com/erc.nic/", "https://www.facebook.com/ercnica/", "https://www.youtube.com/@ERCNic"]}</script><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="/content.css"><style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body.method-page{margin:0;background:#051326;color:#c2ccd3;font-family:Inter,system-ui,sans-serif;font-size:17px;line-height:1.75}
+.method-page h1,.method-page h2,.method-page h3{color:#e4e7e5;font-style:normal;text-transform:none;letter-spacing:-.035em;font-weight:800}
+.method-page h1{font-size:clamp(34px,4.4vw,58px);line-height:1.12;margin:16px 0 24px}
+.method-page h1 span{color:#71d6ef}
+.method-page h2{font-size:clamp(28px,3.2vw,42px);line-height:1.17;margin:12px 0 24px}
+.method-page h3{font-size:18px;line-height:1.4;margin:0;letter-spacing:-.02em}
+.method-page p{margin:0 0 20px}
+.method-page .eyebrow{color:#71d6ef;font-size:11px;letter-spacing:.15em;font-weight:800;margin:0}
+.method-page main,.method-page footer{max-width:1240px;margin:auto;padding:0 32px}
+.method-page .method-header{position:sticky;top:0;z-index:20;max-width:none;padding:16px max(24px,calc((100vw - 1176px)/2));display:flex;align-items:center;justify-content:space-between;gap:20px;background:#06182ef5;border-bottom:1px solid #20496b;backdrop-filter:blur(12px)}
+.method-page .method-brand{font-size:22px;font-weight:800;letter-spacing:-.05em;text-decoration:none;white-space:nowrap;color:#e4e7e5}
+.method-page .method-brand span{color:#71d6ef}
+.method-page nav{display:flex;gap:24px;align-items:center;font-size:13px}
+.method-page nav a{min-height:44px;display:flex;align-items:center;text-decoration:none}
+.method-page a{color:#71d6ef}
+.method-page .cta{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:48px;padding:14px 22px;background:#075bd8;border:1px solid #3585ee;border-radius:10px;color:#fff;text-decoration:none;font-size:14px;font-weight:700;line-height:1.5;transition:background .2s,transform .2s}
+.method-page .cta:hover{background:#086de8;transform:translateY(-2px)}
+.method-page .method-text-link{display:inline-flex;align-items:center;gap:14px;min-height:44px;font-size:14px;font-weight:600;text-underline-offset:6px}
+.method-page a:focus-visible,.method-page summary:focus-visible{outline:3px solid #71d6ef;outline-offset:5px;border-radius:6px}
+.method-page .method-hero{display:grid;grid-template-columns:1.12fr .88fr;gap:32px;align-items:center;min-height:660px;padding:48px 0}
+.method-page .method-hero-copy{position:relative;z-index:1}
+.method-page .method-lead{font-size:17px;max-width:54ch}
+.method-page .method-hero-actions{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;margin-top:30px}
+.method-page .method-hero-visual{position:relative;min-width:0;isolation:isolate;border-radius:28px;overflow:hidden;border:1px solid #20496b;background:#071a31}
+.method-page .method-hero-visual img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.method-page .method-image-label{position:absolute;bottom:0;inset-inline:0;padding:40px 22px 20px;background:linear-gradient(transparent,#051326f2);display:flex;justify-content:space-between;align-items:end;gap:14px}
+.method-page .method-image-label>span{font-size:9px;letter-spacing:.12em;color:#dce6ee;font-weight:700}
+.method-sound{height:38px;display:flex;align-items:center;gap:3px}
+.method-sound i{display:block;height:var(--bar);width:3px;border-radius:3px;background:#71d6ef;animation:method-wave 1s ease-in-out var(--delay) 3 alternate}
+@keyframes method-wave{from{transform:scaleY(.4)}to{transform:scaleY(1)}}
+.method-page .method-route{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-block:1px solid #20496b;margin:0 0 72px}
+.method-page .method-route a{display:flex;gap:16px;padding:22px 18px;font-size:13px;font-weight:700;text-decoration:none}
+.method-page .method-route a+a{border-left:1px solid #20496b}
+.method-page .method-route span{color:#c2ccd3}
+.method-page section:not(.method-hero){margin:0 0 88px}
+.method-page .method-split{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,6vw,80px);align-items:center}
+.method-page .method-photo{position:relative;overflow:hidden;border-radius:24px;background:#071a31;border:1px solid #20496b}
+.method-page .method-photo img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover}
+.method-page .method-photo-tag{position:absolute;bottom:20px;left:20px;right:20px;background:#06182ee8;border:1px solid #28516b;border-radius:10px;padding:10px 16px;font-size:12px;color:#dce6ee}
+.method-page .method-offer{display:grid;grid-template-columns:.7fr 1.3fr;gap:48px;border-block:1px solid #20496b;padding:40px 0}
+.method-page .method-offer>p{margin:0}
+.method-page .method-principles-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:start}
+.method-page .method-principles-intro{position:sticky;top:110px}
+.method-page .method-hint{font-size:14px}
+.method-page .method-principles-photo{border-radius:20px;overflow:hidden;max-width:320px;border:1px solid #20496b}
+.method-page .method-principles-photo img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;object-position:50% 20%}
+.method-page .method-principles{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.method-page .method-principles li{margin:0;background:#0b2744;border:1px solid #20496b;border-radius:16px;transition:border-color .2s,background .2s}
+.method-page .method-principles li:hover{border-color:#3b7d9c}
+.method-page details{border:0}
+.method-page summary{cursor:pointer;list-style:none}
+.method-page summary::-webkit-details-marker{display:none}
+.method-page .method-principles summary{display:grid;grid-template-columns:34px minmax(0,1fr) 20px;gap:16px;align-items:center;padding:22px}
+.method-page .method-principle-number{color:#71d6ef;font-size:22px;line-height:1;font-weight:800}
+.method-plus{width:18px;height:18px;position:relative;display:block}
+.method-plus::before,.method-plus::after{content:"";position:absolute;top:8px;left:2px;width:14px;height:2px;background:#71d6ef;transition:transform .2s}
+.method-plus::after{transform:rotate(90deg)}
+details[open] .method-plus::after{transform:rotate(0)}
+.method-page .method-principles details>p{padding:0 22px 24px 72px;font-size:15px;margin:0}
+.method-page details[open]>p{animation:method-answer .25s ease-out}
+@keyframes method-answer{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}
+.method-page .method-outcomes{grid-template-columns:1.1fr .9fr}
+.method-page .method-value{padding:0;list-style:none;margin:0}
+.method-page .method-value li{position:relative;padding:16px 0 16px 30px;border-bottom:1px solid #20496b;margin:0}
+.method-page .method-value li::before{content:"↗";position:absolute;left:0;color:#71d6ef}
+.method-page .method-faq{max-width:850px;margin-inline:auto!important}
+.method-page .method-faq>h2{text-align:center;margin-bottom:32px}
+.method-page .method-faq details{border-bottom:1px solid #28516b;padding:20px 0}
+.method-page .method-faq summary{font-weight:700;color:#e4e7e5;min-height:44px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.method-page .method-faq summary::after{content:"+";color:#71d6ef;font-size:24px}
+.method-page .method-faq details[open] summary::after{content:"−"}
+.method-page .method-faq details p{margin:10px 0 0}
+.method-page .method-fit{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.method-page .method-closing{padding:36px;border-radius:24px;border:1px solid #28516b;background:linear-gradient(145deg,#103351,#071a31)}
+.method-closing-mark{display:block;font-size:46px;color:#71d6ef;line-height:1;margin-bottom:24px}
+.method-page footer{padding-block:32px;border-top:1px solid #20496b;font-size:13px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.method-page footer p{margin:0;overflow-wrap:anywhere}
+.method-skip{position:fixed;top:-100px;left:16px;z-index:100;padding:12px;background:#075bd8;color:#fff!important}
+.method-skip:focus{top:12px}
+.method-reveal-pending{opacity:0;transform:translateY(20px)}
+[data-method-reveal]{transition:opacity .6s ease,transform .6s ease}
+@media(max-width:900px){
+ .method-page .method-hero{grid-template-columns:1fr 1fr;gap:24px;min-height:0}
+ .method-page .method-principles-layout{grid-template-columns:.7fr 1.3fr;gap:24px}
+ .method-page .method-fit{gap:24px}
 }
-</style></head><body class="method-page"><header><a href="/">ERC Academy.</a><nav aria-label="Navegación principal"><a href="/clases-ingles-online/">Clases online</a><a href="/clases-particulares-ingles/">Tutorías</a><a href="/metodo-y-profesor/">Profesor</a></nav></header><main id="content">
-<div class="method-hero"><p class="eyebrow">ERC ACADEMY · NICARAGUA</p><h1>Aprende inglés de la forma en que tu cerebro está diseñado para aprender.</h1><p>Un programa selectivo, orientado por la neurociencia, para quienes quieren dejar de memorizar y están listos para comprender, responder y hablar.</p></div>
-<section class="method-bio" aria-labelledby="who-title"><img src="/about_us.jpg" alt="Carlos Mercado, fundador de ERC Academy" width="160" height="160" loading="lazy"><div><h2 id="who-title">Quién soy</h2><p>Soy Carlos Mercado, fundador de ERC Academy en Nicaragua y creador del método de Activación Auditiva y Acondicionamiento Neuroplástico.</p><p>No me limito a dirigir un aula. Entreno la forma en que las personas escuchan, recuerdan y responden, para que el inglés deje de ser algo que estudian y se convierta en algo que usan.</p></div></section>
-<section aria-labelledby="offer-title"><h2 id="offer-title">Qué ofrezco</h2><p>Un programa de entrenamiento a largo plazo que reconstruye tu relación con el inglés desde la base, empezando por el sonido. No encontrarás atajos ni promesas exageradas. Tendrás un camino estructurado y honesto, con acompañamiento personal, retroalimentación constante y un método diseñado para desarrollar una comprensión y una comunicación reales.</p></section>
-<section aria-labelledby="principles-title"><h2 id="principles-title">Los principios del método</h2><ol class="method-principles"><li><h3>Primero el sonido, después el significado.</h3><p>Los niños escuchan un idioma mucho antes de leerlo. Por eso empezamos donde el cerebro empieza de forma natural.</p></li><li><h3>El idioma se procesa en tiempo real, no se memoriza.</h3><p>Conocer palabras en el papel es distinto de comprenderlas a velocidad natural. Entrenamos lo segundo.</p></li><li><h3>Neuroplasticidad.</h3><p>Con la repetición, la variedad y los intervalos adecuados, el cerebro crea nuevas conexiones a cualquier edad.</p></li><li><h3>Superar la curva del olvido.</h3><p>La práctica se distribuye en el tiempo para que lo aprendido se quede contigo.</p></li><li><h3>Frases completas antes que reglas.</h3><p>Asimilas frases completas y naturales, y la gramática se afianza con el uso.</p></li><li><h3>Mente y cuerpo juntos.</h3><p>La voz, el ritmo y el movimiento forman parte de cómo se consolida el aprendizaje.</p></li><li><h3>Progreso, no niveles.</h3><p>No te etiquetamos como principiante o avanzado. Evaluamos tu esfuerzo, tu perseverancia y la facilidad con la que comprendes y respondes.</p></li><li><h3>Honestidad.</h3><p>Sin promesas de fluidez exprés. Los resultados llegan al hacer el trabajo.</p></li></ol></section>
-<section aria-labelledby="value-title"><h2 id="value-title">Lo que te llevas</h2><ul class="method-value"><li>Comprendes el inglés <em>hablado</em>, no solo el escrito.</li><li>Hablas con un ritmo natural y una pronunciación clara.</li><li>Recuerdas lo aprendido bajo presión, cuando lo necesitas.</li><li>Ganas confianza porque confías en lo que escuchas y en tu capacidad para expresarte.</li><li>Recibes acompañamiento y seguimiento, no un curso que abres una vez al mes y luego olvidas.</li></ul></section>
-<section aria-labelledby="questions-title"><h2 id="questions-title">Preguntas con respuestas honestas</h2><details open><summary>¿Por qué no empezar con la gramática?</summary><p>Porque un niño no empieza por ahí. La gramática llega después y se afianza porque ya le resulta familiar.</p></details><details><summary>¿Voy a entender todo desde el principio?</summary><p>No, y no se espera que lo hagas. La comprensión crece poco a poco, sobre una base sólida.</p></details><details><summary>¿Es para todo el mundo?</summary><p>No.</p></details></section>
-<section aria-labelledby="learners-title"><h2 id="learners-title">Para quién es</h2><p>Para personas comprometidas, con una meta clara y una razón personal para aprender inglés, dispuestas a salir de su zona de comodidad, crecer a largo plazo y asumir la responsabilidad de su propio progreso. No está dirigido a estudiantes avanzados que solo buscan perfeccionar su gramática. Cada estudiante empieza con una entrevista de admisión, porque el método funciona mejor con quienes están preparados para asumir este compromiso.</p></section>
-<section class="method-closing" aria-label="Reserva tu entrevista de admisión"><p>Aquí no se trata de llevarte de la mano para memorizar vocabulario. Se trata de transformar hábitos, un sonido a la vez. Si ese es el cambio que buscas, hablemos.</p><a class="cta" href="https://calendar.app.google/dT9HURDSafqhZkSd6" target="_blank" rel="noopener noreferrer">Reserva tu entrevista de admisión</a></section>
-</main><footer><a href="/">Inicio</a> · <a href="/#contact">Inscripción</a> · <a href="/guias/ingles-atencion-cliente/">Guía de atención al cliente</a><p>ERC Academy · erc.academianic@gmail.com</p></footer></body></html>
+@media(max-width:700px){
+ html{scroll-padding-top:90px}
+ .method-page main,.method-page footer{padding-inline:20px}
+ .method-page .method-header{padding:12px 20px;gap:12px}
+ .method-page .method-brand{font-size:20px}
+ .method-page nav{gap:0}
+ .method-page nav a:not(:last-child){display:none}
+ .method-page .method-hero{grid-template-columns:1fr;padding:36px 0;gap:28px}
+ .method-page .method-hero-copy{text-align:center}
+ .method-page h1{font-size:clamp(32px,8.6vw,44px)}
+ .method-page .method-hero-actions{justify-content:center;flex-direction:column;gap:10px}
+ .method-page .method-hero-actions .cta{width:100%}
+ .method-page .method-hero-visual{width:100%;max-width:420px;margin:auto}
+ .method-page .method-hero-visual img{aspect-ratio:1;object-position:50% 20%}
+ .method-page .method-route{margin-bottom:44px}
+ .method-page .method-route a{flex-direction:column;gap:5px;padding:16px 8px;text-align:center;font-size:11px}
+ .method-page section:not(.method-hero){margin-bottom:48px}
+ .method-page .method-split,.method-page .method-offer,.method-page .method-principles-layout,.method-page .method-fit{grid-template-columns:1fr;gap:28px}
+ .method-page .method-copy>h2,.method-page .method-copy>.eyebrow,.method-page .method-offer>div,.method-page .method-principles-intro,.method-page .method-fit>div>h2,.method-page .method-fit>div>.eyebrow{text-align:center}
+ .method-page .method-offer{padding:32px 0}
+ .method-page .method-principles-intro{position:static}
+ .method-page .method-principles-photo{max-width:260px;margin:auto}
+ .method-page .method-principles summary{padding:18px 16px;gap:12px;grid-template-columns:30px minmax(0,1fr) 18px}
+ .method-page .method-principles h3{font-size:17px}
+ .method-page .method-principles details>p{padding:0 18px 20px}
+ .method-page .method-photo{max-width:420px;width:100%;margin-inline:auto}
+ .method-page .method-closing{padding:28px 22px;text-align:center}
+ .method-page .method-closing .cta{width:100%}
+ .method-page footer{display:block;text-align:center}
+ .method-page footer p{margin-top:16px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.method-page *{animation:none!important;transition:none!important}.method-reveal-pending{opacity:1;transform:none}}
+</style></head><body class="method-page"><a class="method-skip" href="#content">Saltar al contenido</a>
+<header class="method-header"><a class="method-brand" href="/">ERC Academy<span>.</span></a><nav aria-label="Navegación de esta página"><a href="#enfoque">El enfoque</a><a href="#principios">Los principios</a><a href="#entrevista">Hablemos <span aria-hidden="true">↗</span></a></nav></header>
+<main id="content">
+<section class="method-hero" aria-labelledby="method-title"><div class="method-hero-copy"><p class="eyebrow">ERC ACADEMY · NICARAGUA</p><h1 id="method-title">Aprende inglés de la forma en que <span>tu cerebro está diseñado para aprender.</span></h1><p class="method-lead">Un programa selectivo, orientado por la neurociencia, para quienes quieren dejar de memorizar y están listos para comprender, responder y hablar.</p><div class="method-hero-actions"><a class="cta" href="https://calendar.app.google/dT9HURDSafqhZkSd6" target="_blank" rel="noopener noreferrer">Reserva tu entrevista <span aria-hidden="true">↗</span></a><a class="method-text-link" href="#principios">Explora el método <span aria-hidden="true">↓</span></a></div></div><div class="method-hero-visual"><img class="" src="/assets/method/portrait-4.webp" alt="" width="1122" height="1402" fetchpriority="high" decoding="async"><div class="method-image-label"><span>ESCUCHAR · RECORDAR · RESPONDER</span><div class="method-sound" aria-hidden="true"><i style="--bar:12px;--delay:0s"></i><i style="--bar:22px;--delay:0.12s"></i><i style="--bar:32px;--delay:0.24s"></i><i style="--bar:18px;--delay:0.36s"></i><i style="--bar:38px;--delay:0.48s"></i><i style="--bar:24px;--delay:0.6s"></i><i style="--bar:30px;--delay:0.72s"></i><i style="--bar:18px;--delay:0.84s"></i><i style="--bar:10px;--delay:0.96s"></i></div></div></div></section>
+<div class="method-route" aria-label="Explora esta página"><a href="#instructor">01 <span>Tu instructor</span></a><a href="#principios">02 <span>El método</span></a><a href="#valor">03 <span>Tu aprendizaje</span></a></div>
+<section id="instructor" class="method-split method-bio" aria-labelledby="who-title" data-method-reveal><div class="method-photo"><img class="" src="/assets/method/portrait-1.webp" alt="" width="1254" height="1254" loading="lazy" decoding="async"><span class="method-photo-tag">Carlos Mercado · Nicaragua</span></div><div class="method-copy"><p class="eyebrow">ACOMPAÑAMIENTO PERSONAL</p><h2 id="who-title">Quién soy</h2><p>Soy Carlos Mercado, fundador de ERC Academy en Nicaragua y creador del método de Activación Auditiva y Acondicionamiento Neuroplástico.</p><p>No me limito a dirigir un aula. Entreno la forma en que las personas escuchan, recuerdan y responden, para que el inglés deje de ser algo que estudian y se convierta en algo que usan.</p><a class="method-text-link" href="#entrevista">Conversemos sobre tu meta <span aria-hidden="true">↗</span></a></div></section>
+<section id="enfoque" class="method-offer" aria-labelledby="offer-title" data-method-reveal><div><p class="eyebrow">UN COMPROMISO A LARGO PLAZO</p><h2 id="offer-title">Qué ofrezco</h2></div><p>Un programa de entrenamiento a largo plazo que reconstruye tu relación con el inglés desde la base, empezando por el sonido. No encontrarás atajos ni promesas exageradas. Tendrás un camino estructurado y honesto, con acompañamiento personal, retroalimentación constante y un método diseñado para desarrollar una comprensión y una comunicación reales.</p></section>
+<section id="principios" class="method-principles-layout" aria-labelledby="principles-title"><div class="method-principles-intro"><p class="eyebrow">LA BASE DEL ENTRENAMIENTO</p><h2 id="principles-title">Los principios<br>del método</h2><p class="method-hint">Explora cada principio.</p><div class="method-principles-photo"><img class="" src="/assets/method/portrait-2.webp" alt="" width="1122" height="1402" loading="lazy" decoding="async"></div></div><ol class="method-principles"><li data-method-reveal><details open><summary><span class="method-principle-number" aria-hidden="true">01</span><h3>Primero el sonido, después el significado.</h3><span class="method-plus" aria-hidden="true"></span></summary><p>Los niños escuchan un idioma mucho antes de leerlo. Por eso empezamos donde el cerebro empieza de forma natural.</p></details></li><li data-method-reveal><details><summary><span class="method-principle-number" aria-hidden="true">02</span><h3>El idioma se procesa en tiempo real, no se memoriza.</h3><span class="method-plus" aria-hidden="true"></span></summary><p>Conocer palabras en el papel es distinto de comprenderlas a velocidad natural. Entrenamos lo segundo.</p></details></li><li data-method-reveal><details><summary><span class="method-principle-number" aria-hidden="true">03</span><h3>Neuroplasticidad.</h3><span class="method-plus" aria-hidden="true"></span></summary><p>Con la repetición, la variedad y los intervalos adecuados, el cerebro crea nuevas conexiones a cualquier edad.</p></details></li><li data-method-reveal><details><summary><span class="method-principle-number" aria-hidden="true">04</span><h3>Superar la curva del olvido.</h3><span class="method-plus" aria-hidden="true"></span></summary><p>La práctica se distribuye en el tiempo para que lo aprendido se quede contigo.</p></details></li><li data-method-reveal><details><summary><span class="method-principle-number" aria-hidden="true">05</span><h3>Frases completas antes que reglas.</h3><span class="method-plus" aria-hidden="true"></span></summary><p>Asimilas frases completas y naturales, y la gramática se afianza con el uso.</p></details></li><li data-method-reveal><details><summary><span class="method-principle-number" aria-hidden="true">06</span><h3>Mente y cuerpo juntos.</h3><span class="method-plus" aria-hidden="true"></span></summary><p>La voz, el ritmo y el movimiento forman parte de cómo se consolida el aprendizaje.</p></details></li><li data-method-reveal><details><summary><span class="method-principle-number" aria-hidden="true">07</span><h3>Progreso, no niveles.</h3><span class="method-plus" aria-hidden="true"></span></summary><p>No te etiquetamos como principiante o avanzado. Evaluamos tu esfuerzo, tu perseverancia y la facilidad con la que comprendes y respondes.</p></details></li><li data-method-reveal><details><summary><span class="method-principle-number" aria-hidden="true">08</span><h3>Honestidad.</h3><span class="method-plus" aria-hidden="true"></span></summary><p>Sin promesas de fluidez exprés. Los resultados llegan al hacer el trabajo.</p></details></li></ol></section>
+<section id="valor" class="method-split method-outcomes" aria-labelledby="value-title" data-method-reveal><div class="method-copy"><p class="eyebrow">DEL ESTUDIO AL USO</p><h2 id="value-title">Lo que te llevas</h2><ul class="method-value"><li>Comprendes el inglés <em>hablado</em>, no solo el escrito.</li><li>Hablas con un ritmo natural y una pronunciación clara.</li><li>Recuerdas lo aprendido bajo presión, cuando lo necesitas.</li><li>Ganas confianza porque confías en lo que escuchas y en tu capacidad para expresarte.</li><li>Recibes acompañamiento y seguimiento, no un curso que abres una vez al mes y luego olvidas.</li></ul></div><div class="method-photo"><img class="" src="/assets/method/portrait-3.webp" alt="" width="1122" height="1402" loading="lazy" decoding="async"></div></section>
+<section class="method-faq" aria-labelledby="questions-title" data-method-reveal><h2 id="questions-title">Preguntas con respuestas honestas</h2><details open><summary>¿Por qué no empezar con la gramática?</summary><p>Porque un niño no empieza por ahí. La gramática llega después y se afianza porque ya le resulta familiar.</p></details><details><summary>¿Voy a entender todo desde el principio?</summary><p>No, y no se espera que lo hagas. La comprensión crece poco a poco, sobre una base sólida.</p></details><details><summary>¿Es para todo el mundo?</summary><p>No.</p></details></section>
+<section id="entrevista" class="method-fit" aria-labelledby="learners-title" data-method-reveal><div><p class="eyebrow">EL PRIMER PASO ES CONOCERNOS</p><h2 id="learners-title">Para quién es</h2><p>Para personas comprometidas, con una meta clara y una razón personal para aprender inglés, dispuestas a salir de su zona de comodidad, crecer a largo plazo y asumir la responsabilidad de su propio progreso. No está dirigido a estudiantes avanzados que solo buscan perfeccionar su gramática. Cada estudiante empieza con una entrevista de admisión, porque el método funciona mejor con quienes están preparados para asumir este compromiso.</p></div><div class="method-closing"><span class="method-closing-mark" aria-hidden="true">↗</span><p>Aquí no se trata de llevarte de la mano para memorizar vocabulario. Se trata de transformar hábitos, un sonido a la vez. Si ese es el cambio que buscas, hablemos.</p><a class="cta" href="https://calendar.app.google/dT9HURDSafqhZkSd6" target="_blank" rel="noopener noreferrer">Reserva tu entrevista de admisión</a></div></section>
+</main>
+<footer><a href="/">Volver a ERC Academy ↗</a><p>ERC Academy · <a href="mailto:erc.academianic@gmail.com">erc.academianic@gmail.com</a></p></footer><script>(() => {
+ const items = document.querySelectorAll('[data-method-reveal]');
+ const motion = matchMedia('(prefers-reduced-motion: reduce)');
+ if (!('IntersectionObserver' in window) || motion.matches) return;
+ const observer = new IntersectionObserver(entries => {
+   entries.forEach(entry => {
+     if (entry.isIntersecting) {
+       entry.target.classList.remove('method-reveal-pending');
+       observer.unobserve(entry.target);
+     }
+   });
+ }, {threshold:0.06});
+ items.forEach(item => {item.classList.add('method-reveal-pending');observer.observe(item);});
+ const showAll = () => { if(motion.matches){items.forEach(item=>item.classList.remove('method-reveal-pending'));observer.disconnect();} };
+ if(motion.addEventListener) motion.addEventListener('change',showAll);
+})();</script></body></html>
