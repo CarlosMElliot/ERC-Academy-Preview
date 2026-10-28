@@ -464,3 +464,13 @@ body.erc-light{background:#051326;color:#d5dadd;color-scheme:dark}
  .erc-light #about .erc-about-highlights p { margin-inline:auto; max-width:32ch; }
  .erc-light #about .erc-about-cta { justify-content:center; max-width:100%; gap:12px; }
 }
+
+/* Separate guidance numbers from headings on narrow screens. */
+@media(max-width:600px) {
+ .erc-light #acompanamiento .erc-guidance-item summary { grid-template-columns:minmax(0,1fr) 28px; gap:18px 16px; align-items:start; }
+ .erc-light #acompanamiento .erc-guidance-number { grid-column:1; grid-row:1; font-size:48px; line-height:1; }
+ .erc-light #acompanamiento .erc-guidance-toggle { grid-column:2; grid-row:1; justify-self:end; margin-top:4px; }
+ .erc-light #acompanamiento .erc-guidance-card-heading { grid-column:1 / -1; grid-row:2; padding-top:0; min-width:0; }
+ .erc-light #acompanamiento .erc-guidance-kicker { margin-bottom:10px; }
+ .erc-light #acompanamiento .erc-guidance-preview { margin-top:12px; }
+}
