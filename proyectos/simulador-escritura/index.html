@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Summary &amp; Opinion Writing Test</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="/favicon.ico?v=erc2" sizes="16x16 32x32 48x48"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/erc-32.png?v=erc2"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/erc-192.png?v=erc2"><link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/erc-180.png?v=erc2"><meta name="description" content="Práctica independiente de escritura de ERC Academy: resumen y opinión en 18 minutos."><link rel="canonical" href="https://ercacademynic.com/proyectos/simulador-escritura/"></head>
+<body>
+
+<!-- ================= SETUP SCREEN ================= -->
+<div class="screen active" id="screen-setup">
+  <div class="setup-card">
+    <a class="erc-return" href="/proyectos/">← Explora ERC</a><div class="setup-eyebrow">ERC Academy · Independent writing practice</div>
+    <h1>Summary &amp; Opinion</h1>
+    <p class="lede">Read a short passage, write a short summary of the author's view, then give your own opinion. You'll have 18 minutes once you begin.</p>
+
+    <p class="practice-note">Independent practice, not an official Versant test or score.</p><div id="draftPrompt" class="note-box" hidden><p>A saved attempt is available in this browser. The timer keeps running while you are away.</p><button class="btn-primary" id="resumeDraft" type="button">Resume attempt</button> <button class="btn-secondary" id="discardDraft" type="button">Discard draft</button></div><p id="draftStatus" class="practice-note" role="status">Your draft is saved only in this browser during the attempt.</p><div class="field-block">
+      <label class="field-label" for="studentName">Your name</label>
+      <input type="text" id="studentName" maxlength="100" placeholder="e.g. Maria Gonzalez" autocomplete="name">
+    </div>
+
+    <div class="field-block">
+      <label class="field-label">Choose a passage</label>
+      <div class="passage-choices" id="passageChoices"></div>
+    </div>
+
+    <button class="begin-btn" id="beginBtn" disabled>Begin test</button>
+    <div class="setup-foot">Once you begin, the 18‑minute timer starts and cannot be paused.</div>
+  </div>
+</div>
+
+<!-- ================= TEST SCREEN ================= -->
+<div class="screen" id="screen-test">
+  <div class="test-header">
+    <div class="th-left">
+      <div class="th-title" id="testTitle">Passage</div>
+      <div class="th-sub" id="testSub">Summary and opinion</div>
+    </div>
+    <div class="th-right">
+      <div class="name-badge">Student: <strong id="headerName">—</strong></div>
+      <div class="timer-wrap">
+        <div class="timer" id="timerDisplay">18:00</div>
+        <div class="timer-bar"><div class="timer-bar-fill" id="timerBarFill"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="req-strip">Summary: 25–50 words, in your own words. Opinion: 50+ words, agree or disagree and explain why.</div>
+
+  <div class="test-body">
+    <div class="passage-pane">
+      <div class="pane-heading">Read the passage</div>
+      <div class="passage-scroll" id="passageScroll"></div>
+    </div>
+
+    <div class="writing-pane">
+      <div class="jump-nav">
+        <button class="jump-btn active" id="jumpSummary" type="button">Summary</button>
+        <button class="jump-btn" id="jumpOpinion" type="button">Opinion</button>
+      </div>
+      <div class="writing-scroll" id="writingScroll">
+        <div class="task-block" id="blockSummary">
+          <p class="task-prompt">Write a short summary of the author's opinion in 25–50 words. Do not copy.</p>
+          <div class="box-wrap">
+            <div class="box-header">
+              <span>Summary</span>
+              <span class="wc-badge" id="summaryWC">0 words</span>
+            </div>
+            <textarea id="summaryBox" placeholder="Please type here."></textarea>
+          </div>
+          <div class="hint-line neutral" id="summaryHint">25–50 words required.</div>
+        </div>
+
+        <div class="task-block" id="blockOpinion">
+          <p class="task-prompt">Write your opinion. Do you agree or disagree with the author? Why? Write at least 50 words. Try to use your own ideas.</p>
+          <div class="box-wrap">
+            <div class="box-header">
+              <span>Opinion</span>
+              <span class="wc-badge" id="opinionWC">0 words</span>
+            </div>
+            <textarea id="opinionBox" placeholder="Please type here."></textarea>
+          </div>
+          <div class="hint-line neutral" id="opinionHint">50 words minimum.</div>
+        </div>
+      </div>
+
+      <div class="test-footer">
+        <div class="submit-warning" id="submitWarning">
+          <span id="submitWarningText">Your writing is shorter than required.</span>
+          <button class="btn-secondary" id="cancelSubmitBtn" type="button" style="padding:6px 12px; font-size:12.5px;">Keep writing</button>
+          <button class="btn-primary" id="confirmSubmitBtn" type="button" style="padding:6px 14px; font-size:12.5px;">Submit anyway</button>
+        </div>
+        <button class="btn-primary" id="submitBtn">Submit test</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= RESULTS SCREEN ================= -->
+<div class="screen" id="screen-results">
+  <div class="results-card">
+    <div class="setup-eyebrow">Test complete</div>
+    <h1 id="resultsHeading">Nice work.</h1>
+    <div class="results-meta" id="resultsMeta"></div>
+
+    <div class="results-section">
+      <h3>Summary <span class="rs-wc" id="resSummaryWC"></span></h3>
+      <div class="results-body" id="resSummaryText"></div>
+    </div>
+    <div class="results-section">
+      <h3>Opinion <span class="rs-wc" id="resOpinionWC"></span></h3>
+      <div class="results-body" id="resOpinionText"></div>
+    </div>
+
+    <p class="practice-note">Finishing the test does not send your writing. Download it or open Gmail and press Send.</p><div class="results-actions">
+      <a class="btn-primary" id="emailBtn" style="text-decoration:none; display:inline-flex; align-items:center;">Email results to instructor</a>
+      <button class="btn-secondary" id="downloadBtn">Download results (.txt)</button>
+      <button class="btn-secondary" id="printBtn">Print / save as PDF</button>
+    </div>
+
+    <div class="note-box">
+      "Email results" opens a new tab with a Gmail message already addressed to <strong>erc.academianic@gmail.com</strong> and filled in — you'll just need to hit send (you may need to be signed into Gmail in that browser). If you use a different email provider, use "Download" instead and attach that file to an email yourself.
+    </div>
+  <p><a class="erc-return" href="/proyectos/">← Back to ERC projects</a></p></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+

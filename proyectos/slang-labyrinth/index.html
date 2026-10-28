@@ -1,0 +1,305 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Slang Labyrinth 3D</title>
+<style>
+:root{color-scheme:dark;box-sizing:border-box;--bg:#05020c;--fg:#f4eaff;--pan:#1b1236;--ac:#ff3df2;--ac2:#35f2ff;--ok:#3dff95;--bad:#ff4d6d}
+html,body{height:100%;margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,sans-serif;overflow:hidden;user-select:none;touch-action:none}
+canvas{display:block}
+#vg{position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 45%,rgba(0,0,0,.85) 100%)}
+#fl{position:fixed;inset:0;pointer-events:none;opacity:0}
+#hud{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);display:flex;flex-wrap:wrap;justify-content:center;gap:4px 14px;padding:8px;font-size:15px;text-shadow:0 0 6px #000;pointer-events:none}
+#hud b{color:var(--ac2)}
+.pad{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));display:flex;gap:10px}
+.pad button{width:68px;height:68px;font-size:26px;background:rgba(27,18,54,.7);color:var(--fg);border:1px solid var(--ac2);border-radius:50%;touch-action:none}
+#o{position:fixed;inset:0;background:rgba(5,2,15,.7);display:none;align-items:center;justify-content:center;padding:14px;z-index:5;overflow:auto}
+#p{background:var(--pan);border:2px solid var(--ac);border-radius:16px;padding:18px;max-width:380px;width:100%;box-shadow:0 0 34px var(--ac);text-align:center}
+.q{font-size:17px;line-height:1.4;margin:8px 0 14px}
+.b,.h,.go{display:block;width:100%;margin:7px 0;padding:12px;font-size:16px;border-radius:10px;border:1px solid var(--ac2);background:#0b0618;color:var(--fg)}
+.h{border-color:#ffd23d;color:#ffd23d}.go{background:var(--ac);color:#000;font-weight:700;border:0}
+.ok{background:var(--ok)!important;color:#000}.no{background:var(--bad)!important;color:#000}
+#fb{min-height:20px;font-size:14px}
+#ts{position:fixed;left:0;right:0;top:22%;text-align:center;font-size:clamp(22px,6vw,40px);font-weight:900;color:#ff2a4a;text-shadow:0 0 18px #f00,0 0 4px #000;opacity:0;pointer-events:none;z-index:4}
+#vg{transition:box-shadow .2s}
+#hud{padding:8px 58px!important}
+#ex{position:fixed;right:8px;top:calc(8px + env(safe-area-inset-top,0px));width:44px;height:44px;border-radius:50%;border:1px solid var(--bad);background:rgba(27,18,54,.85);color:var(--bad);font-size:20px;z-index:6;touch-action:manipulation}
+#tm{position:fixed;left:8px;top:calc(18px + env(safe-area-inset-top,0px));font-weight:800;font-size:16px;text-shadow:0 0 6px #000;pointer-events:none;z-index:6}
+.sel{background:var(--ac2)!important;color:#000!important}
+#tr{position:fixed;inset:0;background:var(--bg);z-index:7;overflow:auto;display:none;padding:calc(12px + env(safe-area-inset-top,0px)) 12px calc(24px + env(safe-area-inset-bottom,0px));text-align:center;touch-action:pan-y}
+.tw{max-width:460px;margin:0 auto}
+.bar{height:10px;background:#2a1b52;border-radius:6px;overflow:hidden;margin:6px 0}.bar i{display:block;height:100%;background:var(--ok)}
+.chip{display:inline-block;margin:3px;padding:6px 10px;border-radius:14px;font-size:13px;border:1px solid #6b3fd6;background:var(--pan);color:var(--fg)}
+.chip.l{border-color:#ffd23d}.chip.m{background:var(--ok);color:#000;border-color:var(--ok)}.chip.u{opacity:.55}
+.og{display:inline-block!important;width:auto!important;margin:3px!important;padding:8px 12px!important}
+</style><link rel="icon" href="/favicon.ico?v=erc2" sizes="16x16 32x32 48x48"><link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/erc-32.png?v=erc2"><link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/erc-192.png?v=erc2"><link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/erc-180.png?v=erc2"><meta name="description" content="Slang Labyrinth: un juego de ERC Academy para practicar 40 expresiones de inglés."><link rel="canonical" href="https://ercacademynic.com/proyectos/slang-labyrinth/"><style>.erc-game-return{display:block;padding:12px;color:#35f2ff;font-size:14px;text-align:center}.erc-game-error{position:fixed;inset:0;z-index:100;background:#051326;color:#e4e7e5;padding:40px;overflow:auto;touch-action:pan-y}.erc-game-error a{color:#71d6ef}</style></head><body>
+<div id="vg"></div><div id="fl"></div><div id="ts"></div><button id="ex" aria-label="Exit to menu">✕</button><div id="tm"></div><div id="hud"></div>
+<div class="pad" style="left:12px"><button data-k="l">⟲</button><button data-k="r">⟳</button></div>
+<div class="pad" style="right:12px"><button data-k="dn">▼</button><button data-k="up">▲</button></div>
+<div id="o"><div id="p"></div></div>
+<div id="tr"></div>
+<script src="config.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const D=`Rizz|Charisma or charm, especially in romantic or social situations|Comes from the middle of "charisma"|He walked up to the group and charmed everyone instantly, unspoken {rizz}.
+No Cap|Used to stress a statement is truthful: "no lie"|Its opposite means exaggeration or falsehood|That was genuinely the best concert I've ever attended, {no cap}.
+Bet|Enthusiastic agreement, confirmation, or accepting a challenge|Synonyms: "say less", "deal"|Are we still grabbing coffee at 3 PM? {Bet}! See you there.
+Ate & Left No Crumbs|Executed something flawlessly, to absolute perfection|Short form: "She ate that"|Did you see her keynote speech? She completely {ate and left no crumbs}.
+Cooked|In trouble, doomed, exhausted, or facing inevitable failure|"Let him ___" = give someone space to execute an idea|I forgot we had a final exam this morning and didn't study at all, I am so {cooked}.
+Delulu|Playfully delusional; unrealistically optimistic|Motto: "___ is the solulu"|Thinking I'm going to win the lottery this weekend is completely {delulu}, but I can dream.
+Aura|An intangible score of coolness, poise, and effortless confidence|"Farming" it = acting cool on purpose|He dropped his coffee in front of everyone, minus 1,000 {aura} points instantly.
+Main Character|Someone acting like the star of their own movie|Add "energy" for MCE|Walking through the city with headphones on rainy days gives total {main character} energy.
+Touch Grass|Disconnect from screens and re-ground yourself in real life|Born in gaming communities teasing chronically online players|You've been arguing on Twitter for six hours straight, please go {touch grass}.
+Slay|To do something exceptionally well, with style and confidence|Roots in Black LGBTQ+ ballroom culture|That outfit is incredible, you came to {slay} tonight!
+Ghost|To abruptly cut off all communication without explanation|Used in dating, friendships, even hiring|We went on three great dates, and then he completely {ghosted} me.
+Glow Up|A major transformation for the better|Modern spin on "grow up"|I barely recognized him at the reunion, his {glow up} was unbelievable.
+Rent-Free|To occupy someone's thoughts constantly without effort|Full phrase: "living ___ in your mind"|That viral catchy song has been living {rent-free} in my head all week.
+It's Giving|Evokes a specific vibe, aesthetic, or comparison|Said alone, it means a strong positive vibe|That blazer and coffee mug combo? {It's giving} CEO energy.
+Sus|Short for suspicious; questionable behavior or motives|Exploded globally via Among Us|Why is he making mysterious calls in the hallway? That's really {sus}.
+Flex|To show off achievements, wealth, skills, or possessions|Idiom: "Weird ___, but okay"|Posting your new vintage watch on social media is a subtle {flex}.
+Salty|Bitter, annoyed, or resentful over something minor|Often paired with a shaker emoji|He's still {salty} because he lost the board game last night.
+Spill the Tea|To share gossip, news, or juicy information|"The tea" alone means gossip|Sit down, grab your coffee, and {spill the tea} on what happened.
+Lowkey / Highkey|Secretly or subtly / openly or intensely|A pair of intensity-modifier adverbs|I {lowkey} want to stay home tonight, but I highkey love that restaurant.
+Standing on Business|Upholding boundaries and backing words with action|About integrity and responsibility|She refused to settle for less than her worth, total respect for {standing on business}.
+Canon Event|An unavoidable, character-building experience in your life story|Think storylines that cannot be changed|I can't interfere with his bad haircut choice; it's a necessary {canon event}.
+Hits Different|Feels uniquely special, gratifying, or intense|Ice water at 3 AM, for example|Drinking ice water at 3 AM just {hits different}.
+Vibe Check|Assessing someone's mood, attitude, or general energy|You can pass or fail it|He walked in throwing negative energy at everyone and failed the {vibe check}.
+Crash Out|To rashly freak out and ruin a situation over anger|Deep breaths prevent it|Take a deep breath and relax, don't {crash out} over a minor mistake.
+Pop Off|To perform or speak impressively and passionately|A cheer: "go ___!"|Your solo presentation was unbelievable, {pop off}!
+Based|Unapologetically yourself; honest opinions regardless of trends|Holds their ground, politely|He stated his unpopular opinion politely and held his ground, totally {based}.
+Unc|Playful tease for someone older or out of touch with trends|Short for a relative at the family barbecue|He tried to do a viral dance and looked like {unc} at a family barbecue.
+Chopped|Unappealing, poorly executed, or disappointing in quality|Describes a bad design update|That new graphic design update is looking completely {chopped}.
+404 Coded|Absent-minded, confused, or uncommunicative|Like a web page that cannot be found|I asked him a basic question and his brain was completely {404 coded}.
+Drip|Stylish, fashionable, high-end clothing and appearance|A liquid metaphor for style|Look at that jacket, his {drip} is unmatched today.
+Simp|Excessively attentive to a crush who isn't interested|Bought front-row tickets, got ignored|He bought front-row tickets for someone who doesn't even text him back, total {simp} behavior.
+Valid|Reasonable, understandable, or worthy of approval|Leaving a party early because you're tired|Leaving the party early because you're tired is totally {valid}.
+Caught in 4K|Caught doing something embarrassing with undeniable visual proof|Think ultra-high-definition resolution|You said you were sleeping, but you're tagged in a live video right now, {caught in 4K}!
+Yap|To talk continuously or excessively about trivial things|Forty minutes about a houseplant|She's been {yapping} on the phone for forty minutes about her new houseplant.
+Mid|Unimpressive or mediocre despite high hype|Neither low nor high|Everyone hyped up that movie, but honestly it was completely {mid}.
+Side Eye|A glance conveying skepticism, judgment, or disapproval|A non-verbal judgment|She gave him a long {side eye} when he said he'd finished all the work.
+Era|A life period defined by an aesthetic or mindset|Matcha ___|I'm entering my peaceful, early-morning matcha {era}.
+BFFR|"Be For Real": calling out absurd or dishonest statements|An acronym starting with B|You expect to finish that entire project in 10 minutes? {BFFR}!
+GOAT|"Greatest Of All Time": the undisputed best|Crowns a legend|Her customer service recovery was so legend, she's the absolute {GOAT}.
+Touch Base|To briefly connect, check in, or update someone|Corporate speak with a baseball metaphor|Let me {touch base} with the team on Monday morning before finalizing.`.split('\n').map(l=>l.split('|'));
+const $=i=>document.getElementById(i),N=15,C=5,H=4.2,shuf=a=>a.map(v=>[Math.random(),v]).sort((p,q)=>p[0]-q[0]).map(p=>p[1]);
+const TOTAL=5,K=(a,b)=>a+','+b,DIRS=[[1,0],[-1,0],[0,1],[0,-1]],ci=v=>Math.round(v/C);
+let R;try{R=new THREE.WebGLRenderer({antialias:true})}catch(error){const box=document.createElement('div');box.className='erc-game-error';const title=document.createElement('h1');title.textContent='No pudimos iniciar el juego 3D';const info=document.createElement('p');info.textContent='Comprueba tu conexión y usa un navegador con WebGL habilitado.';const link=document.createElement('a');link.href='/proyectos/';link.textContent='Volver a los proyectos de ERC';box.append(title,info,link);document.body.append(box);throw error;}R.setPixelRatio(Math.min(devicePixelRatio,2));R.setSize(innerWidth,innerHeight);
+R.shadowMap.enabled=true;R.toneMapping=THREE.ACESFilmicToneMapping;R.outputEncoding=THREE.sRGBEncoding;document.body.prepend(R.domElement);
+const scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(68,innerWidth/innerHeight,.1,220);
+scene.background=new THREE.Color(0x05020c);scene.fog=new THREE.FogExp2(0x05020c,.075);
+scene.add(new THREE.AmbientLight(0x3a2266,.55));
+addEventListener('resize',()=>{R.setSize(innerWidth,innerHeight);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix()});
+function tex(hue,sat,rep){const k=document.createElement('canvas');k.width=k.height=256;const g=k.getContext('2d');g.fillStyle='#222';g.fillRect(0,0,256,256);
+ for(let r=0;r<8;r++)for(let c=-1;c<4;c++){g.fillStyle=`hsl(${hue},${sat}%,${28+Math.random()*22}%)`;g.fillRect(c*64+(r%2?32:0)+2,r*32+2,60,28)}
+ for(let i=0;i<4000;i++){g.fillStyle=`rgba(0,0,0,${Math.random()*.3})`;g.fillRect(Math.random()*256,Math.random()*256,2,2)}
+ const t=new THREE.CanvasTexture(k);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(rep,rep);t.encoding=THREE.sRGBEncoding;t.anisotropy=4;return t}
+const wt=tex(265,30,1),ft=tex(220,10,N*2);
+const wallM=new THREE.MeshStandardMaterial({map:wt,bumpMap:wt,bumpScale:1.5,roughness:.9}),floorM=new THREE.MeshStandardMaterial({map:ft,bumpMap:ft,bumpScale:1,roughness:.8});
+const wallG=new THREE.BoxGeometry(C,H,C),gateG=new THREE.BoxGeometry(C*.96,H,C*.96),orbG=new THREE.SphereGeometry(.28,12,10);
+const gk=document.createElement('canvas');gk.width=gk.height=256;{const g=gk.getContext('2d');g.fillStyle='#240030';g.fillRect(0,0,256,256);g.strokeStyle='#ff3df2';g.lineWidth=10;g.strokeRect(14,14,228,228);g.font='130px serif';g.textAlign='center';g.textBaseline='middle';g.fillText('🔒',128,120);g.font='bold 34px sans-serif';g.fillStyle='#ff9af7';g.fillText('DECODE ME',128,222)}
+const gateM=new THREE.MeshStandardMaterial({map:new THREE.CanvasTexture(gk),emissive:0xff2bd6,emissiveMap:null,emissiveIntensity:.7,transparent:true,opacity:.96});
+// hero
+const hero=new THREE.Group(),skin=new THREE.MeshStandardMaterial({color:0xffc9a0,roughness:.7}),cl=new THREE.MeshStandardMaterial({color:0x3dd5ff,roughness:.5,metalness:.2}),pn=new THREE.MeshStandardMaterial({color:0x1b2a6b,roughness:.6});
+const mesh=(geo,mat,x,y,z,p=hero)=>{const o=new THREE.Mesh(geo,mat);o.position.set(x,y,z);o.castShadow=true;p.add(o);return o};
+mesh(new THREE.BoxGeometry(.7,.9,.4),cl,0,1.5,0);mesh(new THREE.SphereGeometry(.28,16,12),skin,0,2.2,0);
+const limb=(w,l,m,x,y)=>{const p=new THREE.Group();p.position.set(x,y,0);mesh(new THREE.BoxGeometry(w,l,w),m,0,-l/2,0,p);hero.add(p);return p};
+const aL=limb(.2,.9,cl,-.5,1.9),aR=limb(.2,.9,cl,.5,1.9),lL=limb(.25,1,pn,-.2,1.05),lR=limb(.25,1,pn,.2,1.05);aR.rotation.x=-1.2;
+mesh(new THREE.CylinderGeometry(.04,.05,.8,6),new THREE.MeshStandardMaterial({color:0x5a3a1a}),.5,1.85,.9);
+const flame=mesh(new THREE.SphereGeometry(.14,10,8),new THREE.MeshBasicMaterial({color:0xffb347}),.5,2.35,.9);
+const torch=new THREE.PointLight(0xff8a30,2.6,26,2);torch.position.set(.5,2.5,.9);torch.castShadow=true;torch.shadow.mapSize.set(512,512);hero.add(torch);scene.add(hero);
+// dust
+const dp=new Float32Array(900);for(let i=0;i<900;i+=3){dp[i]=Math.random()*N*C;dp[i+1]=.3+Math.random()*3.6;dp[i+2]=Math.random()*N*C}
+const dg=new THREE.BufferGeometry();dg.setAttribute('position',new THREE.BufferAttribute(dp,3));const dust=new THREE.Points(dg,new THREE.PointsMaterial({size:.07,color:0xffcc99,transparent:true,opacity:.55}));scene.add(dust);
+// state
+let S={hearts:3,score:0,streak:0,hints:2,lvl:1,pool:[]},L,world,P={x:C,z:C,y:0},heading=0,lock=1,fall=null,opening=[],orbs=[],gates=new Map(),pit=null,ph=0;const keys={};
+function bfs(m,sx,sy){const d=m.map(r=>r.map(()=>-1));d[sy][sx]=0;const q=[[sx,sy]];for(let i=0;i<q.length;i++){const[a,b]=q[i];for(const[u,v]of DIRS){const X=a+u,Y=b+v;if(!m[Y][X]&&d[Y][X]<0){d[Y][X]=d[b][a]+1;q.push([X,Y])}}}return d}
+function addOrb(i,j){const o=new THREE.Mesh(orbG,new THREE.MeshBasicMaterial({color:0xffd23d}));o.position.set(i*C+(Math.random()-.5)*2,1.3,j*C+(Math.random()-.5)*2);world.add(o);orbs.push(o)}
+let mon,warn='',beatT=0,chosen=15,timeLeft=0,running=false,paused=false,prevO=null;
+const fmt=s=>Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0');
+function timeUp(){keys.up=keys.dn=keys.l=keys.r=0;fall=null;P.y=0;hero.rotation.x=hero.rotation.z=0;prevO=null;over("⏳ Time's up!",`You cleared ${S.lvl-1} of ${TOTAL} mazes.<br>`)}
+function showExit(){if(prevO)return;prevO={h:$('p').innerHTML,d:$('o').style.display||'none',l:lock,p:paused};paused=true;lock=1;keys.up=keys.dn=keys.l=keys.r=0;
+ show(`<h2 style="margin:0;color:#ff4d6d">Leave the labyrinth?</h2><p class=q>Your progress will be lost and you'll return to the start screen.</p><button class=go id=ey>Yes, exit to menu</button><button class=b id=et style="border-color:#ffd23d;color:#ffd23d">🏋️ Exit to Training Ground</button><button class=b id=en>Keep playing</button>`)}
+function toMenu(){running=false;paused=false;prevO=null;fall=null;hero.rotation.x=hero.rotation.z=0;keys.up=keys.dn=keys.l=keys.r=0;
+ S={hearts:3,score:0,streak:0,hints:2,lvl:1,pool:[]};build();lock=1;menu()}
+function toast(m){const e=$('ts');e.textContent=m;e.animate([{opacity:1},{opacity:1,offset:.7},{opacity:0}],{duration:2200})}
+function makeMon(){const g=new THREE.Group(),b=new THREE.Mesh(new THREE.SphereGeometry(.95,20,16),new THREE.MeshStandardMaterial({color:0x120008,emissive:0x550010,roughness:.4}));b.position.y=1.4;g.add(b);
+ const em=new THREE.MeshBasicMaterial({color:0xff2040,fog:false});[-.35,.35].forEach(x=>{const e=new THREE.Mesh(new THREE.SphereGeometry(.14,8,6),em);e.position.set(x,1.55,.8);g.add(e)});
+ const l=new THREE.PointLight(0xff1030,2.6,14,2);l.position.y=1.5;g.add(l);g.visible=false;world.add(g);
+ mon={g,b,l,x:C,z:C,tx:C,tz:C,on:false,grace:Math.max(6,15-2*S.lvl),sp:Math.min(6.3,3.4+.75*S.lvl)};warn='';beatT=0;$('vg').style.boxShadow='none'}
+function monTick(dt,t){
+ if(!mon.on){mon.grace-=dt;warn=`👁 awakens in ${Math.max(0,Math.ceil(mon.grace))}s`;
+  if(mon.grace<=0){mon.on=true;mon.g.visible=true;mon.x=mon.tx=C;mon.z=mon.tz=C;toast('👁 IT AWAKENS. RUN!');flash('#ff1030',900);beep(70,1,'sawtooth')}return}
+ const pi=ci(P.x),pj=ci(P.z),mi=ci(mon.x),mj=ci(mon.z);
+ if(pi==mi&&pj==mj){mon.tx=P.x;mon.tz=P.z}
+ else if(Math.hypot(mon.tx-mon.x,mon.tz-mon.z)<.2){const d=bfs(L.m,pi,pj);if(d[mj]&&d[mj][mi]>0)for(const[u,v]of DIRS){const a=mi+u,b=mj+v;if(L.m[b]&&d[b][a]>=0&&d[b][a]<d[mj][mi]){mon.tx=a*C;mon.tz=b*C;break}}}
+ const dx=mon.tx-mon.x,dz=mon.tz-mon.z,dl=Math.hypot(dx,dz)||1,st=Math.min(dl,mon.sp*dt);mon.x+=dx/dl*st;mon.z+=dz/dl*st;
+ mon.g.position.set(mon.x,Math.sin(t*3)*.25,mon.z);if(dl>.05)mon.g.rotation.y=Math.atan2(dx,dz);
+ mon.b.scale.setScalar(1+Math.sin(t*9)*.08);mon.l.intensity=2.6+Math.random()*1.2;
+ const dist=Math.hypot(P.x-mon.x,P.z-mon.z),a=Math.max(0,1-dist/22);
+ $('vg').style.boxShadow=`inset 0 0 ${60+a*140}px rgba(255,0,40,${a*.8})`;warn=dist<16?'⚠ IT IS CLOSE!':'👁 it hunts you';
+ beatT-=dt;if(beatT<=0&&dist<22){beep(55,.12);setTimeout(()=>beep(55,.12),160);beatT=.35+dist/22*.9}
+ if(dist<1.5){S.hearts--;flash('#ff1030',1000);beep(90,.7,'sawtooth');mon.on=false;mon.g.visible=false;mon.grace=6;$('vg').style.boxShadow='none';
+  if(S.hearts<=0){lock=1;over()}else toast('💀 IT GOT YOU! -1 ❤️')}}
+function build(){
+ if(world)scene.remove(world);world=new THREE.Group();scene.add(world);orbs=[];gates.clear();opening=[];
+ const m=[...Array(N)].map(()=>Array(N).fill(1)),st=[[1,1]];m[1][1]=0;
+ while(st.length){const[cx,cy]=st[st.length-1],nb=shuf([[2,0],[-2,0],[0,2],[0,-2]]).filter(([a,b])=>cx+a>0&&cx+a<N-1&&cy+b>0&&cy+b<N-1&&m[cy+b][cx+a]);
+  if(!nb.length){st.pop();continue}const[a,b]=nb[0];m[cy+b/2][cx+a/2]=0;m[cy+b][cx+a]=0;st.push([cx+a,cy+b])}
+ const d=bfs(m,N-2,N-2),path=[];let px=1,py=1;
+ while(d[py][px]>0){path.push([px,py]);for(const[u,v]of DIRS)if(d[py+v][px+u]===d[py][px]-1){px+=u;py+=v;break}}
+ const G=Math.min(3+S.lvl,7);
+ for(let i=1;i<=G;i++){const[a,b]=path[Math.floor(path.length*i/(G+1))],g=new THREE.Mesh(gateG,gateM.clone());g.position.set(a*C,H/2,b*C);world.add(g);gates.set(K(a,b),g)}
+ for(let y=0;y<N;y++)for(let x=0;x<N;x++)if(m[y][x]){const w=new THREE.Mesh(wallG,wallM);w.position.set(x*C,H/2,y*C);w.castShadow=w.receiveShadow=true;world.add(w)}
+ const fl=new THREE.Mesh(new THREE.PlaneGeometry(N*C,N*C),floorM);fl.rotation.x=-Math.PI/2;fl.position.set((N-1)/2*C,0,(N-1)/2*C);fl.receiveShadow=true;world.add(fl);
+ const open=[];for(let y=1;y<N-1;y++)for(let x=1;x<N-1;x++)if(!m[y][x]&&x+y>4&&!gates.has(K(x,y)))open.push([x,y]);
+ shuf(open).slice(0,5).forEach(p=>addOrb(...p));
+ const ex=new THREE.Group(),bm=new THREE.MeshBasicMaterial({color:0x35f2ff,transparent:true,opacity:.28,blending:THREE.AdditiveBlending,depthWrite:false,fog:false});
+ const beam=new THREE.Mesh(new THREE.CylinderGeometry(.9,.9,40,16,1,true),bm);beam.position.y=20;ex.add(beam);
+ const ring=new THREE.Mesh(new THREE.TorusGeometry(1.5,.12,10,40),new THREE.MeshBasicMaterial({color:0x7ffbff}));ring.position.y=1.8;ex.add(ring);ex.ring=ring;
+ const el=new THREE.PointLight(0x35f2ff,3.2,20,2);el.position.y=2;ex.add(el);ex.position.set((N-2)*C,0,(N-2)*C);world.add(ex);world.ex=ex;
+ L={m,d};P={x:C,z:C,y:0};heading=0;scene.fog.density=.07+.008*S.lvl;makeMon();hud()}
+function solid(i,j){return !L.m[j]||L.m[j][i]!==0||gates.has(K(i,j))}
+function hit(x,z){const r=.6;return solid(ci(x-r),ci(z-r))||solid(ci(x+r),ci(z-r))||solid(ci(x-r),ci(z+r))||solid(ci(x+r),ci(z+r))}
+function hud(){const dd=L.d[ci(P.z)]?.[ci(P.x)];$('hud').innerHTML=`<span>${'❤️'.repeat(S.hearts)||'💀'}</span><span>⭐ <b>${S.score}</b></span><span>🔥 <b>${S.streak}</b></span><span>💡 <b>${S.hints}</b></span><span>🚪 steps <b>${dd>=0?dd:'?'}</b></span><span>🌀 Maze <b>${S.lvl}/${TOTAL}</b> ${Array.from({length:TOTAL},(_,i)=>i<S.lvl-1?'◆':i==S.lvl-1?'◈':'◇').join('')} <b>${TOTAL-S.lvl}</b> left</span><span style="color:#ff4d6d;font-weight:700">${warn}</span>`}
+function beep(f,d=.15,ty='sine'){try{const a=beep.a||(beep.a=new AudioContext()),o=a.createOscillator(),g=a.createGain();o.type=ty;o.frequency.value=f;o.connect(g);g.connect(a.destination);g.gain.value=.07;o.start();o.stop(a.currentTime+d)}catch(e){}}
+function drone(){if(drone.on)return;drone.on=1;try{const a=beep.a||(beep.a=new AudioContext()),o=a.createOscillator(),f=a.createBiquadFilter(),g=a.createGain();o.type='sawtooth';o.frequency.value=46;f.frequency.value=160;g.gain.value=.05;o.connect(f);f.connect(g);g.connect(a.destination);o.start()}catch(e){}}
+function flash(c,ms){const f=$('fl');f.style.background=c;f.animate([{opacity:.85},{opacity:0}],{duration:ms})}
+function show(h){$('p').innerHTML=h;$('o').style.display='flex'}
+function hide(){$('o').style.display='none';lock=0}
+function ask(key){lock=1;keys.up=keys.dn=keys.l=keys.r=0;if(!S.pool.length)S.pool=shuf([...D.keys()]).sort((a,b)=>M(b)-M(a));
+ const i=S.pool.pop(),o=shuf([i,...shuf([...D.keys()].filter(k=>k!=i)).slice(0,3)]);S.q={i,key,h:0};
+ show(`<h2 style="margin:0;color:#ff3df2">🔒 Decode the gate</h2><p class=q>Which slang means: <b>${D[i][1]}</b>?</p>`+o.map(k=>`<button class=b data-k=${k}>${D[k][0]}</button>`).join('')+`<button class=h id=hb>💡 Use hint (${S.hints})</button><p id=fb></p>`)}
+function hint(){const q=S.q;if(q.h||q.done)return;if(!S.hints){$('fb').textContent='No hints left. Hunt the golden orbs!';return}
+ S.hints--;q.h=1;const w=[...document.querySelectorAll('.b')].filter(b=>+b.dataset.k!=q.i),r=w[Math.floor(Math.random()*w.length)];r.disabled=true;r.style.opacity=.25;
+ $('fb').innerHTML=`💡 <i>${D[q.i][2]}</i> (one wrong answer removed)`;$('hb').textContent='💡 Hint used'}
+function ans(k,btn){const q=S.q;if(q.done)return;q.done=1;rec(q.i,k==q.i);
+ if(k==q.i){btn.classList.add('ok');const pts=Math.round(100*(1+Math.min(S.streak,4)*.5)*(q.h?.6:1));S.score+=pts;S.streak++;beep(660,.3);
+  let m=`✅ +${pts} pts`;if(S.streak%3==0){S.hints++;m+=' · 3-streak bonus: +1 💡'}$('fb').textContent=m;
+  const g=gates.get(q.key);gates.delete(q.key);opening.push({g,t:0});setTimeout(()=>{hide();flash('#3dff95',700);hud()},1000)}
+ else{btn.classList.add('no');S.streak=0;S.hearts--;beep(110,.6,'sawtooth');
+  $('fb').innerHTML=`💥 TRAP! It was <b>${D[q.i][0]}</b>. The floor cracks open...`;
+  setTimeout(()=>{if(S.hearts<=0)return over();hide();lock=1;fall={t:0};pit=new THREE.Mesh(new THREE.CircleGeometry(1.6,24),new THREE.MeshBasicMaterial({color:0}));pit.rotation.x=-Math.PI/2;pit.position.set(P.x,.03,P.z);pit.scale.setScalar(.01);world.add(pit);flash('#ff1030',900)},1500)}}
+function lost(){const dp=L.d[ci(P.z)][ci(P.x)],pi=ci(P.x),pj=ci(P.z),c=[];
+ for(let y=1;y<N-1;y++)for(let x=1;x<N-1;x++)if(!L.m[y][x]&&!gates.has(K(x,y))&&L.d[y][x]>=dp&&Math.abs(x-pi)+Math.abs(y-pj)>=5)c.push([x,y]);
+ const[nx,ny]=shuf(c.length?c:[[1,1]])[0];P.x=nx*C;P.z=ny*C;P.y=0;heading=Math.random()*6.28;
+ const near=[];for(let y=1;y<N-1;y++)for(let x=1;x<N-1;x++)if(!L.m[y][x]&&!gates.has(K(x,y))&&Math.abs(x-nx)+Math.abs(y-ny)<=5&&(x!=nx||y!=ny))near.push([x,y]);
+ shuf(near).slice(0,2).forEach(p=>addOrb(...p));flash('#000',1600)}
+function win(){lock=1;const b=500+S.hearts*100;S.score+=b;track(S.lvl>=TOTAL?'maze_win':'level_clear',{level:S.lvl,score:S.score});beep(990,.5);flash('#35f2ff',1200);
+ $('vg').style.boxShadow='none';
+ if(S.lvl>=TOTAL){const tb=chosen?Math.floor(timeLeft)*2:0;S.score+=tb;running=false;return show(`<h2 style="color:#3dff95">🏆 ALL ${TOTAL} LABYRINTHS CONQUERED!</h2><p class=q>You outran the Devourer and decoded every gate.${tb?`<br>⏱ Time bonus: +${tb}`:''}<br>Final score: <b>${S.score}</b></p><button class=go id=rs>Play again</button><button class=b id=mm>Main menu</button>`)}
+ paused=true;show(`<h2 style="color:#3dff95">🚪 ESCAPED!</h2><p class=q>+${b} bonus.<br>Maze ${S.lvl} of ${TOTAL} cleared, <b>${TOTAL-S.lvl} left</b>. More gates, thicker darkness, and the Devourer wakes sooner and runs faster.</p><button class=go id=nx>Next labyrinth →</button>`)}
+function over(t='💀 Lost in the maze',m=''){running=false;track('maze_over',{reason:t,level:S.lvl,score:S.score});lock=1;$('vg').style.boxShadow='none';show(`<h2 style="color:#ff4d6d">${t}</h2><p class=q>${m}Final score: <b>${S.score}</b></p><button class=go id=rs>Run again</button><button class=b id=et style="border-color:#ffd23d;color:#ffd23d">🏋️ Training Ground</button><button class=b id=mm>Main menu</button>`)}
+function start(){S={hearts:3,score:0,streak:0,hints:2,lvl:1,pool:[]};build();timeLeft=chosen*60;running=true;paused=false;$('ex').style.display='block';$('tm').style.display='block';hide()}
+$('o').onclick=e=>{const t=e.target;if(t.dataset.k!==undefined)ans(+t.dataset.k,t);else if(t.id=='hb')hint();else if(t.id=='nx'){S.lvl++;S.hearts=Math.min(3,S.hearts+1);build();paused=false;hide()}else if(t.id=='rs')start();else if(t.id=='st'){drone();start()}
+ else if(t.dataset.m!==undefined){chosen=+t.dataset.m;document.querySelectorAll('[data-m]').forEach(b=>b.classList.toggle('sel',b===t))}
+ else if(t.id=='mm'||t.id=='ey')toMenu();
+ else if(t.id=='tg')trHub();
+ else if(t.id=='lg'){const n=($('un').value||'').trim();if(!/^[A-Za-z0-9_-]{3,16}$/.test(n))return loginScreen('Use 3-16 letters, numbers, _ or -');login(n);menu()}
+ else if(t.id=='pf')profile();else if(t.id=='pb')menu();else if(t.id=='sw'){USER=null;DB.cur=null;dbSave();loginScreen()}
+ else if(t.id=='et'){toMenu();trHub()}
+ else if(t.id=='en'){$('p').innerHTML=prevO.h;$('o').style.display=prevO.d;lock=prevO.l;paused=prevO.p;prevO=null}};
+$('ex').onclick=showExit;addEventListener('keydown',e=>{if(e.key=='Escape'&&running)showExit()});
+document.querySelectorAll('.pad button').forEach(b=>{const k=b.dataset.k,on=e=>{e.preventDefault();keys[k]=1},off=()=>keys[k]=0;b.onpointerdown=on;b.onpointerup=b.onpointerleave=b.onpointercancel=off});
+const KM={ArrowUp:'up',w:'up',ArrowDown:'dn',s:'dn',ArrowLeft:'l',a:'l',ArrowRight:'r',d:'r'};
+addEventListener('keydown',e=>{if(e.target.tagName=='INPUT'){if(e.key=='Enter')$('lg').click();return}if(KM[e.key]){e.preventDefault();keys[KM[e.key]]=1}});addEventListener('keyup',e=>{if(e.target.tagName!='INPUT'&&KM[e.key])keys[KM[e.key]]=0});
+// ---------- Training Ground ----------
+const CFG=window.CFG||{},SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+const esc=x=>String(x).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let DB={u:{},cur:null,vid:null};
+try{DB=JSON.parse(localStorage.getItem('erc-slangDB-v1'))||DB}catch(e){}
+if(!DB.u)DB.u={};if(!DB.vid)DB.vid=crypto.randomUUID?crypto.randomUUID():String(Math.random()).slice(2);
+const blank=()=>({c:Array(40).fill(0),s:Array(40).fill(0)});let PR=blank(),USER=null;
+const dbSave=()=>{try{localStorage.setItem('erc-slangDB-v1',JSON.stringify(DB))}catch(e){}},save=()=>{if(USER)USER.PR=PR;dbSave()},M=i=>PR.c[i]>=3?1:0,mCount=()=>PR.c.filter(c=>c>=3).length;
+function track(type,data={}){
+ if(USER&&type!='visit'){USER.hist.push({t:Date.now(),type,data});USER.hist=USER.hist.slice(-60);dbSave()}
+ if(CFG.url&&CFG.key)fetch(CFG.url+'/rest/v1/events',{method:'POST',headers:{apikey:CFG.key,Authorization:'Bearer '+CFG.key,'Content-Type':'application/json',Prefer:'return=minimal'},
+  body:JSON.stringify({visitor:DB.vid,username:USER?USER.name:null,type,data,ua:navigator.userAgent.slice(0,150)}),keepalive:true}).catch(()=>{})}
+function login(name){const k=name.toLowerCase(),isNew=!Object.prototype.hasOwnProperty.call(DB.u,k);if(isNew)DB.u[k]={name,created:Date.now(),logins:0,hist:[],PR:blank()};
+ USER=DB.u[k];USER.logins++;USER.last=Date.now();if(!USER.PR||USER.PR.c.length!=40)USER.PR=blank();PR=USER.PR;DB.cur=k;dbSave();track(isNew?'signup':'login',{logins:USER.logins,mastered:mCount()})}
+function loginScreen(msg=''){$('ex').style.display=$('tm').style.display='none';
+ show(`<h2 style="margin:0;color:#ff3df2">Who's playing?</h2><p class=q>Enter a username to create or continue your profile.<br><small>3-16 letters, numbers, _ or -</small></p><input id=un maxlength=16 placeholder="username" autocapitalize=off autocomplete=off style="width:100%;box-sizing:border-box;padding:12px;font-size:18px;border-radius:10px;border:1px solid #35f2ff;background:#0b0618;color:#fff"><p id=ue style="color:#ff4d6d;min-height:18px;margin:6px">${msg}</p><button class=go id=lg>Play</button><small>Your username and game activity are saved ${CFG.url?'and shared with the site owner to track progress and usage':'on this device'}.</small><a class="erc-game-return" href="/proyectos/">← Back to ERC projects</a>`);setTimeout(()=>{const u=$('un');if(u)u.focus()},50)}
+function profile(){const sm=e=>{const d=e.data||{};return e.type=='training'?`${d.ok}/${d.tot} correct`:d.score!=null?d.score+' pts':''},
+ h=USER.hist.slice(-10).reverse().map(e=>`<li>${new Date(e.t).toLocaleString()} · <b>${e.type}</b> ${sm(e)}</li>`).join('');
+ show(`<h2 style="margin:0;color:#35f2ff">👤 ${esc(USER.name)}</h2><p class=q style="font-size:14px">Member since ${new Date(USER.created).toLocaleDateString()}<br>Logins: <b>${USER.logins}</b> · Mastered: <b>${mCount()}/40</b></p><div style="text-align:left;font-size:13px;max-height:200px;overflow:auto"><b>Recent activity</b><ul style="margin:4px;padding-left:18px">${h||'<li>Nothing yet</li>'}</ul></div><button class=go id=pb>Back</button><button class=b id=sw>Switch user</button>`)}
+function startup(){track('visit',{ref:(document.referrer||'').slice(0,100)});const k=DB.cur;if(k&&Object.prototype.hasOwnProperty.call(DB.u,k)){login(DB.u[k].name);menu()}else loginScreen()}
+function rec(i,ok){PR.s[i]=1;PR.c[i]=ok?Math.min(3,PR.c[i]+1):0;save()}
+const T=$('tr'),TR={o:{t:15,n:10,f:'smart',x:'mix',l:3},hp:3,q:[],i:0,ok:0,tot:0,st:0,newM:[],miss:[],rq:new Set(),timer:0,cur:null};
+const grp=(k,l,a)=>`<p style="margin:10px 0 2px">${l}</p><div>${a.map(([v,n])=>`<button class="b og${TR.o[k]==v?' sel':''}" data-o=${k} data-v=${v}>${n}</button>`).join('')}</div>`;
+function trHub(){clearInterval(TR.timer);T.style.display='block';T.scrollTop=0;const mc=mCount();
+ T.innerHTML=`<div class=tw><h2 style="margin:6px 0;color:#35f2ff">🏋️ Training Ground</h2>
+ <p style="margin:4px 0;font-size:14px">Master all 40 slangs: answer each correctly <b>3 times in a row</b>. Gate answers in the maze count too!</p>
+ <div class=bar><i style="width:${mc/40*100}%"></i></div><p style="margin:2px 0 8px"><b>${mc}/40</b> mastered${mc==40?' 🏆 FLUENT!':''}</p>
+ <div>${D.map((d,i)=>`<span class="chip ${PR.c[i]>=3?'m':PR.s[i]?'l':'u'}" data-st=${i}>${d[0]}${PR.c[i]>=3?' ✓':PR.s[i]?' ·'+PR.c[i]+'/3':''}</span>`).join('')}</div>
+ <p id=card class=q style="min-height:60px;font-size:14px">👆 Tap any slang to study it. <small>Grey = unseen · gold = learning · green = mastered</small></p>
+ ${grp('x','🎮 Exercise type'+(SR?'':' (speaking not supported in this browser)'),[['mix','Mix of all'],['mc','Multiple choice'],['gap','Fill the gap'],['say','Speak it 🎤']])}${grp('l','❤️ Lives',[[3,'3 lives'],[0,'Unlimited']])}${grp('t','⏱ Time per question',[[0,'Off'],[10,'10s'],[15,'15s'],[20,'20s']])}${grp('n','📚 Questions per session',[[10,'10'],[20,'20'],[40,'40']])}${grp('f','🎯 Focus',[['smart','Weakest first'],['all','All 40 mixed']])}
+ <button class=go id=tgo style="margin-top:14px">Start training</button><button class=b id=tx>← Back</button><button class=b id=trs style="opacity:.6;font-size:13px">Reset progress</button></div>`}
+function trStart(){const o=TR.o,ix=[...D.keys()],pr=i=>PR.s[i]?PR.c[i]+1:0;
+ TR.q=(o.f=='smart'?shuf(ix).sort((a,b)=>pr(a)-pr(b)):shuf(ix)).slice(0,o.n);Object.assign(TR,{hp:3,i:0,ok:0,tot:0,st:0,newM:[],miss:[],rq:new Set()});T.scrollTop=0;trQ()}
+const nrm=x=>x.toLowerCase().replace(/bffr/g,'be for real').replace(/four oh four/g,'404').replace(/four k\b/g,'4k').replace(/[^a-z0-9' ]+/g,' ').split(/\s+/).filter(Boolean);
+function simil(a,b){const x=nrm(a),y=nrm(b),L=[...Array(x.length+1)].map(()=>Array(y.length+1).fill(0));
+ for(let i=1;i<=x.length;i++)for(let j=1;j<=y.length;j++)L[i][j]=x[i-1]==y[j-1]?L[i-1][j-1]+1:Math.max(L[i-1][j],L[i][j-1]);return L[x.length][y.length]/(y.length||1)}
+const sentOf=i=>D[i][3].replace(/[{}]/g,''),gapOf=i=>D[i][3].replace(/\{[^}]*\}/,'_____'),hiOf=i=>D[i][3].replace(/\{([^}]*)\}/,'<b style="color:#ff3df2">$1</b>');
+const pick=()=>{const x=TR.o.x;if(x=='mc')return Math.random()<.5?0:1;if(x=='gap')return 2;if(x=='say')return SR?3:2;return shuf(SR?[0,1,2,2,3,3]:[0,1,2,2])[0]};
+function trQ(){clearInterval(TR.timer);if(TR.i>=TR.q.length||(TR.o.l&&TR.hp<=0))return trEnd();
+ const i=TR.q[TR.i],ty=pick(),o=shuf([i,...shuf([...D.keys()].filter(k=>k!=i)).slice(0,3)]);TR.cur={i,ty,done:0,tries:0};T.scrollTop=0;
+ const hp=TR.o.l?'❤️'.repeat(Math.max(0,TR.hp))+'🖤'.repeat(3-Math.max(0,TR.hp)):'';
+ const body=ty==3?`<p class=q>🎤 Read this aloud clearly:<br><span style="font-size:19px">“${hiOf(i)}”</span></p><button class=h id=tl>🔊 Listen first</button><button class=go id=sp>🎤 Tap and speak</button><div id=heard style="min-height:40px;font-size:14px"></div><button class=b id=sk style="opacity:.6;font-size:13px">Skip (counts as a miss)</button>`
+ :`<p class=q>${ty==0?`Which slang means: <b>${D[i][1]}</b>?`:ty==1?`What does <b style="color:#ff3df2;font-size:22px">${D[i][0]}</b> mean?`:`✏️ Fill the gap:<br><b style="font-size:18px">“${gapOf(i)}”</b>`}</p>${o.map(k=>`<button class=b data-a=${k}>${ty==1?D[k][1]:D[k][0]}</button>`).join('')}`;
+ T.innerHTML=`<div class=tw><div style="display:flex;justify-content:space-between;margin-top:6px"><span>Q <b>${TR.i+1}/${TR.q.length}</b> ${hp}</span><span>✅ <b>${TR.ok}</b> · 🔥 <b>${TR.st}</b></span></div>${TR.o.t?'<div class=bar><i id=tb style="width:100%;background:#ffd23d"></i></div>':''}${body}<div id=tfb></div><button class=b id=tq style="opacity:.6;font-size:13px">End session</button></div>`;
+ if(TR.o.t){const t0=performance.now(),ms=TR.o.t*1000;TR.timer=setInterval(()=>{const r=1-(performance.now()-t0)/ms,b=$('tb');if(b){b.style.width=Math.max(0,r*100)+'%';if(r<.3)b.style.background='#ff4d6d'}if(r<=0)trAns(-1)},100)}}
+function listen(){const c=TR.cur;if(!c||c.busy||c.done)return;const r=new SR(),b=$('sp'),h=$('heard');r.lang='en-US';r.maxAlternatives=3;c.busy=1;c.sc=null;c.err=0;b.textContent='🎙 Listening…';
+ r.onresult=e=>{const al=[...e.results[0]].map(a=>a.transcript);c.heard=al[0];c.sc=Math.max(...al.map(a=>simil(a,sentOf(c.i))))};
+ r.onerror=e=>{c.err=e.error};
+ r.onend=()=>{c.busy=0;if(c.done)return;b.textContent='🎤 Tap and speak';
+  if(c.err&&c.err!='no-speech'){h.textContent='⚠ Microphone problem ('+c.err+'). Allow mic access, or skip.';return}
+  if(c.sc==null){h.textContent="I didn't hear anything. Try again.";return}
+  h.innerHTML=`Heard: “${esc(c.heard)}” · ${Math.round(c.sc*100)}% match`;
+  if(c.sc>=.75)trAns(c.i);else if(++c.tries>=2)trAns(-2);else h.innerHTML+='<br>❌ Not quite. One more try!'};
+ try{r.start()}catch(e){c.busy=0;b.textContent='🎤 Tap and speak'}}
+function trAns(k,btn){const c=TR.cur;if(!c||c.done)return;c.done=1;clearInterval(TR.timer);try{speechSynthesis.cancel()}catch(e){}const i=c.i,ok=k==i,was=PR.c[i];TR.tot++;rec(i,ok);let m;
+ document.querySelectorAll('[data-a]').forEach(b=>{b.disabled=true;if(+b.dataset.a==i)b.classList.add('ok');else if(b===btn)b.classList.add('no')});['sp','tl','sk'].forEach(id=>{const e=$(id);if(e)e.disabled=true});
+ if(ok){TR.ok++;TR.st++;if(was<3&&PR.c[i]>=3){TR.newM.push(i);m='🏅 MASTERED!'}else m=`✅ Correct! (${PR.c[i]}/3)`;beep(660,.2)}
+ else{TR.st=0;if(TR.o.l)TR.hp--;beep(110,.4,'sawtooth');if(!TR.miss.includes(i))TR.miss.push(i);m=k==-1?"⏰ Time's up!":k==-2?'🗣 Not pronounced clearly enough.':'❌ Not quite.';if(!TR.rq.has(i)){TR.rq.add(i);TR.q.push(i)}}
+ const end=TR.i+1>=TR.q.length||(TR.o.l&&TR.hp<=0);
+ $('tfb').innerHTML=`<p class=q style="font-size:15px"><b>${m}${!ok&&TR.o.l?(TR.hp>0?` −1 ❤️ (${TR.hp} left)`:' 💀 No lives left'):''}</b><br><b>${D[i][0]}</b>: ${D[i][1]}<br>💡 <i>${D[i][2]}</i><br>“${sentOf(i)}”</p><button class=go id=tn>${end?'See results':'Next →'}</button>`;$('tn').scrollIntoView({block:'nearest'})}
+function trEnd(){clearInterval(TR.timer);const mc=mCount(),acc=TR.tot?Math.round(TR.ok/TR.tot*100):0,lost=TR.o.l&&TR.hp<=0;T.scrollTop=0;track('training',{ok:TR.ok,tot:TR.tot,acc,mastered:mc,mode:TR.o.x,lost});
+ T.innerHTML=`<div class=tw><h2 style="color:#35f2ff;margin:6px 0">${lost?'💀 Out of lives':'📊 Session complete'}</h2><p class=q>${TR.ok}/${TR.tot} correct (${acc}%)<br>🏅 Mastered overall: <b>${mc}/40</b></p>
+ <div class=bar><i style="width:${mc/40*100}%"></i></div>
+ ${TR.newM.length?`<p>🏅 Newly mastered: <b>${TR.newM.map(i=>D[i][0]).join(', ')}</b></p>`:''}
+ ${TR.miss.length?`<p style="text-align:left;font-size:14px"><b>Review these:</b><br>${TR.miss.map(i=>`• <b>${D[i][0]}</b>: ${D[i][1]}`).join('<br>')}</p>`:'<p>🔥 Flawless run!</p>'}
+ ${mc==40?'<p class=q style="color:#3dff95">🏆 You have mastered all 40 slangs!</p>':''}
+ <button class=go id=tgo>Train again</button><button class=b id=th>Training Ground</button><button class=b id=tx>← Back to menu</button></div>`}
+T.onclick=e=>{const t=e.target,d=t.dataset;
+ if(d.st!==undefined){const i=+d.st;$('card').innerHTML=`<b style="color:#ff3df2">${D[i][0]}</b>: ${D[i][1]}<br>💡 <i>${D[i][2]}</i>`}
+ else if(d.o){TR.o[d.o]=isNaN(d.v)?d.v:+d.v;T.querySelectorAll(`[data-o=${d.o}]`).forEach(b=>b.classList.toggle('sel',b===t))}
+ else if(d.a!==undefined)trAns(+d.a,t);
+ else if(t.id=='tl'){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(sentOf(TR.cur.i));u.lang='en-US';u.rate=.9;speechSynthesis.speak(u)}catch(e){}}
+ else if(t.id=='sp')listen();else if(t.id=='sk')trAns(-2);
+ else if(t.id=='tgo')trStart();else if(t.id=='tn'){TR.i++;trQ()}else if(t.id=='tq')trEnd();else if(t.id=='th')trHub();
+ else if(t.id=='tx'){clearInterval(TR.timer);T.style.display='none';if(!running)menu()}
+ else if(t.id=='trs'){if(t.dataset.arm){PR={c:Array(40).fill(0),s:Array(40).fill(0)};save();trHub()}else{t.dataset.arm=1;t.textContent='Tap again to confirm reset'}}};
+const clk=new THREE.Clock();build();
+function menu(){if(!USER)return loginScreen();$('ex').style.display=$('tm').style.display='none';$('vg').style.boxShadow='none';
+show(`<h2 style="margin:0;color:#ff3df2">Escape the Slang Labyrinth 3D</h2><p style="margin:4px 0;font-size:14px">👤 <b>${esc(USER.name)}</b> · <a id=pf style="color:#35f2ff;text-decoration:underline;cursor:pointer">Profile</a></p><p class=q>Follow the <b style="color:#35f2ff">cyan beam of light</b> to the exit. Magenta gates 🔒 block the way, and each one asks a slang from the deck.<br><br>✅ Right: the gate shatters open, points + streak<br>💥 Wrong: the floor collapses! You fall, lose a ❤️ and wake up lost somewhere deeper in the dark, with golden 💡 orbs nearby<br>👁 A few seconds in, <b style="color:#ff4d6d">the Devourer</b> awakens and hunts you through the maze. It never stops, and it takes a ❤️ if it catches you. Keep running!<br>🌀 Conquer all ${TOTAL} labyrinths to win.<br><br><small>Keys: W/S run, A/D turn. Phone: hold the on-screen buttons.</small></p><p style="margin:12px 0 2px">⏱ <b>Time limit for all ${TOTAL} mazes</b></p><div>${[[0,'No limit'],[10,'10 min'],[15,'15 min'],[25,'25 min']].map(([m,l])=>`<button class="b${m==chosen?' sel':''}" data-m=${m} style="display:inline-block;width:auto;margin:3px;padding:8px 12px">${l}</button>`).join('')}</div><button class=go id=st>Enter the maze</button><button class=b id=tg style="border-color:#ffd23d;color:#ffd23d">🏋️ Training Ground · ${mCount()}/40 mastered</button><a class="erc-game-return" href="/proyectos/">← Back to ERC projects</a>`)}
+startup();
+(function loop(){requestAnimationFrame(loop);const dt=Math.min(clk.getDelta(),.05),t=clk.elapsedTime;
+ if(running&&!paused&&chosen){timeLeft-=dt;if(timeLeft<=0){timeLeft=0;timeUp()}}
+ const tm=$('tm');tm.textContent=chosen?'⏱'+fmt(timeLeft):'⏱ ∞';tm.style.color=chosen&&timeLeft<60?'#ff4d6d':'';
+ const f=(keys.up?1:0)-(keys.dn?.6:0),tr=(keys.l?1:0)-(keys.r?1:0),fx=Math.sin(heading),fz=Math.cos(heading);
+ if(!lock&&!fall){heading+=tr*2.3*dt;const sp=f*7.5*dt;let nx=P.x+fx*sp,nz=P.z+fz*sp;if(!hit(nx,P.z))P.x=nx;if(!hit(P.x,nz))P.z=nz;
+  for(const[k,g]of gates){const[a,b]=k.split(',');if(Math.hypot(P.x-a*C,P.z-b*C)<C/2+1.25){ask(k);break}}
+  for(let i=orbs.length-1;i>=0;i--)if(Math.hypot(P.x-orbs[i].position.x,P.z-orbs[i].position.z)<1.3){world.remove(orbs[i]);orbs.splice(i,1);S.hints++;beep(880,.2);flash('#ffd23d',500)}
+  if(Math.hypot(P.x-(N-2)*C,P.z-(N-2)*C)<2.2)win();else monTick(dt,t);hud()}
+ if(f&&!lock&&!fall)ph+=dt*9*Math.sign(f);const sw=(f&&!fall)?Math.sin(ph):0;
+ aL.rotation.x=sw*.9;lL.rotation.x=sw*.9;lR.rotation.x=-sw*.9;
+ if(fall&&!paused){fall.t+=dt;pit.scale.setScalar(Math.min(1,fall.t*3));if(fall.t>.45){const q=fall.t-.45;P.y=-q*q*30;hero.rotation.x+=dt*5;hero.rotation.z+=dt*3}
+  if(fall.t>1.5){world.remove(pit);fall=null;hero.rotation.x=hero.rotation.z=0;lost();lock=0}}
+ hero.position.set(P.x,P.y+(Math.abs(sw)*.14),P.z);hero.rotation.y=heading;
+ torch.intensity=2.6+Math.sin(t*23)*.3+Math.random()*.5;flame.scale.setScalar(.9+Math.random()*.4);
+ gates.forEach(g=>g.material.emissiveIntensity=.6+.4*Math.sin(t*3));
+ for(let i=opening.length-1;i>=0;i--){const o=opening[i];o.t+=dt;o.g.scale.y=Math.max(.01,1-o.t*1.6);o.g.position.y=H/2*o.g.scale.y;o.g.material.emissiveIntensity=3;o.g.material.opacity=1-o.t;if(o.t>.8){world.remove(o.g);opening.splice(i,1)}}
+ orbs.forEach((o,i)=>{o.position.y=1.3+Math.sin(t*2+i)*.25;o.rotation.y=t});
+ if(world.ex)world.ex.ring.rotation.y=t*2,world.ex.ring.rotation.x=Math.sin(t)*.5;dust.rotation.y=t*.01;
+ // chase camera with wall avoidance
+ let k=1;for(;k>.2;k-=.1){if(!solid(ci(P.x-fx*3.2*k),ci(P.z-fz*3.2*k)))break}
+ const tx=P.x-fx*3.2*k,tz=P.z-fz*3.2*k,ty=2.7+(k<1?-.5*(1-k):0);cam.position.lerp(new THREE.Vector3(tx,ty,tz),.2);
+ if(fall&&fall.t>.45)cam.position.add(new THREE.Vector3((Math.random()-.5)*.25,(Math.random()-.5)*.25,0));
+ cam.lookAt(P.x+fx*3,1.7+Math.max(P.y,-3)*.5,P.z+fz*3);R.render(scene,cam)})();
+</script></body></html>
+
