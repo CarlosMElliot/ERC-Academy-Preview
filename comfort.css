@@ -341,3 +341,29 @@ body.erc-light{background:#051326;color:#d5dadd;color-scheme:dark}
  .erc-light #prueba #demo-question-panel,.erc-light #prueba .erc-audio-panel { padding:16px; }
  .erc-light #prueba .erc-video-player { height:auto; aspect-ratio:16/9; }
 }
+
+/* Mobile usability pass: scrollable navigation, readable player and touch targets. */
+@media(max-width:1023px) {
+ .erc-light .erc-main-nav .erc-mobile-menu>div { overflow-y:auto; overscroll-behavior:contain; -webkit-overflow-scrolling:touch; }
+}
+@media(max-width:600px) {
+ .erc-light #inicio { min-height:78svh; padding-inline:20px; }
+ .erc-light #inicio h1 { font-size:clamp(36px,10vw,48px); line-height:1.12; }
+ .erc-light #inicio .erc-action { padding-inline:20px; min-height:48px; }
+ .erc-light #prueba { padding-inline:12px; }
+ .erc-light #prueba .erc-demo-card { padding:24px 14px; }
+ .erc-light #prueba .erc-audio-panel,.erc-light #prueba #demo-question-panel { padding:14px; }
+ .erc-light #prueba .erc-video-player { min-height:200px; }
+ .erc-light #prueba #demo-replay,.erc-light #prueba #demo-audio-note a { display:inline-flex; align-items:center; min-height:44px; }
+ .erc-light #prueba #demo-audio-note { font-size:12px; }
+ .erc-light #prueba #demo-next { width:100%; min-height:48px; }
+ .erc-light #contact #erc-contact-form { padding:24px 18px; min-width:0; }
+ .erc-light #contact :is(input,textarea) { font-size:16px; min-width:0; }
+ .erc-light #contact .erc-contact-wrap>* { min-width:0; }
+ .erc-light #contact #contact-whatsapp { display:inline-flex; align-items:center; min-height:44px; }
+ .erc-light #contact #contact-status { font-size:14px; line-height:1.6; margin-top:12px; }
+ .erc-light #contact #contact-status:empty { display:none; }
+ .erc-light .erc-review-person>div { min-width:0; overflow-wrap:anywhere; }
+ .erc-light .erc-review-person a { display:inline-flex; align-items:center; min-height:44px; }
+ .erc-light .erc-resource-links a,.erc-light #legal a { display:inline-flex; align-items:center; justify-content:center; min-height:44px; min-width:44px; }
+}
