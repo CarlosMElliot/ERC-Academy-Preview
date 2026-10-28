@@ -9,9 +9,9 @@
   .hub-article{font-size:23px;line-height:1.7}
 }
 @media(max-width:600px){
-  .hub-article{font-size:20px;line-height:1.65}
+  .hub-article{font-size:17px;line-height:1.6}
   .hub-article p{margin-bottom:1.15em}
-  .hub-article h2{font-size:27px;line-height:1.3;margin-top:32px}
+  .hub-article h2{font-size:23px;line-height:1.3;margin-top:28px}
   .hub-article ul,.hub-article ol{padding-left:1.25em}
   .hub-article blockquote{padding:14px 16px;margin:22px 0}
 }
