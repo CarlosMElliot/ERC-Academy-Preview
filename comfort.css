@@ -386,3 +386,28 @@ body.erc-light{background:#051326;color:#d5dadd;color-scheme:dark}
  .erc-mobile-menu[open] .erc-menu-icon>span:nth-child(3) { transform:translateY(-8px) rotate(-45deg); }
  .erc-light .erc-main-nav .erc-mobile-menu>div>.erc-mobile-book { display:flex; justify-content:center; margin-top:10px; padding:14px 16px; background:#075bd8; color:#fff!important; border-radius:10px; }
 }
+
+/* Phone spacing refinement; desktop and tablet composition remain unchanged. */
+@media(max-width:600px) {
+ .erc-light :is(#inicio,#acompanamiento,#prueba,#en-clase,#testimonials,#pricing,#mission,#about,#seguir-aprendiendo,#preguntas,#contact) { padding-inline:20px; }
+ .erc-light #prueba .erc-demo-card { padding:24px 12px; }
+ .erc-light #prueba :is(.erc-audio-panel,#demo-question-panel) { padding:12px; }
+ .erc-light #prueba .erc-listening-focus { padding:16px; }
+ .erc-light #prueba .erc-listening-meta { gap:8px 14px; }
+ .erc-light #prueba #demo-question { font-size:19px; }
+ .erc-light #prueba .erc-demo-options button { padding:12px; }
+ .erc-light #en-clase .erc-classroom-intro { text-align:center; }
+ .erc-light #en-clase .erc-classroom-intro>p:not(.erc-classroom-eyebrow) { margin-inline:auto; max-width:34ch; }
+ .erc-light #en-clase .erc-classroom-link { gap:12px; max-width:100%; justify-content:center; font-size:14px; }
+ .erc-light #en-clase .erc-classroom-caption { padding:18px; gap:12px; grid-template-columns:auto minmax(0,1fr); text-align:left; }
+ .erc-light #en-clase .erc-classroom-caption h3 { overflow-wrap:anywhere; }
+ .erc-light #acompanamiento .erc-guidance-heading { text-align:center; }
+ .erc-light #acompanamiento .erc-guidance-lead { margin-inline:auto; }
+ .erc-light #acompanamiento .erc-guidance-goals { text-align:left; }
+ .erc-light #testimonials .erc-reviews-heading { align-items:center; text-align:center; }
+ .erc-light #pricing .erc-plan { padding-inline:20px; }
+ .erc-light #contact .erc-contact-wrap>header { text-align:center; }
+ .erc-light #contact #erc-contact-form { text-align:left; }
+ .erc-light :is(#pricing,#contact) .erc-book { max-width:100%; white-space:normal; }
+ .erc-light main section { scroll-margin-top:80px; }
+}
